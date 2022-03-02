@@ -22,11 +22,18 @@ public class Main {
 			System.out.print("La resta acumlada es " +r.doAcum(a)+"\n");
 			System.out.print("La resta acumlada es " +r.doAcum(b)+"\n");
 			
+<<<<<<< HEAD
 			//Cambio para merge de tres vias sin conflicto
 			System.out.print("Cambios Master");
 			//Cambio para merge de tres vias con conflicto
 			System.out.print("Cambios Master con conflicto");
 				
+=======
+			
+			
+			//Cambios rama restaBranch con conflicto
+			System.out.print("Cambios rama restaBranch con conflicto");
+>>>>>>> restaBranch
 		}
 
 	}
