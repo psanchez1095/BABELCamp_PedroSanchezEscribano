@@ -15,4 +15,11 @@ int acum; //Atributo que guarda un entero que es el resultado de acumular sumas
 		this.acum-=n;
 		return this.acum;
 	}
+	
+	//Cambios rama restaBranch
+	int doSpezialAcum(final int n) {
+		this.acum-=n;
+		return this.acum%10;
+	}
+	
 }
