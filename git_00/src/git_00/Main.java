@@ -24,6 +24,8 @@ public class Main {
 			
 			//Cambio para merge de tres vias sin conflicto
 			System.out.print("Cambios Master");
+			//Cambio para merge de tres vias con conflicto
+			System.out.print("Cambios Master con conflicto");
 				
 		}
 
