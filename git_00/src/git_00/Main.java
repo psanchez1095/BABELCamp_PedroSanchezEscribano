@@ -21,7 +21,11 @@ public class Main {
 			System.out.print("La resta es "+r.resta(a, b)+"\n");
 			System.out.print("La resta acumlada es " +r.doAcum(a)+"\n");
 			System.out.print("La resta acumlada es " +r.doAcum(b)+"\n");
-				
+			
+			
+			
+			//Cambios rama restaBranch con conflicto
+			System.out.print("Cambios rama restaBranch con conflicto");
 		}
 
 	}
