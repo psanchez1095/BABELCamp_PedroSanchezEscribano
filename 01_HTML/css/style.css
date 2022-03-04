@@ -1,0 +1,59 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+
+/* Parte principal de la página*/
+body{
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-image: url(../img/back.jpg);
+}
+/*Css Relacionado con la cabecera*/
+header{
+    background-color: black;
+    color:white;
+    margin:2%;
+    padding-bottom: 2%;
+    padding-top:    1%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    text-align: center;
+
+}
+header>div{
+    margin-left: 2%;
+}
+header>div>h1>span>a{
+    position: absolute;
+    right: 0;
+    margin-right:5%;
+}
+/*Css Relacionado con la parte principal de la pagina(body)*/
+#bodyIndex>div{
+    margin-left: 15%;
+    float: left;
+    background-color: aliceblue;
+    padding: 2%;
+    border-radius: 9%;
+}
+#bodySecond>div{
+    margin-left: 24%;
+
+}
+textarea{
+    resize: none;
+}
+table{
+    text-align: center;
+}
+/*Css Relacionado con la parte final de la pagina(footer)*/
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin:1%;
+  
+}

@@ -5,14 +5,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babel-HTML00</title>
+    <link rel="stylesheet" href="/css/style.css" media="screen">
     <link rel="icon" type="img/png" href="/img/html-5.png">
 </head>
-<header>
-    <h1>HTML && CSS</h1>
-</header>
-<body>
-    <div>
 
+<header>
+    <div>
+        <h1>Gaming World
+            <span><a href="https://www.google.com/" target="_blank" title="Ir a google"alt="Ir a google"><img src="/img/google_48px.png" ></a></span> 
+        </h1>
     </div>
+</header>
+
+<body id="bodyIndex">
+
+    <div>
+        <ul type="circle">
+            <li><b>Bienvenido al Foro Gaming Word, entre otras cosas podrás:</b></li>
+        </ul>
+        <ol  type="1">
+            <li>Ver una tabla de los juegos mas jugados</li>
+            <li>Crear una nueva pregunta</li>
+            <li><a href="second.html" title="Ver el juego del mes">Ver el juego del mes</a></li>
+        </ol>
+        <div>
+            <br>
+            <br>
+
+            <table border="1"  >
+                <caption><h4>Juegos mas jugados del mes</h4></caption>
+                
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Temática</th>
+                        <th>Desarrolador</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>League of Legends</td>
+                        <td>MOBA</td>
+                        <td>Riot Games</td>   
+                    </tr>
+                    <tr>
+                        <td>Minecraft</td>
+                        <td>Supervivencia</td>
+                        <td>Majong</td>   
+                    </tr>
+                    <tr>
+                        <td>Valorant</td>
+                        <td>Shooter</td>
+                        <td>Riot Games</td>    
+                    </tr>
+                    <tr>
+                        <td>Rust</td>
+                        <td>Supervivencia</td>
+                        <td>Facepunch Studios</td>    
+                    </tr>
+                    <tr>
+                        <td>Clash Royale</td>
+                        <td>Estrategia</td>
+                        <td>SuperCell</td>    
+                    </tr>
+                    <tr>
+                        <td>Counter-Strike: Global Offensive</td>
+                        <td>Shooter</td>
+                        <td>Valve Corporation</td>    
+                    </tr>
+                    <tr>
+                        <td>Elder Ring</td>
+                        <td>Rol</td>
+                        <td>FromSoftware</td>    
+                    </tr>
+                    <tr>
+                        
+                        <td colspan="3"><b>Estadísticas nuevas en Abril</b></td>
+                    </tr>
+                </tbody>
+                <!-- <tfoot>Tabla1. Listado de peliculas</tfoot> -->
+            </table>
+        </div>
+    </div>
+
+    <div >
+        <form action="procesarPeticion.jsp" method="get">
+            
+            <input type="text" name="TituloPregunta" placeholder="Titulo de tu pregunta"required />	
+            <br/>
+            <br/>
+            
+            <input type="text" name="tematica"  placeholder="Temática" required/>
+            <br/>
+            <br/>
+            
+            <textarea type="text" name="mensaje" placeholder="Contenido" rows="10" cols="40" required></textArea>
+            <br/>
+            <br/>
+
+            <input type="date" name="date"/>
+            <br/>
+            <br/>
+
+            <input type="checkbox" name="hobbies" value="M" checked/>PC<br/>	
+            <input type="checkbox" name="hobbies" value="L" checked/>PlayStation 5<br />	
+            <input type="checkbox" name="hobbies" value="D" />Xbox One<br />	
+            <input type="checkbox" name="hobbies" value="V" />Nintendo Switch<br />	
+            <input type="checkbox" name="hobbies" value="V" />Android/IOS<br />	
+            <br/>
+    
+            <br/>
+            <br/>
+            <input type="submit" value="Enviar Pregunta"/>
+    
+        
+        </form>
+    </div>
+
 </body>
+
+<footer>
+    <a href="second.html"><img src="/img/next.png" ></a>
+</footer>
+
 </html>
