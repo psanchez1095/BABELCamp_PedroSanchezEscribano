@@ -1,29 +1,112 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
+h2 {
+    margin-top: 5%;
+}
 
-/* Referente a Header*/
+ul {
+    margin-left: 15%;
+}
 
-.centrar{
+body {
+    background-color: ghostwhite;
+}
+a{
+    color: white;
+}
+/*Clase usada para centrar el texto de los elementos que contiene*/
+.centrar {
     text-align: center;
 }
-.margenIzq{
+
+/*Clase usada para dar un pequeño margen a la izquierda*/
+.margenIzq {
     margin-left: 1%;
 }
 
-img{
-    position:absolute;
-    right: 0;
-    top:0;
-    margin:1%;
-    border-radius: 17%;
-    background-color: whitesmoke;
-    padding:2%;
-}
-header{
-    background-color: whitesmoke;
+/*Clase icon para definir el tamaño de los iconos*/
+.icon {
+    width: 24px;
+    height: 24px;
 }
 
+#divBodyIzquierda {
+    width: 30%;
+    float: left;
+    padding-right: 1%;
+    color: white;
+    height: 100vh;
+    background-color: rgb(59, 143, 118);
+}
 
+/*Clase que define las propiedades de las tarjetas
+de información de las parte izquierda de la pagina HTML*/
+.target {
+    background-color: darkslategray;
+    border: 6px solid white;
+    border-bottom-right-radius: 22%;
+    border-top-right-radius: 22%;
+    padding: 2%;
+}
+
+/*Define las propiedades para todos aquellos parrafos
+ contenidos directamente en una clase target*/
+.target>p {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/*Identificador que define las propiedades de la imagen de 
+perfil usada en la parte izq de la pagina HTML*/
+#imgPerfil {
+    width: 24vh;
+    height: 30vh;
+    min-height: 30vh;
+    min-height: 15vh;
+    margin: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 65%;
+    border: 4px solid white;
+}
+
+/*Identificador que define las propiedades de la segunda targeta (Educacion) de la parte izq de la pagina HTML(div)*/
+#education {
+    margin-top: 4%;
+}
+
+/*Identificador que define las propiedades de la parte derecha de la pagina HTML(div)*/
+#divBodyDer {
+    max-width: 60%;
+    float: left;
+}
+
+/*Identificador que define las propiedades de la parte derecha de la pagina HTML(div principal Verde)*/
+#divMainDer {
+    width: 80%;
+    margin-left: 15%;
+    margin-top: 1%;
+    padding: 1%;
+    background-color: darkslategrey;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+}
+
+/*Identificador que define las propiedades de la parte derecha de la pagina HTML(div secundario blanco)*/
+#textDivDer {
+    width: 80%;
+    padding: 1%;
+    max-width: 80%;
+    margin-top: 25%;
+    margin: 10%;
+    background-color: white;
+}
+
+/*Define las propiedades para todos aquellos parrafos
+ contenidos directamente en un identificador textDivDer*/
+#textDivDer>p {
+    margin: 2%;
+}
