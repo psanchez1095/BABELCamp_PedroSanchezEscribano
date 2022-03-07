@@ -1,12 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    background-image: url(/img/back.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 a {
@@ -14,18 +10,34 @@ a {
 }
 
 h2 {
+
     text-align: center;
+}
+body{
+    background-color: darkslateblue;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    font-family: 'Aladin', cursive;
+}
+
+h1.titulo {
+    font-size: 36px;
+    background-color: white;
+    font-family: 'Aladin', cursive;
 }
 
 header {
     background-color: darkslategray;
     color: white;
-    padding-bottom: 1%;
+    padding-bottom: 0.5%;
     padding-top: 1%;
     border-bottom: 4px solid white;
     text-align: center;
-
 }
+
 textarea {
     resize: none;
 }
@@ -33,7 +45,17 @@ textarea {
 table {
     text-align: center;
 }
-
+caption>p {
+    font-family: 'Aladin', cursive;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3%;
+}
+.finTable{
+    background-color: black;
+    color: white;
+   
+}
 #enlaceGoogle {
     position: absolute;
     right: 0;
@@ -44,16 +66,25 @@ table {
     height: 48px;
     width: 48px;
 }
-.iconGoogle{
+
+.iconGoogle {
     border-radius: 50%;
     border: 2px solid white;
+}
+
+.iconNoticia {
+    margin-top: 1%;
+    height: 36px;
+    width: 36px;
+    background-color: white;
+    border-radius: 50%;
 }
 
 /*Css Relacionado con la parte principal de la pagina(body)*/
 
 /*Parte Izq*/
 .divIzq {
-    height: 88vh;
+    min-height: 88vh;
     float: left;
     width: 25%;
     padding-right: 1%;
@@ -61,6 +92,7 @@ table {
     background-color: rgb(59, 143, 118);
     border-right: 4px solid white;
 }
+
 #indice {
     margin-left: 10%;
     width: 80%;
@@ -74,6 +106,7 @@ table {
 #indice>ol {
     margin-left: 10%;
 }
+
 #nuevaPregunta {
     margin-top: 2%;
     margin-left: 5%;
@@ -83,10 +116,11 @@ table {
     color: black;
     border-radius: 10%;
 }
+
 /*Parte Der*/
 #divDer {
-    height: 88vh;
-    width: 25%;
+    min-height: 88vh;
+    width: 30%;
     float: right;
     background-color: rgb(59, 143, 118);
     border-left: 4px solid white;
@@ -98,12 +132,35 @@ table {
 
 #info {
     margin-top: 2%;
-    margin-left: 7%;
+    margin-left: 5%;
     float: left;
     background-color: aliceblue;
     padding: 2%;
     border-radius: 9%;
 
+}
+
+.noticia {
+    margin-left: 7%;
+    background-color: aliceblue;
+    width: 80%;
+    padding: 3.5%;
+
+}
+
+.encabezadoNoticia {
+    border: 2px solid white;
+    text-align: center;
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 7%;
+    padding: 3%;
+
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    font-weight: bold;
+    color: white;
+    background-color: black;
 }
 
 /*Css Relacionado con second.html*/
