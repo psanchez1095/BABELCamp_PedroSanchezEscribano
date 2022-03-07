@@ -1,28 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babel-HTML01</title>
+    <title>Babel-HTML00</title>
     <link rel="stylesheet" href="/css/style.css" media="screen">
-    <link rel="icon" type="img/png" href="/img/html-5.png">
+    <link rel="icon" type="img/png" href="/img/iconGB.png">
 </head>
+
 <header>
-    <div>
-    <h1>Juego del Mes
-        <span><a href="https://www.google.com/" target="_blank" title="Ir a google" alt="Ir a google"><img src="/img/google_48px.png" ></a></span> 
+
+
+    <h1> Gaming World <img class="icon" src="/img/iconGB2.png">
+        <span><a id="enlaceGoogle" href="https://www.google.com/" target="_blank" title="Ir a google"
+                alt="Ir a google"><img class="iconGoogle"src="/img/iconGoogle.png"></a></span>
     </h1>
-</div>
+
 </header>
-<body id="bodySecond">
-    <div >
-        <img src="/img/Elden-Ring.jpg" width="800" 
-        height="500">
+
+<body>
+    <div class="divIzq">
+
+        <div id="indice">
+
+            <h2>Bienvenido al Foro Gaming Word, entre otras cosas podrás:</h2>
+
+            <ol type="1">
+                <li>Ver una tabla de los juegos mas jugados</li>
+                <li>Crear una nueva pregunta</li>
+                <li><a href="second.html" title="Ver el juego del mes">Ver el juego del mes</a></li>
+            </ol>
+        </div>
+
+        <div id="nuevaPregunta">
+            <form action="procesarPeticion.jsp" method="get">
+
+                <input type="text" name="TituloComentario" placeholder="Titulo de tu comenatrio sobre el juego"
+                    required />
+                <br />
+                <br />
+
+                <input type="text" name="tematica" placeholder="Temática" required />
+                <br />
+                <br />
+
+                <textarea type="text" name="mensaje" placeholder="Reseña acerca del juego del mes" rows="10" cols="40"
+                    required></textArea>
+                <br />
+                <br />
+
+                <input type="date" name="date" />
+                <br />
+                <br />
+
+                <input type="checkbox" name="hobbies" value="M" checked />PC<br />
+                <input type="checkbox" name="hobbies" value="L" checked />PlayStation 5<br />
+                <input type="checkbox" name="hobbies" value="D" />Xbox One<br />
+                <input type="checkbox" name="hobbies" value="V" />Nintendo Switch<br />
+                <input type="checkbox" name="hobbies" value="V" />Android/IOS<br />
+                <br />
+
+                <br />
+                <br />
+                <input type="submit" value="Enviar Pregunta" />
+
+
+            </form>
+        </div>
     </div>
+
+
+    <div id="divJuegoDelMes">
+        <img src="/img/imgElderRing.jpg " id="imgJuegoDelMes">
+
+        <div id="gameDescription">
+            <p>En la Odisea, Ulises (u Odiseo) recibe uno de los máximos castigos de los dioses: vagar diez años en su
+                regreso a Ítaca después de la guerra de Troya. Normalmente, los mitos se ciñen a una sola aventura, pero
+                el héroe griego se enfrenta al cíclope, a las sirenas, a la bruja Circe, a Escila (la hidra) y Caribdis
+                e incluso desciende al Inframundo. Por eso no conocemos su gesta como un viaje, sino como una odisea.
+                Cuando juegas a Elden Ring, sientes que estás viviendo algo similar. No eres solo un sinluz en busca de
+                convertirte en señor del Círculo de Elden; eres un conquistador de las Tierras Intermedias. Tu aventura
+                no es una sola. Son muchas.</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
 </body>
+
 <footer>
-    <a href="index.html"><img src="/img/previous.png" ></a>
+    <a href="index.html"><img src="/img/iconPrevious.png"></a>
 </footer>
 
 </html>

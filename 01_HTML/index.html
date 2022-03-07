@@ -1,85 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babel-HTML00</title>
     <link rel="stylesheet" href="/css/style.css" media="screen">
-    <link rel="icon" type="img/png" href="/img/html-5.png">
+    <link rel="icon" type="img/png" href="/img/iconGB.png">
 </head>
 
 <header>
+
     <div>
-        <h1>Gaming World
-            <span><a href="https://www.google.com/" target="_blank" title="Ir a google"alt="Ir a google"><img src="/img/google_48px.png" ></a></span> 
+        <h1> Gaming World <img class="icon" src="/img/iconGB2.png">
+            <span><a id="enlaceGoogle" href="https://www.google.com/" target="_blank" title="Ir a google"
+                    alt="Ir a google"><img class="iconGoogle" src="/img/iconGoogle.png"></a></span>
         </h1>
     </div>
 </header>
 
-<body id="bodyIndex">
+<body>
+    <div class="divIzq">
 
-    <div>
-        <ul type="circle">
-            <li><b>Bienvenido al Foro Gaming Word, entre otras cosas podrás:</b></li>
-        </ul>
-        <ol  type="1">
-            <li>Ver una tabla de los juegos mas jugados</li>
-            <li>Crear una nueva pregunta</li>
-            <li><a href="second.html" title="Ver el juego del mes">Ver el juego del mes</a></li>
-        </ol>
+        <div id="indice" type="">
+
+            <h2>Bienvenido al Foro Gaming Word, entre otras cosas podrás:</h2>
+
+            <ol type="1">
+                <li>Ver una tabla de los juegos mas jugados</li>
+                <li>Crear una nueva pregunta</li>
+                <li><a href="second.html" title="Ver el juego del mes">Ver el juego del mes</a></li>
+            </ol>
+        </div>
+
+        <div id="nuevaPregunta">
+            <form action="procesarPeticion.jsp" method="get">
+
+                <input type="text" name="TituloPregunta" placeholder="Titulo de tu pregunta" required />
+                <br />
+                <br />
+
+                <input type="text" name="tematica" placeholder="Temática" required />
+                <br />
+                <br />
+
+                <textarea type="text" name="mensaje" placeholder="Contenido" rows="10" cols="40" required></textArea>
+                <br />
+                <br />
+
+                <input type="date" name="date" />
+                <br />
+                <br />
+
+                <input type="checkbox" name="hobbies" value="M" checked />PC<br />
+                <input type="checkbox" name="hobbies" value="L" checked />PlayStation 5<br />
+                <input type="checkbox" name="hobbies" value="D" />Xbox One<br />
+                <input type="checkbox" name="hobbies" value="V" />Nintendo Switch<br />
+                <input type="checkbox" name="hobbies" value="V" />Android/IOS<br />
+                <br />
+
+                <br />
+                <br />
+                <input type="submit" value="Enviar Pregunta" />
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <div id="info">
+
         <div>
             <br>
             <br>
 
-            <table border="1"  >
-                <caption><h4>Juegos mas jugados del mes</h4></caption>
-                
+            <table border="1">
+                <caption>
+                    <h4>Juegos mas jugados del mes</h4>
+                </caption>
+
                 <thead>
                     <tr>
                         <th>Nombre</th>
                         <th>Temática</th>
-                        <th>Desarrolador</th>    
+                        <th>Desarrolador</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>League of Legends</td>
                         <td>MOBA</td>
-                        <td>Riot Games</td>   
+                        <td>Riot Games</td>
                     </tr>
                     <tr>
                         <td>Minecraft</td>
                         <td>Supervivencia</td>
-                        <td>Majong</td>   
+                        <td>Majong</td>
                     </tr>
                     <tr>
                         <td>Valorant</td>
                         <td>Shooter</td>
-                        <td>Riot Games</td>    
+                        <td>Riot Games</td>
                     </tr>
                     <tr>
                         <td>Rust</td>
                         <td>Supervivencia</td>
-                        <td>Facepunch Studios</td>    
+                        <td>Facepunch Studios</td>
                     </tr>
                     <tr>
                         <td>Clash Royale</td>
                         <td>Estrategia</td>
-                        <td>SuperCell</td>    
+                        <td>SuperCell</td>
                     </tr>
                     <tr>
                         <td>Counter-Strike: Global Offensive</td>
                         <td>Shooter</td>
-                        <td>Valve Corporation</td>    
+                        <td>Valve Corporation</td>
                     </tr>
                     <tr>
                         <td>Elder Ring</td>
                         <td>Rol</td>
-                        <td>FromSoftware</td>    
+                        <td>FromSoftware</td>
                     </tr>
                     <tr>
-                        
+
                         <td colspan="3"><b>Estadísticas nuevas en Abril</b></td>
                     </tr>
                 </tbody>
@@ -88,44 +135,39 @@
         </div>
     </div>
 
-    <div >
-        <form action="procesarPeticion.jsp" method="get">
-            
-            <input type="text" name="TituloPregunta" placeholder="Titulo de tu pregunta"required />	
-            <br/>
-            <br/>
-            
-            <input type="text" name="tematica"  placeholder="Temática" required/>
-            <br/>
-            <br/>
-            
-            <textarea type="text" name="mensaje" placeholder="Contenido" rows="10" cols="40" required></textArea>
-            <br/>
-            <br/>
 
-            <input type="date" name="date"/>
-            <br/>
-            <br/>
 
-            <input type="checkbox" name="hobbies" value="M" checked/>PC<br/>	
-            <input type="checkbox" name="hobbies" value="L" checked/>PlayStation 5<br />	
-            <input type="checkbox" name="hobbies" value="D" />Xbox One<br />	
-            <input type="checkbox" name="hobbies" value="V" />Nintendo Switch<br />	
-            <input type="checkbox" name="hobbies" value="V" />Android/IOS<br />	
-            <br/>
-    
-            <br/>
-            <br/>
-            <input type="submit" value="Enviar Pregunta"/>
-    
-        
-        </form>
+
+    <div id="divDer">
+
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae erat in enim consequat iaculis. Maecenas
+            tellus dolor, gravida in pulvinar eget, efficitur non arcu. Donec ante odio, iaculis sed eros eu, aliquam
+            rhoncus neque. Cras quis vestibulum tortor, sed suscipit urna. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nulla eleifend, sem et cursus porta, risus ligula efficitur nulla, sed accumsan ipsum lacus
+            nec dolor. Morbi ac bibendum dolor. Quisque tristique mauris et risus scelerisque aliquet. Sed blandit ante
+            in molestie ultricies. In leo mauris, tristique quis turpis rutrum, fermentum consequat augue. Sed interdum
+            non quam vel mollis. Integer pretium magna sit amet sodales consectetur. In hac habitasse platea dictumst.
+
+            Cras accumsan eros ac ex eleifend posuere. Premper a tellus vel hendrerit. Cras eget vulputate felis. Morbi
+            id sem libero. Aenean auctor diam pulvinar sapien tristique tincidunt. Sed a felis aliquam eros pharetra
+            dapibus vel ac sem. Cras tristique eros sodales congue posuere. Morbi ultrices augue vitae sapien
+            sollicitudin, accumsan lobortis ante sollicitudin. Suspendisse ut leo ex. Cras quis diam vel risus pretium
+            aliquam id nec arcu. Suspendisse volut eros a, iaculis laoreet elit. Nulla ultricies eli volutpat orci
+            elementum est rutrum, nec maximus enim facilisis. Cras imperdiet et risus quis vulputate. Donec sollicitudin
+            est non mauris blandit bibendum. Suspendisse efficitur dolor nec leo laoreet pellentesque. Integer
+            ullamcorper arcu ac tellus fringilla tempus. Nunc leo mauris, lobortis eget tempus quis, sollicitudin ac
+            tellus. Nulla porta accumsan erat, et varius lacus efficitur ac. Morbi nec elementum velit. Duis fringilla
+            felis sit amet eros venenatis, isi lobortis. Cras malesuada vehicula interdum. Etiam nec mauris vehicula,
+            ultrices arcu venenatis, sagittis en</p>
+
+
     </div>
 
 </body>
 
 <footer>
-    <a href="second.html"><img src="/img/next.png" ></a>
+    <a href="second.html"><img src="/img/iconNext.png"></a>
 </footer>
 
 </html>
