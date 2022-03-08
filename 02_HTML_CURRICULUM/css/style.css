@@ -43,12 +43,13 @@ a{
     width: 24px;
     height: 24px;
 }
-
+.mainBody{
+    display: flex;
+    flex-direction: row;
+}
 #divBodyIzquierda {
-    height: 100vh;
-    max-height: 100vh;
-    width: 30%;
-    float: left;
+    min-height: 100vh;
+    width: 25%;
     padding-right: 1%;
     color: white;
     background-color: rgb(59, 143, 118);
@@ -92,15 +93,14 @@ perfil usada en la parte izq de la pagina HTML*/
 
 /*Identificador que define las propiedades de la parte derecha de la pagina HTML(div)*/
 #divBodyDer {
-    
-    max-width: 60%;
-    float: left;
+   width: 75%; 
 }
 
 /*Identificador que define las propiedades de la parte derecha de la pagina HTML(div principal Verde)*/
 #divMainDer {
-    max-height: 100%;
-    margin-left: 15%;
+    width: 80%;
+    min-height: 95%;
+    margin-left: 10%;
     margin-top: 1%;
     padding: 1%;
     background-color: darkslategrey;
