@@ -5,15 +5,18 @@
     padding: 0;
 }
 
-a {
-    color: white
+
+tr {
+    border: none;
+
 }
 
 h2 {
 
     text-align: center;
 }
-body{
+
+body {
     background-color: darkslateblue;
 }
 
@@ -43,20 +46,25 @@ textarea {
 }
 
 table {
+    box-shadow: -10px 5px 20px darkslateblue, 10px 5px 20px darkslateblue;
+
     margin-left: 15%;
     text-align: center;
 }
+
 caption>p {
     font-family: 'Aladin', cursive;
     font-weight: bold;
     text-align: center;
     margin-bottom: 3%;
 }
-.finTable{
+
+.finTable {
     background-color: black;
     color: white;
-   
+
 }
+
 #enlaceGoogle {
     position: absolute;
     right: 0;
@@ -82,10 +90,11 @@ caption>p {
 }
 
 /*Css Relacionado con la parte principal de la pagina(body)*/
-.mainBody{
-display: flex;
-flex-direction: row;
+.mainBody {
+    display: flex;
+    flex-direction: row;
 }
+
 /*Parte Izq*/
 .divIzq {
     min-height: 88vh;
@@ -110,7 +119,6 @@ flex-direction: row;
 #indice>ol {
     margin-left: 10%;
 }
-
 #nuevaPregunta {
     margin-top: 2%;
     margin-left: 5%;
@@ -120,9 +128,12 @@ flex-direction: row;
     color: black;
     border-radius: 10%;
 }
-#divCentro{
+
+/*Parte Central*/
+#divCentro {
     width: 50%;
 }
+
 /*Parte Der*/
 #divDer {
     width: 25%;
@@ -142,6 +153,7 @@ flex-direction: row;
     background-color: aliceblue;
     padding: 2%;
     border-radius: 9%;
+    height: 88%;
 
 }
 
@@ -154,29 +166,30 @@ flex-direction: row;
 }
 
 .encabezadoNoticia {
-    border: 2px solid white;
-    text-align: center;
     width: 80%;
     margin-top: 2%;
     margin-left: 7%;
     padding: 3%;
+    border: 2px solid white;
     border-top-left-radius: 15%;
     border-top-right-radius: 15%;
+    text-align: center;
     font-weight: bold;
     color: white;
     background-color: black;
 }
 
 /*Css Relacionado con second.html*/
-#divJuegoDelMes{
-    width:75%;
+#divJuegoDelMes {
+    width: 75%;
 }
+
 #imgJuegoDelMes {
-    margin-top: 2%;
-    margin-left:25%;
-    border: 2px solid white;
     height: 50%;
     width: 50%;
+    margin-top: 2%;
+    margin-left: 25%;
+    border: 2px solid white;
 }
 
 #gameDescription {
@@ -187,7 +200,7 @@ flex-direction: row;
     color: black;
     background-color: skyblue;
     border: 4px solid white;
-    border-left:none;
+    border-left: none;
 
 }
 
@@ -198,4 +211,16 @@ footer {
     right: 0;
     margin: 1%;
 
+}
+
+.navigation:hover{
+    padding: 2%;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+a:link {
+    color: white
+}
+a:visited{
+    color: darkslateblue;
 }
