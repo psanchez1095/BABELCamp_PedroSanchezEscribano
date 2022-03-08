@@ -48,7 +48,6 @@ a{
     flex-direction: row;
 }
 #divBodyIzquierda {
-    min-height: 100vh;
     width: 25%;
     padding-right: 1%;
     color: white;
@@ -80,8 +79,8 @@ perfil usada en la parte izq de la pagina HTML*/
     min-height: 30vh;
     min-height: 15vh;
     margin: 30%;
+    margin-bottom: 1%;
     margin-top: 5%;
-    margin-bottom: 5%;
     border-radius: 65%;
     border: 4px solid white;
 }
@@ -91,15 +90,40 @@ perfil usada en la parte izq de la pagina HTML*/
     margin-top: 4%;
 }
 
+#education:hover #imgEducation{
+    padding: 1%;
+    border:1px solid white;
+    border-radius: 2%;
+}
+
+#contact:hover #imgContact{
+    padding: 1%;
+    border:1px solid white;
+    border-radius: 50%;
+}
+
 /*Identificador que define las propiedades de la parte derecha de la pagina HTML(div)*/
 #divBodyDer {
    width: 75%; 
 }
 
+/*Identificador que define las propiedades de la parte derecha de la pagina HTML(div Imagenes)*/
+#botones{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40%;
+}
+
+#botones>img{
+    height: 24px;
+    width: 24px;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
 /*Identificador que define las propiedades de la parte derecha de la pagina HTML(div principal Verde)*/
 #divMainDer {
     width: 80%;
-    min-height: 95%;
     margin-left: 10%;
     margin-top: 1%;
     padding: 1%;
@@ -111,7 +135,9 @@ perfil usada en la parte izq de la pagina HTML*/
 /*Identificador que define las propiedades de la parte derecha de la pagina HTML(div secundario blanco)*/
 #textDivDer {
     max-height: 100%;
-    margin:5%;
+    margin-top: 5%;
+    margin-left:5% ;
+    margin-right: 5%;
     padding:2% ;
     border-top-left-radius: 15%;
     border-top-right-radius: 15%;
