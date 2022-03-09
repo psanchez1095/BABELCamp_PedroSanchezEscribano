@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Gaming</title>
+    <!--Responsive CSS-->
+    <link rel="stylesheet"  media="screen and (max-width: 2000px)" href="css/gamingWorld.css">
+    <!--Icono de la barra del navegador-->
+    <link rel="icon" type="img/png" href="img/gamingWorld/iconGB.png">
+</head>
+
+<header>
+
+        <h1> Gaming World <img class="icon" src="img/gamingWorld/iconGB2.png">
+            <span><a id="enlaceGoogle" href="https://www.google.com/" target="_blank" title="Ir a google"
+                    alt="Ir a google"><img class="iconGoogle" src="img/gamingWorld/iconGoogle.png"></a></span>
+        </h1>
+    
+</header>
+
+<body>
+    <div class="mainBody">
+        
+        <div class="divIzq">
+
+            <div id="indice" type="">
+
+                <h2>Bienvenido al Foro Gaming World, entre otras cosas podrás:</h2>
+
+                <ol type="1">
+                    <li>Ver una tabla de los juegos mas jugados</li>
+                    <li>Crear una nueva pregunta</li>
+                    <li><a href="secondGamingWorld.html"  title="Ver el juego del mes">Ver el juego del mes</a></li>
+                </ol>
+            </div>
+
+            <div id="nuevaPregunta">
+                <form action="procesarPeticion.jsp" method="get">
+
+                    <input type="text" name="TituloPregunta" placeholder="Titulo de tu pregunta" required />
+                    <br />
+                    <br />
+
+                    <input type="text" name="tematica" placeholder="Temática" required />
+                    <br />
+                    <br />
+
+                    <textarea type="text" name="mensaje" placeholder="Contenido" rows="10" cols="40"
+                        required></textArea>
+                    <br />
+                    <br />
+
+                    <input type="date" name="date" />
+                    <br />
+                    <br />
+
+                    <input type="checkbox" name="hobbies" value="M" checked />PC<br />
+                    <input type="checkbox" name="hobbies" value="L" checked />PlayStation 5<br />
+                    <input type="checkbox" name="hobbies" value="D" />Xbox One<br />
+                    <input type="checkbox" name="hobbies" value="V" />Nintendo Switch<br />
+                    <input type="checkbox" name="hobbies" value="V" />Android/IOS<br />
+                    <br />
+
+                    <br />
+                    <br />
+                    <input type="submit" value="Enviar Pregunta" />
+
+
+                </form>
+            </div>
+        </div>
+
+
+        <div id="divCentro">
+
+            <div id="info">
+
+                <div>
+                    <br>
+                    <br>
+
+                    <table>
+                        <caption>
+                            <p>JUEGOS MAS JUGADOS DEL MES</p>
+                        </caption>
+
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Temática</th>
+                                <th>Desarrolador</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>League of Legends</td>
+                                <td>MOBA</td>
+                                <td>Riot Games</td>
+                            </tr>
+                            <tr>
+                                <td>Minecraft</td>
+                                <td>Supervivencia</td>
+                                <td>Majong</td>
+                            </tr>
+                            <tr>
+                                <td>Valorant</td>
+                                <td>Shooter</td>
+                                <td>Riot Games</td>
+                            </tr>
+                            <tr>
+                                <td>Rust</td>
+                                <td>Supervivencia</td>
+                                <td>Facepunch Studios</td>
+                            </tr>
+                            <tr>
+                                <td>Clash Royale</td>
+                                <td>Estrategia</td>
+                                <td>SuperCell</td>
+                            </tr>
+                            <tr>
+                                <td>Counter-Strike: Global Offensive</td>
+                                <td>Shooter</td>
+                                <td>Valve Corporation</td>
+                            </tr>
+                            <tr>
+                                <td>Elder Ring</td>
+                                <td>Rol</td>
+                                <td>FromSoftware</td>
+                            </tr>
+                            <tr>
+
+                                <td colspan="3" class="finTable"><b>Estadísticas nuevas en Abril</b></td>
+                            </tr>
+                        </tbody>
+                        <!-- <tfoot>Tabla1. Listado de peliculas</tfoot> -->
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="divDer">
+            <h1 class="titulo">Noticias</h1>
+            <div class="encabezadoNoticia">
+                Nueva edición coleccionista<br>
+                <img class="iconNoticia" src="img/gamingWorld/new.png">
+            </div>
+            <div class="noticia">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae erat in enim consequat iaculis.
+                    Maecenas
+                    tellus dolor, gravida in pulvinar eget, efficitur non arcu. Donec ante odio, iaculis sed eros eu,
+                    aliquam
+                    rhoncus neque. Cras quis vestibulum tortor, sed suscipit urna. Lorem ipsum dolor sit amet,
+                    consectetur
+
+                </p>
+            </div>
+            <div class="encabezadoNoticia">
+                Ubisoft también detiene las ventas de sus videojuegos en Rusia por la invasión a Ucrania<br>
+                <img class="iconNoticia" src="img/gamingWorld/ubisoft.png">
+            </div>
+            <div class="noticia">
+                <p>De acuerdo a Reuters, Ubisoft ha tomado la decisión de cesar las ventas de sus productos en Rusia,
+                    siguiendo así el camino marcado días atrás por otras grandes compañías del sector como Electronic
+                    Arts,
+                    Epic Games o Activision-Blizzard tras un llamamiento de un ministro del Gobierno de Ucrania.
+                </p>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+<footer>
+    <a href="secondGamingWorld.html"><img class="navigation"src="img/gamingWorld/iconNext.png"></a>
+</footer>
+
+</html>
