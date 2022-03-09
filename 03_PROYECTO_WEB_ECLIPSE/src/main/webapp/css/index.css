@@ -19,6 +19,10 @@ body {
 	flex-direction: row;
 }
 
+h2{
+	font-family: 'Satisfy', cursive;
+}
+
 #divBodyIzquierda {
 	min-height: 100vh;
 	width: 25%;
@@ -32,6 +36,12 @@ body {
 	min-height: 100vh;
 	width: 75%;
 	height: 50vh;
+}
+
+#divBodyDer>h2{
+	text-align:center;
+	margin-top:2%;
+	margin-bottom: 20%;
 }
 
 #info {
@@ -52,21 +62,53 @@ body {
 	margin-bottom: 20%;
 }
 
-#divImgs {
+#divImgsIzq {
 	display: flex;
 	flex-direction: column;
 }
 
-#divImgs>img {
+#divImgsIzq>img {
 	margin-left: 40%;
 	margin-bottom: 10%;
 	width: 64px;
 	height: 64px;
 }
 
-#divImgs>p {
+#divImgsIzq>p {
+	font-family: 'Satisfy', cursive;
+	text-align: center;
+	margin-bottom: 2%;
+	
+	font-weight: bold;
+}
+
+#divWebsDer{
+	display: flex;
+	flex-direction: row;
+}
+.enlaceWeb{
+	margin-left: 25%;
+	padding:2%;
+	border-radius:50%;
+}
+
+.enlaceWeb:hover{
+	border:4px solid  rgb(59, 143, 118);
+}
+.enlace>img {
+	margin-bottom: 10%;
+	width: 128px;
+	height: 128px;
+}
+
+.enlace>p {
 	font-family: 'Satisfy', cursive;
 	text-align: center;
 	margin-bottom: 2%;
 	font-weight: bold;
 }
+.enlace{
+	text-decoration:none;
+	color:black;
+}
+
