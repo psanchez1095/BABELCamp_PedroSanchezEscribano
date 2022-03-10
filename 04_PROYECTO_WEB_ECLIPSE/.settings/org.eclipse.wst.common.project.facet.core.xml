@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
   <runtime name="C-_Users_pedro.sanchez_Documents_BABEL_BABELCamp_PedroSanchezEscribano_apache-tomcat-9.0.58-windows-x64_apache-tomcat-9.0.58"/>
+  <fixed facet="wst.jsdt.web"/>
   <fixed facet="java"/>
   <fixed facet="jst.web"/>
-  <fixed facet="wst.jsdt.web"/>
+  <installed facet="java" version="17"/>
   <installed facet="jst.web" version="4.0"/>
   <installed facet="wst.jsdt.web" version="1.0"/>
-  <installed facet="java" version="11"/>
 </faceted-project>

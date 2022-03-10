@@ -1,0 +1,90 @@
+@charset "ISO-8859-1";
+
+/*Fuente de Google Fonts*/
+@import
+	url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+/*Quitar margin y padding por defecto*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: ghostwhite;
+}
+form{
+	width:50%;
+	display:flex;
+	flex-direction:column;
+	margin-left:25%;
+	background-color:darkslateblue;
+	padding: 2%;
+	
+}
+form>h2{
+	color:white;
+	text-align: center;
+	}
+input{
+	width:50%;
+	margin-left:25%;
+	margin-bottom:2%;
+}
+h2,h1{
+	font-family: 'Satisfy', cursive;
+}
+.mainBody {
+	display: flex;
+	flex-direction: row;
+}
+
+#divBodyIzquierda {
+	min-height: 100vh;
+	width: 25%;
+	padding-right: 1%;
+	color: black;
+	background-color: darkslateblue;
+}
+
+
+#divBodyDer {
+	min-height: 100vh;
+	width: 75%;
+	height: 50vh;
+}
+
+#divBodyDer>h1{
+	text-align:center;
+	margin-top:2%;
+	margin-bottom: 10%;
+}
+
+#info {
+	height: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 2%;
+	border: 6px solid white;
+	border-top: none;
+	border-bottom-right-radius: 10%;
+	border-bottom-left-radius: 10%;
+	background-color: aliceblue;
+}
+
+#info>h2 {
+	text-align: center;
+	margin-top: 2%;
+	margin-bottom: 20%;
+}
+
+
+
+#divContentDer{
+	display: flex;
+	flex-direction: row;
+}
+
+
+
+
