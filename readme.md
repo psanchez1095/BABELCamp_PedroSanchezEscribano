@@ -6,8 +6,45 @@
  
 Repositorio dedicado a las diferentes prácticas realizadas en el BABELCamp de 2022 que imparte [Babel](https://www.babelgroup.com/)
 
-**Lecciones**  
+**git_00**
 
-- GIT  
-- HTML  
-- CSS  
+***Ejercicio 1***
+
+Manejo de git
+
+**01_HTML**
+
+***Ejercicio 2***
+
+Hacer una web con HTML que incluya la mayoria de los componente HTML vistos 
+(tablas, imagenes, enlaces, formularios HTML5, etc). La temática puede ser de cualquier tipo
+(comercio electronico, ocio, deporte, etc).
+
+La web debe de tener al menos 2 páginas.
+
+**02_HTML_CURRICULUM**
+
+***Ejercicio 3***
+
+Hacer el CV en HTML y CSS 
+
+**03_PROYECTO_WEB_ECLIPSE**
+
+***Ejercicio 4***
+
+Hacer un proyecto web con Java con una página principal.
+
+La página principal hará una pequeña presentación y tendrá enlaces al ejercicio 2 y al ejercicio 3
+
+**04_PROYECTO_WEB_ECLIPSE**
+
+***Ejercicio 5***
+
+Hacer una aplicación web con java que tenga una pantalla inicial de login.
+
+La aplicación validará el usuario y el password con una lista predefinida con 3 objetos
+usuario (clase usuario).
+
+Si el usuario y el password coincide con algun usuario de la lista, entonces la aplicación
+mostrará una página de bienvenida mostrando el nombre el usario. En caso contrario mostrará una página 
+de error con un enlace a la pagina de login.
