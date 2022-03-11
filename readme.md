@@ -57,3 +57,9 @@ En la página de bienvenida poner enlaces a la página web del ejercicio 1 y del
 los estilos).
 
 ***Todas las páginas estan hechas con un diseño responsive excepto las referentes a GamingWorld*** 
+
+
+
+## TOMCAT  
+
+He añadido el Tomcat para que no se desajusten las rutas al importar el proyecto.
