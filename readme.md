@@ -12,7 +12,7 @@ Repositorio dedicado a las diferentes prácticas realizadas en el BABELCamp de 2
 
 Manejo de git
 
-## 01_HTML  
+## [01_HTML](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/01_HTML)    
 
 ***Ejercicio 2***
 
@@ -22,7 +22,7 @@ Hacer una web con HTML que incluya la mayoria de los componente HTML vistos
 
 La web debe de tener al menos 2 páginas.
 
-## 02_HTML_CURRICULUM  
+## [02_HTML_CURRICULUM](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/02_HTML_CURRICULUM)    
 
 ***Ejercicio 3***
 
@@ -30,7 +30,7 @@ Hacer el CV en HTML y CSS
 
 ***Hecho con diseño responsive***  
 
-## 03_PROYECTO_WEB_ECLIPSE  
+## [03_PROYECTO_WEB_ECLIPSE](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/03_PROYECTO_WEB_ECLIPSE)    
 
 ***Ejercicio 4***
 
@@ -38,7 +38,7 @@ Hacer un proyecto web con Java con una página principal.
 
 La página principal hará una pequeña presentación y tendrá enlaces al ejercicio 2 y al ejercicio 3
 
-## 04_PROYECTO_WEB_ECLIPSE  
+## [04_PROYECTO_WEB_ECLIPSE](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/04_PROYECTO_WEB_ECLIPSE)    
 
 ***Ejercicio 5***
 
