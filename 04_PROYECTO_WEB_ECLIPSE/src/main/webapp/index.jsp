@@ -13,7 +13,7 @@
 	media="screen and (max-width: 860px) and (min-width:0px)"
 	href="css/indexLarge.css">
 <link rel="icon" type="img/png" href="img/curriculum/information.png">
-<title>Login</title>
+<title>Inicio</title>
 </head>
 
 <body>
@@ -24,18 +24,41 @@
 
 			<div id="info">
 
-				<h2>Página Acceso Gaming World</h2>
+				<h2>Repositorio Web Java</h2>
+
+				<div id="divImgsIzq">
+					<p>Apache Tomcat v9</p>
+					<img src="img/server.png">
+					<p>HTML5</p>
+					<img src="img/html.png">
+					<p>CSS3</p>
+					<img src="img/css.png">
+
+				</div>
+
 
 			</div>
+
 
 		</div>
 
 		<div id="divBodyDer">
 
-			<h1>LOGIN</h1>
+			<h2>Páginas Web</h2>
 
-			<div id="divContentDer">
+			<div id="divWebsDer">
 
+				<div class="enlaceWeb">
+					<a class="enlace" href="indexGamingWorld.html">
+						<p>GamingWorld</p> <img src="img/iconGB256.png">
+					</a>
+				</div>
+
+				<div class=enlaceWeb>
+					<a class="enlace" href="curriculum.html">
+						<p>Curriculum</p> <img src="img/curriculum/curriculum.png">
+					</a>
+				</div>
 
 			</div>
 

@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,11 +29,36 @@ public class loginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
+		Map<String, String> users = new HashMap<String, String>();
+		users.put("user1", "pswd1");
+		users.put("user@gmail.com", "pswd2");
+		users.put("usuario@gmail.com", "pswd3");
+		
+		if(users.containsKey(request.getParameter("email"))) {
+			System.out.print("sad");
+			System.out.print(request.getParameter("email"));
+			System.out.print(users.get(request.getParameter("email")));
+			System.out.print(request.getParameter("password"));
+			if(users.get(request.getParameter("email")).equals(request.getParameter("password"))) {
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+				rd.forward(request, response);
+			}
+			else {
+				RequestDispatcher rd = request.getRequestDispatcher("error.jsp");
+				rd.forward(request, response);
+			}
+			
+			
+		}
+		else {
+			RequestDispatcher rd = request.getRequestDispatcher("error.jsp");
+			rd.forward(request, response);
+			}
+			
 		
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-		//request.setAttribute("title", title);
-		rd.forward(request, response);
+		
+		
 		
 		
 		//Si quieres guarda informacion para un usuario durante su vida en la app

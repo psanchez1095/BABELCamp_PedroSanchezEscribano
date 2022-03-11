@@ -24,34 +24,25 @@
 
 			<div id="info">
 
-				<h2>PÃ¡gina Acceso</h2>
-				
-				<div class="tarjeta">
-				<h3>Gaming World</h3>
-				</div>
-				<img class="icon" src="img/gamingWorld/iconGB2.png">
-				
-				<div class="tarjeta">
-				<h3>Curriculum</h3>
-				</div>
-				<img class="icon" src="img/curriculum/curriculum.png">
+				<h2>Página Acceso Gaming World</h2>
+
 			</div>
 
 		</div>
 
 		<div id="divBodyDer">
 
-			<h1>LOGIN</h1>
+			<h1>ERROR LOGIN</h1>
 
 			<div id="divContentDer">
 
-				<form action="loginServlet" method="post">
+				<form action="loginServlet" method="get">
 					<h2>Correo / Nombre de Usuario</h2>
 					<span><input type="text" name="email"
 						placeholder="Correo / Nombre de Usuario" required /></span>
-					<h2>ContraseÃ±a</h2>
+					<h2>Contraseña</h2>
 					<span><input type="password" name="password"
-						placeholder="ContraseÃ±a" required /></span>
+						placeholder="Contraseña" required /></span>
 					<h2>Acceder</h2>
 					<span><input type="submit" value="Acceder" /></span>
 
