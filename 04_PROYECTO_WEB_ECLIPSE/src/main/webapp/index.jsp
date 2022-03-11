@@ -27,6 +27,8 @@
 				<h2>Repositorio Web Java</h2>
 
 				<div id="divImgsIzq">
+					<p>Bienvenido ${param.email}</p>
+					<img src="img/curriculum/contact.png">
 					<p>Apache Tomcat v9</p>
 					<img src="img/server.png">
 					<p>HTML5</p>
