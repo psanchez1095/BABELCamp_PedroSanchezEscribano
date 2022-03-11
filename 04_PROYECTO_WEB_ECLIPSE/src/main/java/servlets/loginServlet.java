@@ -17,57 +17,50 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/loginServlet")
 public class loginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public loginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
+	public loginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+		// Map para guardar los usuarios < correo/nombre,contraseña >
 		Map<String, String> users = new HashMap<String, String>();
+
+		// Introduzco tres usuarios para hacer las pruebas
 		users.put("user1", "pswd1");
 		users.put("user@gmail.com", "pswd2");
 		users.put("usuario@gmail.com", "pswd3");
-		
-		if(users.containsKey(request.getParameter("email"))) {
-			System.out.print("sad");
-			System.out.print(request.getParameter("email"));
-			System.out.print(users.get(request.getParameter("email")));
-			System.out.print(request.getParameter("password"));
-			if(users.get(request.getParameter("email")).equals(request.getParameter("password"))) {
+
+		// Si el nombre de usuario coincide con alguno de los que forman el Map entra
+		if (users.containsKey(request.getParameter("email"))) {
+
+			// Si la contraseña para ese nombre de usuario coincide con alguna contraseña de
+			// las que forman el Map entra
+			// y se muestra la pantalla de inicio
+			if (users.get(request.getParameter("email")).equals(request.getParameter("password"))) {
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 				rd.forward(request, response);
 			}
+			// Si no muestra la pantalla de error
 			else {
 				RequestDispatcher rd = request.getRequestDispatcher("error.jsp");
 				rd.forward(request, response);
 			}
-			
-			
+
 		}
+		// Si no muestra la pantalla de error
 		else {
 			RequestDispatcher rd = request.getRequestDispatcher("error.jsp");
 			rd.forward(request, response);
-			}
-			
-		
-		
-		
-		
-		
-		
-		//Si quieres guarda informacion para un usuario durante su vida en la app
-		//Una sesion unica por usuario
-		//request.getSession().setAttribute("nombre", nombre);
-		
-		
+		}
+
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
