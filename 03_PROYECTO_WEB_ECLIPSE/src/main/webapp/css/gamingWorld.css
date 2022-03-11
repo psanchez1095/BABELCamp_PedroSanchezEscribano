@@ -1,0 +1,227 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+tr {
+    border: none;
+
+}
+
+h2 {
+
+    text-align: center;
+}
+
+body {
+    background-color: darkslateblue;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    font-family: 'Aladin', cursive;
+}
+
+h1.titulo {
+    font-size: 36px;
+    background-color: white;
+    font-family: 'Aladin', cursive;
+}
+
+header {
+    background-color: darkslategray;
+    color: white;
+    padding-bottom: 0.5%;
+    padding-top: 1%;
+    border-bottom: 4px solid white;
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+table {
+    box-shadow: -10px 5px 20px darkslateblue, 10px 5px 20px darkslateblue;
+    border:1px solid black;
+    margin-left: 15%;
+    text-align: center;
+}
+
+caption>p {
+    font-family: 'Aladin', cursive;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.finTable {
+    background-color: black;
+    color: white;
+
+}
+
+#enlaceGoogle {
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
+}
+
+.icon {
+    height: 48px;
+    width: 48px;
+}
+
+.iconGoogle {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.iconNoticia {
+    margin-top: 1%;
+    height: 36px;
+    width: 36px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/*Css Relacionado con la parte principal de la pagina(body)*/
+.mainBody {
+    display: flex;
+    flex-direction: row;
+}
+
+/*Parte Izq*/
+.divIzq {
+    min-height: 88vh;
+    float: left;
+    width: 25%;
+    padding-right: 1%;
+    color: white;
+    background-color: rgb(59, 143, 118);
+    border-right: 4px solid white;
+}
+
+#indice {
+    margin-left: 10%;
+    width: 80%;
+    border: 6px solid white;
+    border-top: none;
+    padding: 1%;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+
+#indice>ol {
+    margin-left: 10%;
+}
+#nuevaPregunta {
+    margin-top: 2%;
+    margin-left: 5%;
+    background-color: aliceblue;
+    padding: 4%;
+    border: 3px solid black;
+    color: black;
+    border-radius: 10%;
+}
+
+/*Parte Central*/
+#divCentro {
+    width: 50%;
+}
+
+/*Parte Der*/
+#divDer {
+    width: 25%;
+    min-height: 88vh;
+    background-color: rgb(59, 143, 118);
+    border-left: 4px solid white;
+}
+
+#divDer>p {
+    margin: 3%;
+}
+
+#info {
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: aliceblue;
+    padding: 2%;
+    border-radius: 9%;
+    height: 88%;
+
+}
+
+.noticia {
+    margin-left: 7%;
+    background-color: aliceblue;
+    width: 80%;
+    padding: 3.5%;
+
+}
+
+.encabezadoNoticia {
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 7%;
+    padding: 3%;
+    border: 2px solid white;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+/*Css Relacionado con second.html*/
+#divJuegoDelMes {
+    width: 75%;
+}
+
+#imgJuegoDelMes {
+    height: 50%;
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 25%;
+    border: 2px solid white;
+}
+
+#gameDescription {
+    margin-top: 1%;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: black;
+    background-color: skyblue;
+    border: 4px solid white;
+    border-left: none;
+
+}
+
+/*Css Relacionado con la parte final de la pagina(footer)*/
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1%;
+
+}
+
+.navigation:hover{
+    padding: 2%;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+a:link {
+    color: white
+}
+a:visited{
+    color: darkslateblue;
+}
