@@ -2,99 +2,107 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego del Mes</title>
-     <!--Responsive CSS-->
-     <link rel="stylesheet"  media="screen and (max-width: 2000px)" href="css/gamingWorld.css">
-     <!--Icono de la barra del navegador-->
-     <link rel="icon" type="img/png" href="img/gamingWorld/iconGB.png">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juego del Mes</title>
+<!--Responsive CSS-->
+<link rel="stylesheet" media="screen and (max-width: 2000px)"href="css/gamingWorld.css">
+<!--Icono de la barra del navegador-->
+<link rel="icon" type="img/png" href="img/gamingWorld/iconGB.png">
 </head>
 
 <header>
-    
-    <h1> Gaming World <img class="icon" src="img/gamingWorld/iconGB2.png">
-        <span><a id="enlaceGoogle" href="https://www.google.com/" target="_blank" title="Ir a google"
-                alt="Ir a google"><img class="iconGoogle" src="img/gamingWorld/iconGoogle.png"></a></span>
-    </h1>
+
+	<h1>
+		Gaming World <img class="icon" src="img/gamingWorld/iconGB2.png">
+		<span><a id="enlaceGoogle" href="https://www.google.com/"target="_blank" title="Ir a google" alt="Ir a google"><imgclass="iconGoogle" src="img/gamingWorld/iconGoogle.png"></a></span>
+	</h1>
 
 </header>
 
 <body>
-    <div class="mainBody">
-        <div class="divIzq">
+	<div class="mainBody">
+		<div class="divIzq">
 
-            <div id="indice" type="">
+			<div id="indice" type="">
 
-                <h2>Bienvenido al Foro Gaming World, entre otras cosas podrás:</h2>
+				<h2>Bienvenido al Foro Gaming World, entre otras cosas podrás:</h2>
 
-                <ol type="1">
-                    <li>Ver una tabla de los juegos mas jugados</li>
-                    <li>Crear una nueva pregunta</li>
-                    <li><a href="secondGamingWorld.html" title="Ver el juego del mes">Ver el juego del mes</a></li>
-                </ol>
-            </div>
+				<ol type="1">
+					<li>Ver una tabla de los juegos mas jugados</li>
+					<li>Crear una nueva pregunta</li>
+					<li><a href="secondGamingWorld.html"title="Ver el juego del mes">Ver el juego del mes</a></li>
+				</ol>
+			</div>
 
-            <div id="nuevaPregunta">
-                <form action="procesarPeticion.jsp" method="get">
+			<div id="nuevaPregunta">
+			
+				<form action="procesarPeticion.jsp" method="get">
 
-                    <input type="text" name="TituloPregunta" placeholder="Titulo de tu pregunta" required />
-                    <br />
-                    <br />
+					<input type="text" name="TituloPregunta"placeholder="Titulo de tu pregunta" required />
+					
+					<br/><br/>
+					
+					<input type="text" name="tematica" placeholder="Temática" required />
+					
+					<br/><br/>
 
-                    <input type="text" name="tematica" placeholder="Temática" required />
-                    <br />
-                    <br />
-
-                    <textarea type="text" name="mensaje" placeholder="Contenido" rows="10" cols="40"
-                        required></textArea>
-                    <br />
-                    <br />
-
-                    <input type="date" name="date" />
-                    <br />
-                    <br />
-
-                    <input type="checkbox" name="hobbies" value="M" checked />PC<br />
-                    <input type="checkbox" name="hobbies" value="L" checked />PlayStation 5<br />
-                    <input type="checkbox" name="hobbies" value="D" />Xbox One<br />
-                    <input type="checkbox" name="hobbies" value="V" />Nintendo Switch<br />
-                    <input type="checkbox" name="hobbies" value="V" />Android/IOS<br />
-                    <br />
-
-                    <br />
-                    <br />
-                    <input type="submit" value="Enviar Pregunta" />
-
-
-                </form>
-            </div>
-        </div>
-
-        <div id="divJuegoDelMes">
-            <img src="img/gamingWorld/imgElderRing.jpg " id="imgJuegoDelMes">
-
-            <div id="gameDescription">
-                <p>En la Odisea, Ulises (u Odiseo) recibe uno de los máximos castigos de los dioses: vagar diez años en
-                    su
-                    regreso a Ítaca después de la guerra de Troya. Normalmente, los mitos se ciñen a una sola aventura,
-                    pero
-                    el héroe griego se enfrenta al cíclope, a las sirenas, a la bruja Circe, a Escila (la hidra) y
-                    Caribdis
-                    e incluso desciende al Inframundo. Por eso no conocemos su gesta como un viaje, sino como una
-                    odisea.
-                    Cuando juegas a Elden Ring, sientes que estás viviendo algo similar. No eres solo un sinluz en busca
-                    de
-                    convertirte en señor del Círculo de Elden; eres un conquistador de las Tierras Intermedias. Tu
-                    aventura
-                    no es una sola. Son muchas.</p>
-            </div>
-        </div>
+					<textarea type="text" name="mensaje" placeholder="Contenido"rows="10" cols="40" required></textArea>
+						
+					<br/><br/>
+					
+					<input type="date" name="date"/> 
+					<br/><br/>
+					
+					<input type="checkbox" name="hobbies" value="M" checked />PC
+					
+					<br/>
+					
+					<input type="checkbox" name="hobbies" value="L" checked />PlayStation 5
+					
+					<br/>
+					
+					<input type="checkbox" name="hobbies" value="D" />Xbox One
+					
+					<br/> 
+					
+					<input type="checkbox" name="hobbies" value="V" />Nintendo Switch
+					
+					
+					<br/>
+					
+					<input type="checkbox" name="hobbies" value="V" />Android/IOS
+					
+					<br/><br/><br/><br/> 
+					
+					<input type="submit"value="Enviar Pregunta" />
 
 
+				</form>
+			</div>
+		</div>
 
-    </div>
+		<div id="divJuegoDelMes">
+			<img src="img/gamingWorld/imgElderRing.jpg " id="imgJuegoDelMes">
+
+			<div id="gameDescription">
+				<p>En la Odisea, Ulises (u Odiseo) recibe uno de los máximos
+					castigos de los dioses: vagar diez años en su regreso a Ítaca
+					después de la guerra de Troya. Normalmente, los mitos se ciñen a
+					una sola aventura, pero el héroe griego se enfrenta al cíclope, a
+					las sirenas, a la bruja Circe, a Escila (la hidra) y Caribdis e
+					incluso desciende al Inframundo. Por eso no conocemos su gesta como
+					un viaje, sino como una odisea. Cuando juegas a Elden Ring, sientes
+					que estás viviendo algo similar. No eres solo un sinluz en busca de
+					convertirte en señor del Círculo de Elden; eres un conquistador de
+					las Tierras Intermedias. Tu aventura no es una sola. Son muchas.</p>
+			</div>
+		</div>
+
+
+
+	</div>
 
 
 
@@ -102,7 +110,8 @@
 </body>
 
 <footer>
-    <a href="indexGamingWorld.html"><img class="navigation" src="img/gamingWorld/iconPrevious.png"></a>
+	<a href="indexGamingWorld.html"><img class="navigation"
+		src="img/gamingWorld/iconPrevious.png"></a>
 </footer>
 
 </html>
