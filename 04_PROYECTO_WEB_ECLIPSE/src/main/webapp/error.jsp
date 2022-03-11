@@ -58,8 +58,9 @@
 		</div>
 
 	</div>
+	
 	<footer>
-    <a href="login.html"><img class="navigation"src="img/gamingWorld/iconPrevious.png"></a>
+    <a href="login.html"><img class="navigation" title="Volver al Login" src="img/gamingWorld/iconPrevious.png"></a>
 	</footer>
 	
 </body>
