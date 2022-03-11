@@ -8,10 +8,10 @@
 <!--Responsive CSS-->
 <link rel="stylesheet"
 	media="screen and (max-width: 2100px) and (min-width:860px)"
-	href="css/login.css">
+	href="css/loginError.css">
 <link rel="stylesheet"
 	media="screen and (max-width: 860px) and (min-width:0px)"
-	href="css/loginLarge.css">
+	href="css/loginErrorLarge.css">
 <link rel="icon" type="img/png" href="img/curriculum/information.png">
 <title>Login</title>
 </head>
@@ -24,9 +24,19 @@
 
 			<div id="info">
 
-				<h2>Página Acceso Gaming World</h2>
-
+				<h2>Página Acceso</h2>
+				
+				<div class="tarjeta">
+				<h3>Gaming World</h3>
+				</div>
+				<img class="icon" src="img/gamingWorld/iconGB2.png">
+				
+				<div class="tarjeta">
+				<h3>Curriculum</h3>
+				</div>
+				<img class="icon" src="img/curriculum/curriculum.png">
 			</div>
+
 
 		</div>
 
@@ -35,26 +45,23 @@
 			<h1>ERROR LOGIN</h1>
 
 			<div id="divContentDer">
+					
+					<div id ="error">
+					
+					<h2>Información Error</h2>
+					<p>Los datos introducidos no coinciden con ningún usuario. Revise su usuario y contraseña</p>
 
-				<form action="loginServlet" method="get">
-					<h2>Correo / Nombre de Usuario</h2>
-					<span><input type="text" name="email"
-						placeholder="Correo / Nombre de Usuario" required /></span>
-					<h2>Contraseña</h2>
-					<span><input type="password" name="password"
-						placeholder="Contraseña" required /></span>
-					<h2>Acceder</h2>
-					<span><input type="submit" value="Acceder" /></span>
-
-
-				</form>
+					</div>
 
 			</div>
 
 		</div>
 
 	</div>
-
+	<footer>
+    <a href="login.html"><img class="navigation"src="img/gamingWorld/iconPrevious.png"></a>
+	</footer>
+	
 </body>
 
 </html>
