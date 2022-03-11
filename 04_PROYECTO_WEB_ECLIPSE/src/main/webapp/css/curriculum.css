@@ -89,7 +89,7 @@ perfil usada en la parte izq de la pagina HTML*/
 
 /*Identificador que define las propiedades de la segunda targeta (Educacion) de la parte izq de la pagina HTML(div)*/
 #education {
-    margin-top: 4%;
+    margin-top: 2%;
 }
 
 #education:hover #imgEducation{
@@ -141,6 +141,7 @@ perfil usada en la parte izq de la pagina HTML*/
     margin-left:5% ;
     margin-right: 5%;
     padding:2% ;
+    padding-bottom:1%;
     border-top-left-radius: 15%;
     border-top-right-radius: 15%;
     background-color: white;
