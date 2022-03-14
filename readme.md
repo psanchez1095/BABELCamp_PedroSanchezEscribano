@@ -58,6 +58,11 @@ los estilos).
 
 ***Todas las páginas estan hechas con un diseño responsive excepto las referentes a GamingWorld*** 
 
+## [05_PROYECTO_WEB_JS](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/05_PROYECTO_WEB_JS)    
+
+***Ejercicio 6***
+
+Hacer una pagina html que nos permite agregar numeros a un array. Además la pagina nos permitira mediante otro boton, sacar un numero aleatorio de los numeros que hemos agregado al array. Se pide que no podamos meter vacios en el array (validar esta parte con JS).
 
 
 ## TOMCAT  
