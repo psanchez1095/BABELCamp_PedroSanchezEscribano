@@ -10,6 +10,7 @@ function validatePush() {
     if (!isNaN(n) && n != "") {
         arrayNumbers.push(n);
         document.getElementById("num").value = ""
+        updateArrayHtml(n);
         document.getElementById("textMensaje").innerHTML = "Número " + n + " añadido al array"
         document.getElementById("mensaje").style.color = "darkgreen"
         document.getElementById("mensaje").style.visibility = "visible"
@@ -45,4 +46,11 @@ function hideMessage() {
 // Retorna un número entero aleatorio entre min (incluido) y max (excluido)
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function updateArrayHtml(nAñadido){
+
+    if (arrayNumbers.length==1) document.getElementById("pArrayValue").innerHTML +=" " + nAñadido + " " ;
+    else document.getElementById("pArrayValue").innerHTML += ", " + nAñadido + " " ;
+
 }
