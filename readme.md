@@ -62,11 +62,21 @@ los estilos).
 
 ***Ejercicio 6***
 
-Hacer una pagina html que nos permite agregar numeros a un array. Además la pagina nos permitira mediante otro boton, sacar un numero aleatorio de los numeros que hemos agregado al array. Se pide que no podamos meter vacios en el array (validar esta parte con JS).
+Hacer una pagina html que nos permite agregar numeros a un array. Además la pagina nos permitirá mediante otro botón, sacar un número aleatorio de los numeros que hemos agregado al array. Se pide que no podamos meter vacios en el array (validar esta parte con JS).
 
 * array.html
 * array.js
 * array.css
+
+***Ejercicio 7***
+
+Hacer una pagina html que simule una calculadora. Tendrá 2 input text para poner 2 números y un input text
+para sacar el resultado. Tendra 4 botones con las operaciones basicas, y cada vez que pulsemos uno, nos mostrará
+el resultado.
+
+* calculadora.html
+* calculadora.js
+* calculadora.css
 
 ## TOMCAT  
 
