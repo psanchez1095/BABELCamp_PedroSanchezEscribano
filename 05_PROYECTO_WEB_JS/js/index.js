@@ -10,10 +10,15 @@ function validatePush() {
     if (!isNaN(n) && n != "") {
         arrayNumbers.push(n);
         document.getElementById("num").value = ""
+        document.getElementById("textMensaje").innerHTML = "Número " + n + " añadido al array"
+        document.getElementById("mensaje").style.color = "darkgreen"
+        document.getElementById("mensaje").style.visibility = "visible"
+        setTimeout(hideMessage, 1500);
     } else {
-        document.getElementById("textError").innerHTML = "Error. Debe añadir números"
-        document.getElementById("error").style.visibility = "visible"
-        setTimeout(error, 2000);
+        document.getElementById("textMensaje").innerHTML = "Error. Debe añadir números"
+        document.getElementById("mensaje").style.color = "red"
+        document.getElementById("mensaje").style.visibility = "visible"
+        setTimeout(hideMessage, 2000);
     }
 
 }
@@ -25,14 +30,15 @@ function extractRandom() {
         document.getElementById("numExtract").value = arrayNumbers[indexRandom]
 
     } else {
-        document.getElementById("textError").innerHTML = "Error. El array se encuentra vacio"
-        document.getElementById("error").style.visibility = "visible"
-        setTimeout(error, 2000)
+        document.getElementById("textMensaje").innerHTML = "Error. El array se encuentra vacio"
+        document.getElementById("mensaje").style.visibility = "visible"
+        document.getElementById("mensaje").style.color = "red"
+        setTimeout(hideMessage, 2000)
     }
 }
 
-function error() {
-    document.getElementById("error").style.visibility = "hidden"
+function hideMessage() {
+    document.getElementById("mensaje").style.visibility = "hidden"
 }
 
 

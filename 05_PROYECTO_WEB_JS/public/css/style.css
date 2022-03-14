@@ -60,11 +60,10 @@ h2{
     justify-content: center;
 }
 
-#error{
+#mensaje{
     margin-left: 10%;
     margin-top:5%;
     width:80%;
-    color:red;
     font-weight: bold;
     background-color: white;
     font-family: 'Aladin', cursive;
@@ -72,4 +71,5 @@ h2{
     visibility:  hidden;
    
 }
+
 
