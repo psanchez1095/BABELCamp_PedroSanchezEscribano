@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="shortcut icon" href="/public/img/calculator.png" type="image/x-icon">
+    <script type="text/javascript" src="/js/calculadora.js"></script>
+    <link rel="stylesheet" media="screen and (max-width: 2100px) and (min-width:0px)" href="/public/css/calculadora.css">
+   
+</head>
+
+<header>
+    <h1>Calculadora Javascript</h1>
+</header>
+
+<header id="subHeader"></header>
+
+<body>
+
+    <div id="divBody">
+
+        <div id="headerCalculator">
+            <img src="public/img/calculator.png">
+        </div>
+
+        <div id="screenCalculator">
+            <input type="text" id = "inputScreenCalculator" placeholder="Screen" readonly />
+        
+        </div>
+
+        <div id="mainCalculator">
+
+            <div class="row">
+                <input type="submit" class = "op"  value="*" onclick="multiplication()" />
+                <input type="submit" class = "op"  value="/" onclick="division()" />
+                <input type="submit" class = "op"  value="+" onclick="add()" />
+                <input type="submit" class = "op"  value="-" onclick="subtraction()" />
+            </div>
+
+            <div class="row">
+                <input type="text" id="n1" class = "number" placeholder="Primer Número"  />
+                <input type="text" id="n2" class = "number"  placeholder="Segundo Número"   />
+            </div>
+
+    </div>
+
+    </div>
+
+    <div id="mensaje">
+        <p id="textMensaje"></p>
+    </div>
+
+</body>
+
+</html>
