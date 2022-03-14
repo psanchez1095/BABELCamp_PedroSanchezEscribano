@@ -12,12 +12,16 @@ header{
     background-color: white;
     text-align: center;
 }
-input{
-    padding:2%;
+
+#subHeader{
+    height: 3vh;
+    background-color: black;
 }
+
 h1{
     margin-top: 1%;
 }
+
 h2{
     margin-top: 2%;
     margin-bottom: 2%;
@@ -26,9 +30,8 @@ h2{
     text-align: center;
 }
 
-#subHeader{
-    height: 3vh;
-    background-color: black;
+input{
+    padding:2%;
 }
 
 #divBody{
@@ -41,6 +44,7 @@ h2{
     background-color: darkslateblue;
     min-height: 86.5vh;
 }
+
 #divBodyDer{
     width:20%;
     background-color: aliceblue; 
@@ -56,17 +60,18 @@ h2{
     flex-direction: row;
     justify-content: center;
 }
+
 #divRandomNumber{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
 #divArray{
-   
     justify-content: center;
     display: flex;
-    
 }
+
 #divArray>p{
     font-family: 'DotGothic16', sans-serif;
     border: 1px solid white;
@@ -78,7 +83,9 @@ h2{
     overflow: scroll;
     font-weight: bold;
 }
+
 #mensaje{
+    font-size:x-large;
     margin-left: 10%;
     margin-top:2%;
     width:80%;
@@ -87,7 +94,6 @@ h2{
     font-family: 'Aladin', cursive;
     text-align: center;
     visibility:  hidden;
-   
 }
 
 

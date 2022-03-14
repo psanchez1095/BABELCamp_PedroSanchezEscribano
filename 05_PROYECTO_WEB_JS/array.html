@@ -11,49 +11,53 @@
     <link rel="stylesheet" media="screen and (max-width: 2100px) and (min-width:0px)" href="/public/css/array.css">
 </head>
 
+<!--Cabecera Principal Negra-->
 <header>
-
     <h1>Prueba Javascript</h1>
-
 </header>
 
+<!--Cabecera Secundaria Blanca-->
 <header id="subHeader"></header>
 
 <body>
     <div id="divBody">
-
+        
+        <!--Div Parte Izquierda de la pagina html-->
         <div id="divBodyIzq">
+
             <div id="mainIzq">
+
                 <h2>Añadir número al array</h2>
+                <!--Div para añadir números al array-->
                 <div id="divAddNumber">
                     <input type="text" id="num" name="number" placeholder="Añadir Numero" required />
                     <input type="submit" name="push" value="Añadir Numero" onclick="validatePush()" />
                 </div>
+
                 <h2>Extraer número aleatorio del array</h2>
+
+                <!--Div para recoger un numero aleatorio del array-->
                 <div id="divRandomNumber">
                     <input type="submit" name="extract" value="Extraer Aleatorio " onclick="extractRandom()" />
-                    <input type="text" id="numExtract" name="number" placeholder="Numero aleatorio del array." />
-
+                    <input  id="numExtract" readonly placeholder="Numero aleatorio del array." />
                 </div>
 
                 <h2>Estado Array</h2>
+                 <!--Div para mostrar el estado actual del array-->
                 <div id="divArray">
-                   
                     <p id="pArrayValue">Array: </p>
- 
-
                 </div>
+                <!--Div para mostrar mensajes exito/error-->       
                 <div id="mensaje">
                     <p id="textMensaje"></p>
                 </div>
+
             </div>
-           
-            
-        </div>
-
-        <div id="divBodyDer">
 
         </div>
+
+         <!--Div Parte Derecha de la pagina html-->
+        <div id="divBodyDer"></div>
 
     </div>
 </body>
