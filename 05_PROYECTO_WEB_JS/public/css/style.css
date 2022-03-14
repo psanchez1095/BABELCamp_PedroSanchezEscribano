@@ -45,7 +45,9 @@ h2{
     background-color: aliceblue; 
 }
 
-#mainIzq{}
+#mainIzq{
+    margin-top: 10%;
+}
 
 #divAddNumber{
     display: flex;
