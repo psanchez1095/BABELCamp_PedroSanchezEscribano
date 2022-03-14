@@ -64,6 +64,9 @@ los estilos).
 
 Hacer una pagina html que nos permite agregar numeros a un array. Además la pagina nos permitira mediante otro boton, sacar un numero aleatorio de los numeros que hemos agregado al array. Se pide que no podamos meter vacios en el array (validar esta parte con JS).
 
+* array.html
+* array.js
+* array.css
 
 ## TOMCAT  
 
