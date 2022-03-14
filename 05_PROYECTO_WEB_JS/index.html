@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WS_Javascript</title>
+    <link rel="shortcut icon" href="/public/img/iconJS.png" type="image/x-icon">
+    <script type="text/javascript" src="/js/index.js"></script>
+    <link rel="stylesheet" media="screen and (max-width: 2100px) and (min-width:0px)" href="/public/css/style.css">
+   
+</head>
+
+<header>
+
+    <h1>Prueba Javascript</h1>
+
+</header>
+<header id="subHeader">
+</header>
+<body>
+    <div id="divBody">
+
+    <div id="divBodyIzq">
+        <div id="mainIzq">
+            <h2>Añadir número al array</h2>
+            <div id="divAddNumber">
+                <input type="text" id ="num" name="number" placeholder="Añadir Numero" required />
+                <input type="submit" name="push" value="Añadir Numero" onclick="validatePush()"/>
+            </div>
+            <h2>Extraer número aleatorio del array</h2>
+            <div id="divRandomNumber">
+                <input type="submit" name="extract" value="Extraer Aleatorio " onclick="extractRandom()"/>
+                <input type="text" id ="numExtract" name="number" placeholder="Añadir Numero" required />
+                
+            </div>
+        </div>
+        <div id="error"><p>Error. Debe añadir números</p></div>
+    </div>
+
+    <div id="divBodyDer">
+      
+    </div>
+
+    </div>
+</body>
+</html>

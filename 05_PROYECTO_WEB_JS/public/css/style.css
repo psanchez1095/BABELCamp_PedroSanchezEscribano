@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
+
+header{
+    font-family: 'Aladin', cursive;
+    height: 8vh;
+    background-color: white;
+    text-align: center;
+}
+input{
+    padding:2%;
+}
+
+h2{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Aladin', cursive;
+    color: white;
+    text-align: center;
+}
+
+#subHeader{
+    height: 6vh;
+    background-color: black;
+}
+
+#divBody{
+    display: flex;
+    flex-direction: row;
+    height: 86vh;
+}
+
+#divBodyIzq{
+    width:80%;
+    background-color: darkslateblue;
+}
+#divBodyDer{
+    width:20%;
+    background-color: aliceblue; 
+}
+
+#mainIzq{}
+
+#divAddNumber{
+    display: flex;
+    flex-direction: row;
+    margin-left: 36%;
+    
+}
+#divRandomNumber{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 36%;
+}
+
+#error{
+    margin-left: 10%;
+    margin-top:5%;
+    width:80%;
+    color:red;
+    font-weight: bold;
+    background-color: white;
+    font-family: 'Aladin', cursive;
+    text-align: center;
+    visibility:  hidden;
+   
+}
+
