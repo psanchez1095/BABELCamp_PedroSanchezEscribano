@@ -60,7 +60,7 @@ los estilos).
 
 ## [05_PROYECTO_WEB_JS](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/05_PROYECTO_WEB_JS)    
 
-***Ejercicio 6***
+***Ejercicio 6a***
 
 Hacer una pagina html que nos permite agregar numeros a un array. Además la pagina nos permitirá mediante otro botón, sacar un número aleatorio de los numeros que hemos agregado al array. Se pide que no podamos meter vacios en el array (validar esta parte con JS).
 
@@ -68,7 +68,7 @@ Hacer una pagina html que nos permite agregar numeros a un array. Además la pag
 * array.js
 * array.css
 
-***Ejercicio 7***
+***Ejercicio 6b***
 
 Hacer una pagina html que simule una calculadora. Tendrá 2 input text para poner 2 números y un input text
 para sacar el resultado. Tendra 4 botones con las operaciones basicas, y cada vez que pulsemos uno, nos mostrará
