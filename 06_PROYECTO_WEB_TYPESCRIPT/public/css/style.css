@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
+
+header{
+    font-family: 'Aladin', cursive;
+    height: 8vh;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+}
+
+#subHeader{
+    width: 100%;
+    height: 3vh;
+    background-color: black;
+}
+
+input{
+    padding:2%;
+}
+
+h1{
+}
+
+h2{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Aladin', cursive;
+    color: white;
+    text-align: center;
+}
+
+body{
+    
+    height: 86.5vh;
+    width:100%;
+    background-color: darkslateblue;
+}
+
+img{
+    width: 10%;
+}
+#mainDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.subHeader{
+    width: 100%;
+    background-color: black;
+    height: 3vh;
+    text-align: center;
+    color:white;
+}
+#divIzq{
+    margin-top:5%;   
+    background-color: gray;
+}
+
+#divCenter{
+    width: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top:5%;  
+    background-color: gray;
+    
+}
+
+#divDer{
+    margin-top:5%;  
+    background-color: gray;
+   
+}
+
+/*Referente al calculo de notas */
+.row{
+    display: flex;
+    flex-direction: row;
+}
+input{
+    margin:1%;
+    width: 70%;
+}
+#calcular{
+    margin:1%;
+   
+}
+#calculo_ts{
+    margin-top:2%;
+    margin-bottom:2%;
+    text-align: center;
+    font-weight:  bold;
+    color : black
+}
+
+/*Referente al Array de Juegos */
+
+#pJuego{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: white;
+    font-family: 'Aladin', cursive;
+    font-weight: bold;
+    text-align: center;
+    border:2px solid black;
+}
