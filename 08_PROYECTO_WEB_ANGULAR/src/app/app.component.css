@@ -9,7 +9,8 @@
     padding: 0;
 }
 
-@media screen and (max-width: 1200) and (min-width:0px){
+
+@media screen and (min-width:0px){
     h2 {
         margin-top: 5%;
         font-family: 'Satisfy', cursive;
@@ -160,7 +161,7 @@
     }
 }
 
-@media screen and (max-width: 2100px) and (min-width:1200px){
+@media screen and (min-width:1200px){
 h2 {
     margin-top: 5%;
     font-family: 'Satisfy', cursive;
@@ -306,5 +307,7 @@ perfil usada en la parte izq de la pagina HTML*/
     margin: 2%;
     margin-bottom: none;
 }
+
 }
+
 
