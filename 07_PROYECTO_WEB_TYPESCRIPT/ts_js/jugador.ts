@@ -3,11 +3,11 @@ import {Historial} from './historial.js'
 class Jugador {
     public id: number;
     public nombre: string;
-    public edad: string;
+    public edad: number;
     public pais: string;
     public historial : Historial;
   
-    constructor(nombre: string, edad: string, pais: string, historial:Historial ,id?: number) {
+    constructor(nombre: string, edad: number, pais: string, historial:Historial ,id?: number) {
       this.id = id ? id : -1;
       this.nombre = nombre;
       this.edad = edad;

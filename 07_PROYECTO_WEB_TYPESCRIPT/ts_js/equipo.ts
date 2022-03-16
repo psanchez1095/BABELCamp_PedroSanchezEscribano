@@ -25,4 +25,4 @@ class Equipo {
      
   }
 
-  export {Jugador} from 'ts_js/jugador.js';
+  export {Equipo} ;

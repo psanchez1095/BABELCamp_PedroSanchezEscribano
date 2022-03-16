@@ -15,4 +15,4 @@ class Equipo {
         return this.jugadores;
     }
 }
-export { Jugador } from 'ts_js/jugador.js';
+export { Equipo };
