@@ -5,14 +5,16 @@ class Jugador {
     public nombre: string;
     public edad: number;
     public pais: string;
+    public urlImg: string;
     public historial : Historial;
   
-    constructor(nombre: string, edad: number, pais: string, historial:Historial ,id?: number) {
+    constructor(nombre: string, edad: number, pais: string, historial:Historial ,urlImg:string,id?: number) {
       this.id = id ? id : -1;
       this.nombre = nombre;
       this.edad = edad;
       this.pais = pais;
       this.historial = historial;
+      this.urlImg = urlImg;
     }
   
     public getNombre(): string {
@@ -26,6 +28,9 @@ class Jugador {
     }
     public getHistorial(): string {
         return this.nombre ;
+    }
+    public getUrlImg(): string {
+        return this.urlImg ;
     }
   }
 

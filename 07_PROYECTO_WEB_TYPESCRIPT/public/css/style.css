@@ -31,7 +31,6 @@ h2{
     text-align: center;
 }
 
-
 #divBody{
     display: flex;
     flex-direction: row;
@@ -49,6 +48,7 @@ h2{
     width:20%;
     background-color: aliceblue; 
 }
+
 #headerBodyDer{
     font-family: 'Aladin', cursive;
     width:100%;
@@ -58,17 +58,18 @@ h2{
     text-align: center;
 
 }
+
 #mainIzq{
     background-image: url(/public/img/terrenoJuego.jpg);
     background-repeat: no-repeat;
-    width: 100%;
     min-height: 100%;
     margin-top: 2%;
     margin-left: 18%;
+    margin-left: 18%;
     display: flex;
     flex-direction: row;
+    justify-content: left;
 }
-
 
 .column{
     display: flex;
@@ -76,19 +77,18 @@ h2{
     flex-direction: column;
     margin-left: 3%;
     width: 10%;
+    margin-bottom: 5%;
 }
+
 .columPortero{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 10%;
     margin-left: 5%;
 }
-.column>input{
- 
-    margin-bottom:50%;
-}
 
-.columPortero>input{
-    margin-bottom: 26%;
+input{
+    margin: 5%;
+    width: 72px;
+    border-radius: 50%;
 }
