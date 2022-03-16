@@ -24,7 +24,6 @@ function calcularNota(alumno) {
     return (((alumno.cal1 + alumno.cal2 + alumno.cal3) / 3) * 0.55 + 0.3 * alumno.calEx + 0.15 * alumno.calTrabajo);
 }
 function calcularNotaHtml() {
-    console.log("perra tu");
     var p1 = document.getElementById("p1").value;
     var p2 = document.getElementById("p2").value;
     var p3 = document.getElementById("p3").value;
@@ -35,7 +34,9 @@ function calcularNotaHtml() {
     var numberP3 = parseInt(p3);
     var numberTr = parseInt(tr);
     var numberEx = parseInt(ex);
-    document.getElementById("resultado").value = (((numberP1 + numberP2 + numberP3) / 3) * 0.55 + 0.3 * numberEx + 0.15 * numberTr).toString();
+    if (!isNaN(numberP1) && !isNaN(numberP2) && !isNaN(numberP3) && !isNaN(numberTr) && !isNaN(numberEx)) {
+        document.getElementById("resultado").value = (((numberP1 + numberP2 + numberP3) / 3) * 0.55 + 0.3 * numberEx + 0.15 * numberTr).toString();
+    }
 }
 //REFERENTE AL ARRAY VIDEOJUEGOS
 var arrJuegos = [];
@@ -51,3 +52,15 @@ function notMarioGames(juegos) {
     }
 }
 notMarioGames(arrJuegos);
+//REFERENTE AL CALCULO DEL FACTORIAL
+function calcularFactorial() {
+    var n = document.getElementById("n").value;
+    var numberN = parseInt(n);
+    if (!isNaN(numberN)) {
+        var total = 1;
+        for (var i = 1; i <= numberN; i++) {
+            total = total * i;
+        }
+        document.getElementById("resultadoFact").value = total.toString();
+    }
+}

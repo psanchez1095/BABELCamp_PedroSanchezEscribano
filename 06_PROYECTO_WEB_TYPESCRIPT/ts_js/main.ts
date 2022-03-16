@@ -19,7 +19,6 @@ let al1 = {
     calEx:6.25
   }
 
-
 arrayAlumnos.push(al1,al2)
 
 document.getElementById("divIzq").setAttribute("style", "font-family: 'Aladin', cursive;");
@@ -32,18 +31,22 @@ function calcularNota(alumno : any): number {
 }
 
 function calcularNotaHtml() {
-    console.log("perra tu")
+    
     let p1 = (document.getElementById("p1") as HTMLInputElement).value;
     let p2 = (document.getElementById("p2") as HTMLInputElement).value;
     let p3 = (document.getElementById("p3") as HTMLInputElement).value;
     let tr = (document.getElementById("tr") as HTMLInputElement).value;
     let ex = (document.getElementById("ex") as HTMLInputElement).value;
+
     let numberP1 = parseInt(p1);
     let numberP2 = parseInt(p2);
     let numberP3 = parseInt(p3);
     let numberTr = parseInt(tr);
     let numberEx = parseInt(ex);
+
+    if( !isNaN(numberP1)&&!isNaN(numberP2)&&!isNaN(numberP3)&&!isNaN(numberTr)&&!isNaN(numberEx)){
     (document.getElementById("resultado") as HTMLInputElement).value = ( ((numberP1 +numberP2 +numberP3 )/3)*0.55 + 0.3*numberEx + 0.15*numberTr).toString()
+    }
 }
 
 //REFERENTE AL ARRAY VIDEOJUEGOS
@@ -70,3 +73,17 @@ function notMarioGames( juegos : Array<string>){
 }
 
 notMarioGames(arrJuegos);
+
+
+//REFERENTE AL CALCULO DEL FACTORIAL
+function calcularFactorial() {
+    var n = (document.getElementById("n")as HTMLInputElement).value;
+    var numberN = parseInt(n);
+    if( !isNaN(numberN)){
+    var total = 1;
+    for (var i = 1; i <= numberN; i++) {
+        total = total * i;
+    }
+    (document.getElementById("resultadoFact")as HTMLInputElement).value = total.toString();
+    }
+}
