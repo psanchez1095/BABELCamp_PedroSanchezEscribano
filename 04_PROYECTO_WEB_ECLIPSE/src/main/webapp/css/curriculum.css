@@ -35,12 +35,12 @@ a{
     text-align: center;
 }
 
-/*Clase usada para dar un pequeño margen a la izquierda*/
+/*Clase usada para dar un pequeï¿½o margen a la izquierda*/
 .margenIzq {
     margin-left: 1%;
 }
 
-/*Clase icon para definir el tamaño de los iconos*/
+/*Clase icon para definir el tamaï¿½o de los iconos*/
 .icon {
     width: 24px;
     height: 24px;
@@ -57,7 +57,7 @@ a{
 }
 
 /*Clase que define las propiedades de las tarjetas
-de información de las parte izquierda de la pagina HTML*/
+de informaciï¿½n de las parte izquierda de la pagina HTML*/
 .target {
     padding: 2%;
     border: 6px solid white;
