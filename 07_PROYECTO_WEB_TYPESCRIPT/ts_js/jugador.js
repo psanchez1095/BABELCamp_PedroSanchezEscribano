@@ -9,5 +9,14 @@ class Jugador {
     getNombre() {
         return this.nombre;
     }
+    getEdad() {
+        return this.nombre;
+    }
+    getPais() {
+        return this.nombre;
+    }
+    getHistorial() {
+        return this.nombre;
+    }
 }
 export { Jugador };

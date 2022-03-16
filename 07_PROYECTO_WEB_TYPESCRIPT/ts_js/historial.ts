@@ -1,19 +1,25 @@
 class Historial {
     public id: number;
     public golesAnotados: number;
-    public TarjetasA: number;
-    public TarjetasR: number;
+    public tarjetasA: number;
+    public tarjetasR: number;
   
   
-    constructor(golesAnotados: number, TarjetasA: number, TarjetasR: number, id?: number) {
+    constructor(golesAnotados: number, tarjetasA: number, tarjetasR: number, id?: number) {
       this.id = id ? id : -1;
       this.golesAnotados = golesAnotados;
-      this.TarjetasA = TarjetasA;
-      this.TarjetasR = TarjetasR;
+      this.tarjetasA = tarjetasA;
+      this.tarjetasR = tarjetasR;
     }
   
     public getGolesAnotados(): number {
       return this.golesAnotados ;
+    }
+    public getTarjetasA(): number {
+      return this.tarjetasA ;
+    }
+    public getTarjetasR(): number {
+      return this.tarjetasR ;
     }
   }
 

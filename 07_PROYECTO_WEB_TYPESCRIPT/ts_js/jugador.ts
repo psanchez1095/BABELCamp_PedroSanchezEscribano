@@ -18,6 +18,15 @@ class Jugador {
     public getNombre(): string {
       return this.nombre ;
     }
+    public getEdad(): string {
+        return this.nombre ;
+    }
+    public getPais(): string {
+        return this.nombre ;
+    }
+    public getHistorial(): string {
+        return this.nombre ;
+    }
   }
 
   export {Jugador}

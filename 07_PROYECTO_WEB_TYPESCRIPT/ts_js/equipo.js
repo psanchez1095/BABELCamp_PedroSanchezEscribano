@@ -8,5 +8,11 @@ class Equipo {
     getNombre() {
         return this.nombre;
     }
+    getFechaFund() {
+        return this.fechaFund;
+    }
+    getJugadores() {
+        return this.jugadores;
+    }
 }
 export { Jugador } from 'ts_js/jugador.js';

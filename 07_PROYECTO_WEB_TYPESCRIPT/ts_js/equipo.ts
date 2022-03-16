@@ -16,6 +16,13 @@ class Equipo {
     public getNombre(): string {
       return this.nombre ;
     }
+    public getFechaFund(): string {
+        return this.fechaFund ;
+    }
+    public getJugadores(): Array<Jugador> {
+        return this.jugadores ;
+    }
+     
   }
 
   export {Jugador} from 'ts_js/jugador.js';
