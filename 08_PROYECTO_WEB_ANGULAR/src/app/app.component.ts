@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = '08_PROYECTO_WEB_ANGULAR';
+  public nombre : string  = 'Pedro Sánchez Escribano';
+  public correo : string = 'ps95se@gmail.com';
+  public telefono : number = 630413222;
+  public municipio : string ="Madrid"
 }

@@ -9,7 +9,9 @@
     padding: 0;
 }
 
+/*Metodología Mobile first*/
 
+/*CSS Para Moviles y Tablets*/
 @media screen and (min-width:0px){
     h2 {
         margin-top: 5%;
@@ -161,6 +163,7 @@
     }
 }
 
+/*CSS Para PC*/
 @media screen and (min-width:1200px){
 h2 {
     margin-top: 5%;
@@ -203,7 +206,7 @@ a{
     flex-direction: row;
 }
 #divBodyIzquierda {
-    width: 25%;
+    width: 28%;
     padding-right: 1%;
     color: white;
     background-color: rgb(59, 143, 118);
@@ -212,6 +215,7 @@ a{
 /*Clase que define las propiedades de las tarjetas
 de informaci�n de las parte izquierda de la pagina HTML*/
 .target {
+    width: 93%;
     padding: 2%;
     border: 6px solid white;
     border-bottom-right-radius: 22%;
