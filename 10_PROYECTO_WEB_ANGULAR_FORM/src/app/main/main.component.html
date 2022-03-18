@@ -4,5 +4,20 @@
     </div>
     <div id="divDerMain">
         <h2>{{titulodivDerMain}}</h2>
+        <div class="row">
+            <input type="submit"   value="Añadir" onclick="multiplication()" />
+             <input type="submit"  value="Eliminar" onclick="division()" />
+             <input type="submit"  value="Editar" onclick="subtraction()">
+             <input type="submit"   value="Limpiar" onclick="add()" />
+            />
+        </div>
+        <div class="column">
+            <input type="text"  [placeholder]="placeholderID"  />
+            <input type="text"  [placeholder]="placeholderTitulo" />
+            <input type="text"  [placeholder]="placeholderCompania"/>
+            <input type="text"  [placeholder]="placeholderVMedia" />
+            />
+        </div>
+
     </div>   
 </body>
