@@ -1,0 +1,38 @@
+<body>
+
+    <div id="divBody">
+
+        <div id="headerCalculator">
+            <img src="assets/img/calculator.png">
+        </div>
+
+        <div id="screenCalculator">
+            <input type="text" id = "inputScreenCalculator" placeholder="Screen" [value]="textScreen" readonly />
+        
+        </div>
+
+        <div id="mainCalculator">
+
+            <div class="row">
+                <input type="submit" class = "op"  value="*" (click)="multiplication()" />
+                <input type="submit" class = "op"  value="/" (click)="division()" />
+                <input type="submit" class = "op"  value="+"(click)="add()" />
+                <input type="submit" class = "op"  value="-" (click)="subtraction()" />
+            </div>
+
+            <div class="row">
+            
+                <input type="text" id="n1" class = "number" [(ngModel)]="n1" placeholder="Primer Número"  />
+                <input type="text" id="n2" class = "number"  [(ngModel)]="n2" placeholder="Segundo Número"   />
+            </div>
+
+    </div>
+
+    </div>
+
+    <div [hidden]="mensajeOculto" id="mensaje">
+        <p id="textMensaje">{{mensaje}}</p>
+    </div>
+
+</body>
+
