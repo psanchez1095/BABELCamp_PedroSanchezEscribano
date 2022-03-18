@@ -130,6 +130,12 @@ En este caso, la información más relevante del CV se tiene que poner como atri
 en el componente y mandar la información a la página web, no se deben de poner en la página html
 directamente.
 
+## [09_PROYECTO_WEB_ANGULAR_CALCULADORA](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/09_PROYECTO_WEB_ANGULAR_CALCULADORA)    
+
+***Ejercicio 10***
+
+Hacer una aplicación angular que muestre la [calculadora](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/05_PROYECTO_WEB_JS) que hicimos en actividades anteriores.
+
 ## TOMCAT  
 
 He añadido el Tomcat para que no se desajusten las rutas al importar el proyecto.
