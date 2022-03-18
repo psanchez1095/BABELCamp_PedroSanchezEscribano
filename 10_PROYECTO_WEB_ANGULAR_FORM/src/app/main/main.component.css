@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+body{
+    display: flex;
+    flex-direction: row;
+    height: 87vh;
+    background-color: lightslategray;
+}
+#divIzqMain{
+    width: 85%;
+}
+#divDerMain{
+    margin-top: 1%;
+    border: 5px solid white;
+    border-right: none;
+    border-bottom-left-radius: 15%;
+    border-top-left-radius: 15%;
+    width: 30%;
+    max-height: 90%;
+    background-color: black;
+}
+
+#divDerMain>h2{
+    margin-top: 2%;
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+    color: white;
+}
