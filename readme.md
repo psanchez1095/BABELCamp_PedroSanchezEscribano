@@ -136,6 +136,23 @@ directamente.
 
 Hacer una aplicación angular que muestre la [calculadora](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/05_PROYECTO_WEB_JS) que hicimos en actividades anteriores.
 
+## [10_PROYECTO_WEB_ANGULAR_FORM](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/10_PROYECTO_WEB_ANGULAR_FORM)    
+
+***Ejercicio 11***
+
+Hacer una aplicacion en angular que de de alta objetos de tipo videojuego. Los videojuegos tendran
+un identificador, un titulo, una compañia y una valoración media. 
+
+La app mostrará un formulario para introducir los datos, además permitira vaciar el formulario.
+
+Debajo del formulario se mostrará una tabla con los videojuegos introducidos.
+
+Meter para ambas aplicaciones estilos (ej: reponsive, estilos de formulario, posicionamiento) //20% del tiempo max
+
+Opcional: dar de baja y modificar videojuego.
+
+# OTROS  
+
 ## TOMCAT  
 
 He añadido el Tomcat para que no se desajusten las rutas al importar el proyecto.
