@@ -102,6 +102,14 @@ export class MainComponent {
 
   //Limpia los valores de un juego
   public edit() {
+    this.games[parseInt(this.id)].setTitulo(this.titulo)
+    this.games[parseInt(this.id)].setCompania(this.compania)
+    this.games[parseInt(this.id)].setValoracionMedia(parseInt(this.vMedia))
+    this.clear()
+    this.addButtonDisabled = false;
+    this.deleteButtonDisabled= true;
+    this.editButtonDisabled = true;
+    this.clearButtonDisabled = true;
 
   }
 

@@ -7,7 +7,7 @@ class Game {
    
     constructor(titulo: string, compania: string, valoracionMedia: number,id?: number) {
         
-      this.id = id ? id : -1;
+      this.id = id ? id : 0;
       this.titulo = titulo;
       this.compania = compania;
       this.valoracionMedia = valoracionMedia;
@@ -24,6 +24,16 @@ class Game {
     }
     public getValoracionMedia(): number {
         return this.valoracionMedia ;
+    }
+
+    public setTitulo(titulo:string) {
+      this.titulo=titulo ;
+    }
+    public setCompania(comp:string){
+      this.compania=comp;
+    }
+    public setValoracionMedia(vmedia:number) {
+      this.valoracionMedia=vmedia;
     }
    
     
