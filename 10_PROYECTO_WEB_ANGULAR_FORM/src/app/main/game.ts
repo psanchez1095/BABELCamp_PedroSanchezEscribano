@@ -6,13 +6,13 @@ class Game {
     public valoracionMedia: number;
     public urlImg: string;
   
-    constructor(titulo: string, compañia: string, valoracionMedia: number,urlImg:string,id?: number) {
+    constructor(titulo: string, compañia: string, valoracionMedia: number,urlImg?:string,id?: number) {
         
       this.id = id ? id : -1;
       this.titulo = titulo;
       this.compañia = compañia;
       this.valoracionMedia = valoracionMedia;
-      this.urlImg = urlImg;
+      this.urlImg = urlImg ? urlImg : "";
     }
   
     public getTitulo(): string {

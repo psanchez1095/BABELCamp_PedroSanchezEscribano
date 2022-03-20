@@ -1,22 +1,24 @@
 <body>
     <div id="divIzqMain">
-
+        <div id="divArray">
+            <h2>{{titleArrGames}}</h2>
+        </div>
     </div>
     <div id="divDerMain">
-        <h2>{{titulodivDerMain}}</h2>
+        <h2>{{titledivDerMain}}</h2>
         <div class="row">
-            <input type="submit"   value="Añadir" onclick="multiplication()" />
+            <input type="submit"   value="Añadir" (click)="addGame()" />
              <input type="submit"  value="Eliminar" onclick="division()" />
              <input type="submit"  value="Editar" onclick="subtraction()">
              <input type="submit"   value="Limpiar" onclick="add()" />
             
         </div>
         <div class="column">
-            <input type="text"  [placeholder]="placeholderID"  />
-            <input type="text"  [placeholder]="placeholderTitulo" />
-            <input type="text"  [placeholder]="placeholderCompania"/>
-            <input type="text"  [placeholder]="placeholderVMedia" />
+            <input type="text"  [placeholder]="placeholderID"  [(ngModel)]="id" />
+            <input type="text"  [placeholder]="placeholderTitulo" [(ngModel)]="titulo"/>
+            <input type="text"  [placeholder]="placeholderCompania"  [(ngModel)]="compania"/>
+            <input type="text"  [placeholder]="placeholderVMedia" [(ngModel)]="vMedia" />
         </div>
-
+        <div id="error" [hidden]="error">{{errorMessage}}</div>
     </div>   
 </body>

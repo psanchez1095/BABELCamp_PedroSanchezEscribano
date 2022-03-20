@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
 /*CSS Para Moviles y Tablets*/
 @media screen and (min-width:0px){
@@ -73,7 +74,26 @@ body{
     }
 
     #divIzqMain{
-        width: 85%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      
+    }
+    #divArray{
+        width: 70%;
+        height: 75%;
+        background-color: darkslateblue;
+        border-bottom-left-radius:10% ;
+        border-bottom-right-radius:10%;
+    }
+    #divArray>h2{
+       margin-top: 2%;
+       text-align: center;
+       font-family: 'Audiowide', cursive;
+       color: white;
+       font-weight: bold;
+     
+
     }
     #divDerMain{
         margin-top: 1%;
@@ -101,5 +121,15 @@ body{
         font-family: 'Audiowide', cursive;
         text-align: center;
         color: white;
+    }
+    #error{
+        margin-top: 3%;
+        padding:2%;
+        background-color: whitesmoke;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Gugi', cursive;
+        color : red
     }
 }
