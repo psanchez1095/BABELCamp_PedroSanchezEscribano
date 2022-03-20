@@ -2,22 +2,29 @@
     <div id="divIzqMain">
         <div id="divArray">
             <h2>{{titleArrGames}}</h2>
+            <div id="game" *ngFor="let x of games" (click)="select(x)" >
+                
+                <h2> {{x.getTitulo()}} </h2>
+                <span> {{x.getCompania()}} </span>
+                <span id="vMedia"> {{x.getValoracionMedia()}} </span>
+
+            </div>
         </div>
     </div>
     <div id="divDerMain">
         <h2>{{titledivDerMain}}</h2>
         <div class="row">
-            <input type="submit"   value="Añadir" (click)="addGame()" />
-             <input type="submit"  value="Eliminar" onclick="division()" />
-             <input type="submit"  value="Editar" onclick="subtraction()">
-             <input type="submit"   value="Limpiar" onclick="add()" />
+            <input type="submit"   value="Añadir" (click)="addGame()" [disabled]="addButtonDisabled" />
+             <input type="submit"  value="Eliminar" (click)="delete()" [disabled]="deleteButtonDisabled"/>
+             <input type="submit"  value="Editar" (click)="edit()" [disabled]="editButtonDisabled">
+             <input type="submit"   value="Limpiar" (click)="clear()"[disabled]="clearButtonDisabled" />
             
         </div>
         <div class="column">
             <input type="text"  [placeholder]="placeholderID"  [(ngModel)]="id" />
             <input type="text"  [placeholder]="placeholderTitulo" [(ngModel)]="titulo"/>
             <input type="text"  [placeholder]="placeholderCompania"  [(ngModel)]="compania"/>
-            <input type="text"  [placeholder]="placeholderVMedia" [(ngModel)]="vMedia" />
+            <input type="text"  [placeholder]="placeholderVMedia" [(ngModel)]="vMedia" />      
         </div>
         <div id="error" [hidden]="error">{{errorMessage}}</div>
     </div>   

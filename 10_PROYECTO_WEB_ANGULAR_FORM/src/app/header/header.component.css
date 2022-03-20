@@ -6,7 +6,8 @@ header{
     display: flex;
     flex-direction: row;
     height:13vh;
-    background-color: lightgray;
+    background-color: black;
+   
 }
 #divIzqHeader{
     width: 85%;
@@ -35,7 +36,7 @@ header{
 h1{
     margin-top: 2%;
     text-align:center ;
-    color: black;
+    color: white;
     font-family: 'Audiowide', cursive;
 }
 }
