@@ -4,10 +4,10 @@
 /*CSS Para Moviles y Tablets*/
 @media screen and (min-width:0px){
 body{
-    width:100%;
+    min-height: 87vh;
+    max-height: 87vh;
     display: flex;
     flex-direction: row;
-    height: 87vh;
     background-color: lightslategray;
 }
 #divIzqMain{
@@ -17,6 +17,7 @@ body{
     justify-content: center;
 }
 #divArray{
+    padding: 2%;
     overflow: auto;
     max-height: 75vh;
     background-color: darkslateblue;
@@ -33,21 +34,23 @@ body{
  
 }
 #divDerMain{
+    max-height: 75vh;
+    min-width: 30%;
+
     margin-top: 1%;
+     background-color: black;
     border: 5px solid white;
     border-right: none;
-    min-width: 30%;
-    max-height: 90%;
-    background-color: black;
-    padding-bottom: 0;
-
-}
+    border-bottom-left-radius: 15%;
+    border-top-left-radius: 15%;
+  }
 
 #divDerMain>h2{
     margin-top:2%;
     margin-bottom: 2%;
     font-family: 'Audiowide', cursive;
     text-align: center;
+    font-size: smaller;
     color: white;
 }
 
@@ -150,7 +153,6 @@ body{
     }
 
     #divArray{
-        
         overflow: auto;
         width: 70%;
         max-height: 75vh;
@@ -175,10 +177,9 @@ body{
         border-bottom-left-radius: 15%;
         border-top-left-radius: 15%;
         min-width: 30%;
-        max-height: 90%;
+        max-height: 70%;
         background-color: black;
-        padding-bottom: 0;
-    }
+            }
     
     .row{
         display: flex;
@@ -193,6 +194,7 @@ body{
         font-family: 'Audiowide', cursive;
         text-align: center;
         color: white;
+        font-size: xx-large;
     }
     #error{
         margin-top: 3%;
