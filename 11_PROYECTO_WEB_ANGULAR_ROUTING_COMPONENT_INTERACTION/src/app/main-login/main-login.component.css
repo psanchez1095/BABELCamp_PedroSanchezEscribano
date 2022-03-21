@@ -50,6 +50,7 @@ body{
     text-align: left;
     font-family: 'Audiowide', cursive;
     color: white;
+
   
  }
 
@@ -93,7 +94,7 @@ body{
     flex-direction: column;
     justify-content: center;
     margin-top:5%;
-    margin-bottom:5%;
+    margin-bottom:0%;
 }
 .column>input{
     width: 90%;
@@ -104,6 +105,12 @@ body{
     font-family: 'Audiowide', cursive;
 
 }
+#divBtnPswd{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+}
+
 #error{
     margin-top: 3%;
     padding:2%;
@@ -183,14 +190,16 @@ body{
 
     }
     #divIzqMain{
+        width:30%;
+        max-height: 50%;
+        padding-bottom: 1%;
         margin-top: 1%;
         border: 5px solid white;
         border-left: none;
         border-bottom-right-radius: 15%;
         border-top-right-radius: 15%;
-        width:30%;
-        max-height: 50%;
         background-color: lightsteelblue;
+
     }
     
     .row{

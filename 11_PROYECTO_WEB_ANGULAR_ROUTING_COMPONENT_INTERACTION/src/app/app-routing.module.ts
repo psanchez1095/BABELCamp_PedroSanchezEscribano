@@ -10,7 +10,7 @@ const routes: Routes = [
     component : MainLoginComponent
   },
   {
-    path : 'index/:routeMessage', //cuando definimos el 'path' no puede empezar por '/'
+    path : 'index', //cuando definimos el 'path' no puede empezar por '/'
     component : MainComponent
   },
 

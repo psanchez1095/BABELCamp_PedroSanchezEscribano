@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { Game } from 'src/app/game';
+import { User } from '../user';
 @Component({
   selector: 'app-main-login',
   templateUrl: './main-login.component.html',
@@ -8,22 +9,94 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class MainLoginComponent {
+  
+  route : ActivatedRoute = new ActivatedRoute();
+  
+  //Array Usuarios
+  users : Array<User> = []
+  mapUserPswd : Map<string,string> = new Map<string,string>()
 
   //Property Binding
   mainTitle: string = 'Login';
   infoTitle: string = 'Información';
   infoText : string = "Para acceder a Videogames App debe loguearse con un usuario y contraseña previamente registrados. En el caso de que haya algun error se notificará al usuario"
   infoFormatLogin : string = "El usuario podra loguearse con su email o correo electrónico y su contraseña"
+  userEmail : string = ""
+  password :  string = ""
+  urlBtnPassword : string = "../../assets/img/eye.png"
+  typeBtnPassword : string = "password"
+  //Placeholders
   placeholderUserEmail: string = 'Correo / Nombre de Usuario';
   placeholderContrasenia: string = 'Contraseña';
-  errorMessage: string = '';
 
+  //Errors
+  errorMessage: string = '';
   error: boolean = true;
+  pswdVisible: boolean = false
   
-  route : ActivatedRoute = new ActivatedRoute();
   constructor(route:ActivatedRoute) {
     route  = route;
+  
+    let user1 = new User("pedro@gmail.com","app10101")
+    this.mapUserPswd.set(user1.getUserEmail(),user1.getPassword())
+    let user2 = new User("prueba@gmail.com","prueba10101",User.urlIconSilver,1)
+    this.mapUserPswd.set(user2.getUserEmail(),user2.getPassword())
+    let user3 = new User("prueba@gmail.com","prueba10101",User.urlIconGold,2)
+    this.mapUserPswd.set(user3.getUserEmail(),user3.getPassword())
+
+    this.users.push(user1,user2,user3)
+
+  }
+  
+  /**
+   * @author Pedro Sanchez Escribano
+   * Método que realiza el proceso de login con los datos introducidos por el usuario.
+   * En caso de error se mostrará un mensaje de error
+   */
+  public login(){
+        
+        //Si el correo o nombre de usuario no se corresponde con ninguno de los usuarios registrados
+        if(!this.mapUserPswd.has(this.userEmail)){
+
+            this.error=false
+            this.errorMessage="El usuario no existe, revise el correo o nombre de usuario"
+
+            setTimeout(() => {
+              this.error=true
+            }, 2000);
+        }
+        else{
+
+          if(this.mapUserPswd.get(this.userEmail)!=this.password){
+            this.error=false
+            this.errorMessage="La contraseña no coincide, reviselá"
+
+            setTimeout(() => {
+              this.error=true
+            }, 2000);
+              
+          }
+
+          else{
+
+          }
+
+        }
   }
 
-  
+  public showPassword(){
+
+      if(this.pswdVisible) {
+        this.typeBtnPassword="password"
+        this.urlBtnPassword = "../../assets/img/eye.png"
+        this.pswdVisible = false;
+      }
+      else{
+        this.typeBtnPassword="text"
+        this.urlBtnPassword = "../../assets/img/closeEye.png"
+        this.pswdVisible = true;
+      }
+  }
+
+
 }
