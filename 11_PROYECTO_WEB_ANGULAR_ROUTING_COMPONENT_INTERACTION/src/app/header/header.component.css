@@ -12,6 +12,9 @@ header{
 #divIzqHeader{
     width: 85%;
     border-bottom: 4px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 #divDerHeader{
     display: flex;
@@ -22,6 +25,10 @@ header{
     width: 15%;
     background-color: black;
     
+}
+#imgTitle{
+    margin: 1%;
+  
 }
 
 #divDerHeader>a>img{

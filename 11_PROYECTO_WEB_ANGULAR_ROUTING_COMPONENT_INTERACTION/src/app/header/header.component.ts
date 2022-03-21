@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent  {
   public titulo : string ="Videogames App"
+  public urlTitleImg : string ="../../assets/img/headerImages/iconGB.png"
+  public urlheader1Img : string ="../../assets/img/headerImages/meristation.jpg"
+  public urlheader2Img : string ="../../assets/img/headerImages/3dJuegos.png"
   constructor() { }
 
  
