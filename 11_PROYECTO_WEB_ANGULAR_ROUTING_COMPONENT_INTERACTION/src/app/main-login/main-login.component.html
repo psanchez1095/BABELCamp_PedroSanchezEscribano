@@ -1,0 +1,24 @@
+<body>
+   
+    <div id="divDerMain">
+        <h2>{{titledivDerMain}}</h2>
+        <div class="column">
+            <input type="text "   [placeholder]="placeholderUserEmail"/>
+            <input type="text"  [placeholder]="placeholderContrasenia"/>
+            
+        </div>
+        <div class="row">
+            <input type="submit"   value="Iniciar Sesion"/>
+            <input type="submit"   value="Registrarse"/>
+            
+        </div>
+        <div id="error" [hidden]="error">{{errorMessage}}</div>
+    </div>   
+    <div id="divIzqMain">
+        <div id="divArray">
+            <h2>{{titleArrGames}}</h2>
+           
+        </div>
+    </div>
+</body>
+
