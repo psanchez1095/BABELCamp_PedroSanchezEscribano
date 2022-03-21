@@ -97,7 +97,7 @@ export class MainComponent {
 
   //Borra un juego del array de juegos
   public delete() {
-
+    this.games.splice(parseInt(this.id), 1);
   }
 
   //Limpia los valores de un juego
