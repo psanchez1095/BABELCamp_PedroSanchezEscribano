@@ -97,14 +97,29 @@ export class MainComponent {
 
   //Borra un juego del array de juegos
   public delete() {
-    this.games.splice(parseInt(this.id), 1);
+    for(let x in this.games){
+      if(this.games[x].getId()==parseInt(this.id)){
+        this.games.splice(parseInt(x), 1);
+      }
+  }
+  this.clear()
+  this.addButtonDisabled = false;
+  this.deleteButtonDisabled= true;
+  this.editButtonDisabled = true;
+  this.clearButtonDisabled = true;
   }
 
   //Limpia los valores de un juego
   public edit() {
-    this.games[parseInt(this.id)].setTitulo(this.titulo)
-    this.games[parseInt(this.id)].setCompania(this.compania)
-    this.games[parseInt(this.id)].setValoracionMedia(parseInt(this.vMedia))
+
+    for(let x in this.games){
+        if(this.games[x].getId()==parseInt(this.id)){
+          this.games[x].setTitulo(this.titulo)
+          this.games[x].setCompania(this.compania)
+          this.games[x].setValoracionMedia(parseInt(this.vMedia))
+        }
+    }
+    
     this.clear()
     this.addButtonDisabled = false;
     this.deleteButtonDisabled= true;
