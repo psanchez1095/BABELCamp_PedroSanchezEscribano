@@ -10,8 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 export class MainLoginComponent {
 
   //Property Binding
-  titledivDerMain: string = 'Login';
-  titleArrGames: string = 'Información';
+  mainTitle: string = 'Login';
+  infoTitle: string = 'Información';
+  infoText : string = "Para acceder a Videogames App debe loguearse con un usuario y contraseña previamente registrados. En el caso de que haya algun error se notificará al usuario"
+  infoFormatLogin : string = "El usuario podra loguearse con su email o correo electrónico y su contraseña"
   placeholderUserEmail: string = 'Correo / Nombre de Usuario';
   placeholderContrasenia: string = 'Contraseña';
   errorMessage: string = '';
