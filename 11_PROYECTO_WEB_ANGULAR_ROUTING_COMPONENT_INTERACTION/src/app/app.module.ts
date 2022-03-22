@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainLoginComponent } from './main-login/main-login.component';
+import { MainAboutUsComponent } from './main-about-us/main-about-us.component';
+import { MainContactComponent } from './main-contact/main-contact.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { MainLoginComponent } from './main-login/main-login.component';
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    MainLoginComponent
+    MainLoginComponent,
+    MainAboutUsComponent,
+    MainContactComponent
   ],
   imports: [
     BrowserModule,

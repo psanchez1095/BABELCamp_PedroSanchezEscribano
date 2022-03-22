@@ -1,26 +1,26 @@
 <body>
-   
+
     <div id="divIzqMain">
         <h2>{{mainTitle}}</h2>
         <div class="column">
-            <input type="text"  [placeholder]="placeholderUserEmail"  [(ngModel)]="userEmail"/>
-             <input [type]="typeBtnPassword" [placeholder]="placeholderContrasenia" [(ngModel)]="password"/>
+            <input type="text" [placeholder]="placeholderUserEmail" [(ngModel)]="userEmail" />
+            <input [type]="typeBtnPassword" [placeholder]="placeholderContrasenia" [(ngModel)]="password" />
         </div>
-        <div id="divBtnPswd"><input type="image" id="btnShowPswd" [src]="urlBtnPassword" (click)="showPassword()" [(ngModel)]="password"/></div>
+        <div id="divBtnPswd"><input type="image" id="btnShowPswd" [src]="urlBtnPassword" (click)="showPassword()"
+                [(ngModel)]="password" /></div>
         <div class="row">
-            <input type="submit"  (click)="login()" value="Iniciar Sesion"/>
-            <input type="submit"   value="Registrarse"/>
-            
+            <input type="submit" (click)="login()" value="Iniciar Sesion" />
+            <input type="submit" value="Registrarse" />
+
         </div>
         <div id="error" [hidden]="error">{{errorMessage}}</div>
-    </div>   
+    </div>
     <div id="divDerMain">
         <div id="divArray">
             <h2>{{infoTitle}}</h2>
             <p>{{infoText}}</p>
             <p>{{infoFormatLogin}}</p>
-           
+
         </div>
     </div>
 </body>
-

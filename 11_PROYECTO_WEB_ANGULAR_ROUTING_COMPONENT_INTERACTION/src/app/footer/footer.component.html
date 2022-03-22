@@ -1,8 +1,9 @@
+
 <footer>
 
     <div class="row">
-        <input type="image" [src]="urlImgContact"/>
-        <input type="image" [src]="urlImgInfo" [disabled]="">   
+        <input type="image" (click)="navigateContact()" [src]="urlImgContact" />
+        <input type="image" (click)="navigateAboutUs()" [src]="urlImgInfo">
     </div>
 
 </footer>
