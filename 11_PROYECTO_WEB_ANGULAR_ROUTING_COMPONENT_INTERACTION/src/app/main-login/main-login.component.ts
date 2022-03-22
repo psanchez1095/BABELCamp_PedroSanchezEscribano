@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Game } from 'src/app/game';
 import { User } from '../user';
 @Component({
@@ -9,8 +9,6 @@ import { User } from '../user';
 })
 
 export class MainLoginComponent {
-  
-  route : ActivatedRoute = new ActivatedRoute();
   
   //Array Usuarios
   users : Array<User> = []
@@ -34,8 +32,8 @@ export class MainLoginComponent {
   error: boolean = true;
   pswdVisible: boolean = false
   
-  constructor(route:ActivatedRoute) {
-    route  = route;
+  constructor(private router:Router) {
+    
   
     let user1 = new User("pedro@gmail.com","app10101")
     this.mapUserPswd.set(user1.getUserEmail(),user1.getPassword())
@@ -69,7 +67,7 @@ export class MainLoginComponent {
 
           if(this.mapUserPswd.get(this.userEmail)!=this.password){
             this.error=false
-            this.errorMessage="La contraseña no coincide, reviselá"
+            this.errorMessage="La contraseña no coincide, revísela"
 
             setTimeout(() => {
               this.error=true
@@ -78,7 +76,11 @@ export class MainLoginComponent {
           }
 
           else{
-
+            let user = null;
+            for(let x in this.users){
+                if(this.users[x].getUserEmail() == this.userEmail && this.users[x].getPassword() == this.password ) user =  this.users[x]
+            }
+            this.router.navigate(["/index",user?.getUserEmail(),user?.getUrlIconStatus()])
           }
 
         }

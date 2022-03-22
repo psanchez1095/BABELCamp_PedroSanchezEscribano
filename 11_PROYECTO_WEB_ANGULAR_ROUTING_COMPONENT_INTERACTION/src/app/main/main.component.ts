@@ -26,17 +26,22 @@ export class MainComponent {
   titulo: string = '';
   compania: string = '';
   vMedia: string = '';
-
+  userEmail: string =""
+  urlIconUser: string =""
   errorMessage: string = '';
-
+  titleUser: string ="User Info"
   error: boolean = true;
   addButtonDisabled: boolean = false;
   deleteButtonDisabled: boolean = true;
   editButtonDisabled: boolean = true;
   clearButtonDisabled: boolean = true;
   route : ActivatedRoute = new ActivatedRoute();
+
   constructor(route:ActivatedRoute) {
-    route  = route;
+
+     this.userEmail = route.snapshot.params["userEmail"]
+     this.urlIconUser =  route.snapshot.params["urlIconStatus"]
+     console.log( route.snapshot.params["urlIconStatus"])
     //Para Pruebas
     /*let game = new Game("1w"," 2", 63, 3)
     let game2 = new Game("44r41"," 2ew", 43, 2)
@@ -49,7 +54,6 @@ export class MainComponent {
   public getGames(): Array<Game> {
     return this.games;
   }
-  
   
  /**
   * @author Pedro Sánchez Escribano
