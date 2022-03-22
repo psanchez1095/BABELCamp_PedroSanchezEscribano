@@ -4,8 +4,7 @@
 /*CSS Para Moviles y Tablets*/
 @media screen and (min-width:0px) {
   body {
-    min-height: 87vh;
-    max-height: 87vh;
+    height: 87vh;
     display: flex;
     flex-direction: row;
     background-color: lightslategray;
@@ -44,7 +43,7 @@
 
   #divDerMainUser {
     margin-top: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 4%;
     background-color: lightsteelblue;
     border: 5px solid white;
     border-right: none;
@@ -190,7 +189,7 @@
   body {
     display: flex;
     flex-direction: row;
-    height: 87vh;
+    height: 81vh;
     background-color: lightslategray;
   }
 
@@ -204,7 +203,7 @@
   #divArray {
     overflow: auto;
     width: 70%;
-    max-height: 75vh;
+    max-height: 73vh;
     background-color: darkslateblue;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
