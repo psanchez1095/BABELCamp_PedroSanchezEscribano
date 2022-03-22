@@ -27,16 +27,15 @@ export class MainComponent {
   titulo: string = '';
   compania: string = '';
   vMedia: string = '';
+  urlImgGame: string=""
   userEmail: string =""
   urlIconUser: string =""
   errorMessage: string = '';
   titleUser: string ="User Info"
+
+  showDetailImgGame: boolean =true;
   error: boolean = true;
-  addButtonDisabled: boolean = false;
-  deleteButtonDisabled: boolean = true;
-  editButtonDisabled: boolean = true;
-  clearButtonDisabled: boolean = true;
-  route : ActivatedRoute = new ActivatedRoute();
+  
 
   constructor(route:ActivatedRoute) {
      //Recogemos los datos enviados con route
@@ -62,15 +61,12 @@ export class MainComponent {
   * Actualiza los valores de los atributos Two Ways Binding con los valores del objecto de tipo Game que recibe
   */
   public select(game: Game) {
-
+    this.showDetailImgGame = false;
     this.id = game.getId().toString();
     this.titulo = game.getTitulo()
     this.compania = game.getCompania()
     this.vMedia = game.getValoracionMedia().toString()
-
-    this.addButtonDisabled = true
-    this.editButtonDisabled = false
-    this.deleteButtonDisabled = false
+    this.urlImgGame = game.getUrlImg().toString()
 
   }
   

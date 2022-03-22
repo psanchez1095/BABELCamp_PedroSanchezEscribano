@@ -25,10 +25,12 @@
                 <h2>{{titledivDerMain}}</h2>
         
                 <div class="column">
-                <input type="text"  [placeholder]="placeholderID"  [(ngModel)]="id" />
-                <input type="text"  [placeholder]="placeholderTitulo" [(ngModel)]="titulo"/>
-                <input type="text"  [placeholder]="placeholderCompania"  [(ngModel)]="compania"/>
-                <input type="text"  [placeholder]="placeholderVMedia" [(ngModel)]="vMedia" />      
+                <input type="text"  [placeholder]="placeholderID"  [value]="id" readonly/>
+                <input type="text"  [placeholder]="placeholderTitulo" [value]="titulo"readonly/>
+                <input type="text"  [placeholder]="placeholderCompania"  [value]="compania"readonly/>
+                <input type="text"  [placeholder]="placeholderVMedia" [value]="vMedia"readonly />  
+                <img id ="detailImgGame" [src]="urlImgGame" [hidden]="showDetailImgGame">
+                
             </div>
             <div id="error" [hidden]="error">{{errorMessage}}</div>
 
