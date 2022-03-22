@@ -41,8 +41,10 @@ export class MainLoginComponent {
     this.mapUserPswd.set(user2.getUserEmail(),user2.getPassword())
     let user3 = new User("prueba1@gmail.com","prueba10100",User.urlIconGold,2)
     this.mapUserPswd.set(user3.getUserEmail(),user3.getPassword())
+    let user4 = new User("babel","babel01",User.urlIconGold,2)
+    this.mapUserPswd.set(user4.getUserEmail(),user4.getPassword())
 
-    this.users.push(user1,user2,user3)
+    this.users.push(user1,user2,user3,user4)
 
   }
   

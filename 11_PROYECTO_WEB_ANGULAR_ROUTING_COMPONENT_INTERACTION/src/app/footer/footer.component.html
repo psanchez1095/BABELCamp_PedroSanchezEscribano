@@ -2,8 +2,9 @@
 <footer>
 
     <div class="row">
-        <input type="image" (click)="navigateContact()" [src]="urlImgContact" />
-        <input type="image" (click)="navigateAboutUs()" [src]="urlImgInfo">
+        <input type="image" [hidden]="showBtnContact" (click)="navigateContact()" [src]="urlImgContact" title="Contacto" />
+        <input type="image" [hidden]="showBtnAboutUs" (click)="navigateAboutUs()" [src]="urlImgInfo" title="About Us">
+        <input id="notBackground" type="image" [hidden]="showBtnLogin" (click)="navigateIndex()" [src]="urlImgLogin" title="CerrarSesion">
     </div>
 
 </footer>

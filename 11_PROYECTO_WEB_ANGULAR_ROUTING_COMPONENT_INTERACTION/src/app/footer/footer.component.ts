@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-footer',
@@ -8,14 +8,34 @@ import { Router } from '@angular/router';
 
 
 export class FooterComponent {
+
+  urlImgLogin :  string = "../../assets/img/icon_logout.png"
   urlImgContact : string = "../../assets/img/icon_contact.png"
   urlImgInfo :  string = "../../assets/img/icon_info.png"
-  constructor(private router:Router) { }
+  
+  //Compartiendo información entre componentes
+  @Input()  showBtnLogin:   boolean = true
+  @Input()  showBtnAboutUs: boolean =false
+  @Input()  showBtnContact: boolean = false
+ 
+  constructor(private router:Router) {}
+  
+  /**
+   * Metodo que navega al indice de la aplicación web
+   */
+  public navigateIndex(){
+    this.router.navigate(["/"])
+  }
 
+   /**
+   * Metodo que navega a la página AboutUs
+   */
   public navigateAboutUs(){
-    console.log("w32eqwewq")
     this.router.navigate(["aboutUs"])
   }
+  /**
+   * Metodo que navega a la página de información de contacto
+   */
   public navigateContact(){
     this.router.navigate(["contact"])
   }

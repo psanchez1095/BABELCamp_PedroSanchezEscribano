@@ -1,4 +1,5 @@
 <body>
+
     <div id="divIzqMain">
         
     </div>
@@ -7,4 +8,7 @@
     </div>
 
 </body>
-<app-footer></app-footer>
+
+<!--Vinculando la propiedad del FooterComponent en la plantilla del componente principal-->
+<app-footer [showBtnAboutUs]="currentBtnAboutUs"[showBtnContact]="currentBtnContact"[showBtnLogin]="currentBtnLogin">
+</app-footer>
