@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Game } from 'src/app/game';
 import { ActivatedRoute } from '@angular/router';
 
@@ -36,7 +36,6 @@ export class MainComponent {
   showDetailImgGame: boolean =true;
   error: boolean = true;
   
-
   constructor(route:ActivatedRoute) {
      //Recogemos los datos enviados con route
      this.userEmail = route.snapshot.params["userEmail"]
