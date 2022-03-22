@@ -4,7 +4,7 @@
             <h2>{{titleArrGames}}</h2>
             <div id="game" *ngFor="let x of games" (click)="select(x)" >
                 
-                <h2> {{x.getTitulo()}} </h2>
+                <h2> {{x.getTitulo()}} <span><img id="idGame" src={{x.getUrlImg()}}></span></h2> 
                 <span> {{x.getCompania()}} </span>
                 <span id="vMedia"> {{x.getValoracionMedia()}} </span>
 

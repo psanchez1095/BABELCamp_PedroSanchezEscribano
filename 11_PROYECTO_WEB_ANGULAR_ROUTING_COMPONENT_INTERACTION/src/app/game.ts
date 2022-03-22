@@ -17,7 +17,7 @@ class Game {
     this.titulo = titulo;
     this.compania = compania;
     this.valoracionMedia = valoracionMedia;
-    this.urlImg = urlImg ? urlImg : "../assets/img/defaultUrlImg.png";
+    this.urlImg = urlImg ? urlImg : "../../assets/img/defaultUrlGame.png";
   }
 
   public getId(): number {

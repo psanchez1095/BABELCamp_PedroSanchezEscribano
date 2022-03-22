@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Game } from 'src/app/game';
 import { User } from '../user';
+
 @Component({
   selector: 'app-main-login',
   templateUrl: './main-login.component.html',
@@ -34,7 +35,6 @@ export class MainLoginComponent {
   
   constructor(private router:Router) {
     
-  
     let user1 = new User("pedro@gmail.com","app10101")
     this.mapUserPswd.set(user1.getUserEmail(),user1.getPassword())
     let user2 = new User("prueba@gmail.com","prueba10101",User.urlIconSilver,1)
@@ -86,6 +86,11 @@ export class MainLoginComponent {
         }
   }
 
+  /**
+   * @author Pedro Sanchez Escribano
+   * Método que se encarga de ocultar o mostrar la contraseña.
+   * El usuario invoca el metodo pulsando el botón del ojo(abierto / cerrado )
+   */
   public showPassword(){
 
       if(this.pswdVisible) {
@@ -99,6 +104,5 @@ export class MainLoginComponent {
         this.pswdVisible = true;
       }
   }
-
 
 }

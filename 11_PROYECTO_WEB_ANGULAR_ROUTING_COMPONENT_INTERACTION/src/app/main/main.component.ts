@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/app/game';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -38,13 +39,13 @@ export class MainComponent {
   route : ActivatedRoute = new ActivatedRoute();
 
   constructor(route:ActivatedRoute) {
-
+     //Recogemos los datos enviados con route
      this.userEmail = route.snapshot.params["userEmail"]
      this.urlIconUser =  route.snapshot.params["urlIconStatus"]
-     console.log( route.snapshot.params["urlIconStatus"])
+
     //Para Pruebas
-    let game = new Game("1w"," 2", 63, 3)
-    let game2 = new Game("44r41"," 2ew", 43, 2)
+    let game = new Game("Loop Hero"," Four Quarters ", 63,3,"../../assets/img/game_loop_hero.png")
+    let game2 = new Game("Stardew Valley"," ConcernedApe(Eric Barone)", 88, 2,"../../assets/img/game_stardew_valley.png")
     let game3 = new Game("ewr1"," 2ewr", 23, 4)
     let game4 = new Game("1qew"," 2ewrew", 13, 1)
     let game5 = new Game("erew1"," 2", 23, 55)
@@ -73,5 +74,4 @@ export class MainComponent {
 
   }
   
-
 }

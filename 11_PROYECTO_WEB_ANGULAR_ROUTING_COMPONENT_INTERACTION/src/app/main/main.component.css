@@ -162,6 +162,10 @@
     padding: 3%;
     border-radius: 50%;
   }
+  #idGame{
+    height:15%;
+    width: 15%;
+  }
 
   /*Estilo Barra Scroll*/
   ::-webkit-scrollbar {
