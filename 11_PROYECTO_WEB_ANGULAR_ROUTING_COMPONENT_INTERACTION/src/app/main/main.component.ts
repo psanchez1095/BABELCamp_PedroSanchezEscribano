@@ -43,12 +43,12 @@ export class MainComponent {
      this.urlIconUser =  route.snapshot.params["urlIconStatus"]
      console.log( route.snapshot.params["urlIconStatus"])
     //Para Pruebas
-    /*let game = new Game("1w"," 2", 63, 3)
+    let game = new Game("1w"," 2", 63, 3)
     let game2 = new Game("44r41"," 2ew", 43, 2)
     let game3 = new Game("ewr1"," 2ewr", 23, 4)
     let game4 = new Game("1qew"," 2ewrew", 13, 1)
     let game5 = new Game("erew1"," 2", 23, 55)
-    this.games.push(game,game2,game3,game4,game5)*/
+    this.games.push(game,game2,game3,game4,game5)
   }
 
   public getGames(): Array<Game> {
