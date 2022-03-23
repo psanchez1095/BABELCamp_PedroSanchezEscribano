@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Game } from 'src/app/game';
-import { User } from '../user';
+import { Game } from '../../entities/game';
+import { User } from '../../entities/user';
 
 @Component({
   selector: 'app-main-login',
