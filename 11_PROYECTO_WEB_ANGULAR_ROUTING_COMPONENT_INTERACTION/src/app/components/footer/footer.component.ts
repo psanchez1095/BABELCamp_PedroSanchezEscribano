@@ -10,10 +10,10 @@ import { MainComponent } from '../main/main.component';
 
 export class FooterComponent {
 
-  urlImgBack :  string = "../../assets/img/icon_back.png"
-  urlImgLogin :  string = "../../assets/img/icon_logout.png"
-  urlImgContact : string = "../../assets/img/icon_contact.png"
-  urlImgInfo :  string = "../../assets/img/icon_info.png"
+  urlImgBack :  string = "../../assets/img/footerImages/icon_back.png"
+  urlImgLogin :  string = "../../assets/img//footerImages/icon_logout.png"
+  urlImgContact : string = "../../assets/img/footerImages/icon_contact.png"
+  urlImgInfo :  string = "../../assets/img/footerImages/icon_info.png"
   userEmail : string = ""
   //Compartiendo información entre componentes
   @Input()  showBtnBack:   boolean = false
