@@ -36,6 +36,8 @@ export class MainComponent {
 
   showDetailImgGame: boolean =true;
   error: boolean = true;
+
+  currentBtnBack:boolean = true;
   
   constructor(private router:Router,route:ActivatedRoute) {
      //Recogemos los datos enviados con route

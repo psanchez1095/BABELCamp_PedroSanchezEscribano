@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class MainContactComponent{
   
    //Asignando valores al componente Footer
+  currentBtnBack = true;
   currentBtnLogin:boolean = false;
   currentBtnAboutUs: boolean = false;
   currentBtnContact: boolean = true;
