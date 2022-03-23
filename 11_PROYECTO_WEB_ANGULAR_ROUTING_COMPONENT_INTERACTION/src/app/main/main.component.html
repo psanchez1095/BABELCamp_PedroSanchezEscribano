@@ -2,7 +2,7 @@
     <div id="divIzqMain">
         <div id="divArray">
             <h2>{{titleArrGames}}</h2>
-            <div id="game" *ngFor="let x of games" (click)="select(x)">
+            <div id="game" *ngFor="let x of games" (click)="navigateDetailGame(x)">
 
                 <h2> {{x.getTitulo()}} <span><img id="idGame" src={{x.getUrlImg()}}></span></h2>
                 <span> {{x.getCompania()}} </span>
@@ -17,11 +17,11 @@
             <h2>{{titleUser}}</h2>
 
             <div id="infoUser">
-                <p>{{userEmail}} </p><img [src]="urlIconUser">
+                <p>{{userEmail}} </p><img id="imgUserStatus" [src]="urlIconUser">
             </div>
 
         </div>
-        <div id="divDerMainDetail">
+        <!-- <div id="divDerMainDetail">
             <h2>{{titledivDerMain}}</h2>
 
             <div class="column">
@@ -35,6 +35,7 @@
             <div id="error" [hidden]="error">{{errorMessage}}</div>
 
         </div>
+        -->
     </div>
 
 </body>

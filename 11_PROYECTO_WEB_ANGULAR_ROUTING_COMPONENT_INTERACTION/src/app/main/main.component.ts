@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Game } from 'src/app/game';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -36,7 +37,7 @@ export class MainComponent {
   showDetailImgGame: boolean =true;
   error: boolean = true;
   
-  constructor(route:ActivatedRoute) {
+  constructor(private router:Router,route:ActivatedRoute) {
      //Recogemos los datos enviados con route
      this.userEmail = route.snapshot.params["userEmail"]
      this.urlIconUser =  route.snapshot.params["urlIconStatus"]
@@ -66,6 +67,10 @@ export class MainComponent {
     this.compania = game.getCompania()
     this.vMedia = game.getValoracionMedia().toString()
     this.urlImgGame = game.getUrlImg().toString()
+
+  }
+  public navigateDetailGame(game: Game) {
+    this.router.navigate(["/detailGame",game.getTitulo(),game.getCompania(),game.getValoracionMedia(),game.getUrlImg(),this.userEmail,this.urlIconUser])
 
   }
   

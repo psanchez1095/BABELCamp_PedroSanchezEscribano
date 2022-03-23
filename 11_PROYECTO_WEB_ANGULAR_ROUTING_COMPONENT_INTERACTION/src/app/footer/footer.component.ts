@@ -14,7 +14,7 @@ export class FooterComponent {
   urlImgInfo :  string = "../../assets/img/icon_info.png"
   
   //Compartiendo información entre componentes
-  @Input()  showBtnLogin:   boolean = true
+  @Input()  showBtnLogin:   boolean = false
   @Input()  showBtnAboutUs: boolean =false
   @Input()  showBtnContact: boolean = false
  

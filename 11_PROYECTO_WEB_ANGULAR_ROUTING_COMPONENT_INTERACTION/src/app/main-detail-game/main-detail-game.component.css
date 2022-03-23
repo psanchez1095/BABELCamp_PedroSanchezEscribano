@@ -4,6 +4,7 @@
 /*CSS Para Moviles y Tablets*/
 @media screen and (min-width:0px) {
   body {
+
     height: 87vh;
     display: flex;
     flex-direction: row;
@@ -42,7 +43,7 @@
   }
 
   #divDerMainUser {
-    margin-top: 15%;
+    margin-top: 2%;
     margin-bottom: 4%;
     background-color: lightsteelblue;
     border: 5px solid white;
@@ -70,26 +71,6 @@
     width: 15%;
     height: 15%;
 }
-
-  #divDerMainDetail {
-    height: 80%;
-    margin-top: 1%;
-    background-color: black;
-    border: 5px solid white;
-    border-right: none;
-    border-bottom-left-radius: 15%;
-    border-top-left-radius: 15%;
-    padding-bottom: 3%;
-  }
-
-  #divDerMainDetail>h2 {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-family: 'Audiowide', cursive;
-    text-align: center;
-    font-size: smaller;
-    color: white;
-  }
 
   .row {
     margin-left: 5%;
@@ -121,32 +102,6 @@
     color: gray
   }
 
-  .column {
-    margin-top: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .column>input {
-    margin-left: 5%;
-    background-color: whitesmoke;
-    font-family: 'Audiowide', cursive;
-    padding: 1%;
-    border: 2px solid lightgrey;
-    width: 90%;
-  }
-
-  #error {
-    margin-top: 3%;
-    padding: 2%;
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Gugi', cursive;
-    color: red
-  }
 
   #game {
     width: 65%;
@@ -170,29 +125,8 @@
     height:15%;
     width: 15%;
   }
-  #detailImgGame{
-    height:15%;
-    width: 15%;
-    margin-top: 1%;
-    margin-left: 45%;
-    background-color: white;
-    border-radius : 50%;
-  }
-
+ 
   
-  #infoUser {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: white;
-    font-family: 'Audiowide', cursive;
-    font-size: smaller;
-  }
-  #imgUserStatus{
-    width: 15%;
-    height: 15%;
-}
-
   /*Estilo Barra Scroll*/
   ::-webkit-scrollbar {
     width: 12px;
@@ -246,23 +180,6 @@
 
 
   }
-  #divDerMainUser {
-    margin-top: 2%;
-    margin-bottom: 4%;
-    background-color: lightsteelblue;
-    border: 5px solid white;
-    border-right: none;
-    padding-bottom: 3%;
-  }
-  #divDerMainDetail {
-    margin-top: 1%;
-    border: 5px solid white;
-    border-right: none;
-    border-bottom-left-radius: 15%;
-    border-top-left-radius: 15%;
-    max-height: 70%;
-    background-color: black;
-  }
 
   .row {
     display: flex;
@@ -271,25 +188,6 @@
     overflow: hidden;
   }
 
-  #divDerMainDetail>h2 {
-    margin-top: 10%;
-    margin-bottom: 5%;
-    font-family: 'Audiowide', cursive;
-    text-align: center;
-    color: white;
-    font-size: xx-large;
-  }
-
-  #error {
-    margin-top: 3%;
-    padding: 2%;
-    background-color: whitesmoke;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Gugi', cursive;
-    color: red
-  }
 
   #game {
     width: 65%;
@@ -309,6 +207,19 @@
     padding: 3%;
     border-radius: 50%;
   }
+
+  #infoUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-family: 'Audiowide', cursive;
+    font-size: medium;
+  }
+  #imgUserStatus{
+    width: 15%;
+    height: 15%;
+    }
 
   /*Estilo Barra Scroll*/
   ::-webkit-scrollbar {

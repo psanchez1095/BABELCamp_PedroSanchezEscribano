@@ -4,7 +4,7 @@
 /*CSS Para Moviles y Tablets*/
 @media screen and (min-width:0px){
 body{
-    height: 87vh;
+    min-height: 87vh;
     display: flex;
     flex-direction: column;
     background-color: lightslategray;
