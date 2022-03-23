@@ -4,6 +4,7 @@ class Game {
   public compania: string;
   public urlImg: string;
   public valoracionMedia: number;
+  public descripcion: string;
 
   constructor(
     titulo: string,
@@ -11,6 +12,7 @@ class Game {
     valoracionMedia: number,
     id?: number, 
     urlImg? : string,
+    descripcion? :string,
 
   ) {
     this.id = id ? id : 0;
@@ -18,6 +20,7 @@ class Game {
     this.compania = compania;
     this.valoracionMedia = valoracionMedia;
     this.urlImg = urlImg ? urlImg : "../../assets/img/defaultUrlGame.png";
+    this.descripcion = descripcion ? descripcion : "Descripción no disponible por el momento"
   }
 
   public getId(): number {
@@ -35,6 +38,9 @@ class Game {
   public getUrlImg(): string {
     return this.urlImg;
   }
+  public getDescripcion(): string {
+    return this.descripcion;
+  }
 
   public setTitulo(titulo: string) {
     this.titulo = titulo;
@@ -47,6 +53,9 @@ class Game {
   }
   public setUrlImg(urlImg: string) {
     this.urlImg = urlImg;
+  }
+  public setDescripcion(desc: string) {
+    this.descripcion = desc;
   }
 }
 export { Game };

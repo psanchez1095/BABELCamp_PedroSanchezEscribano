@@ -25,7 +25,7 @@ const routes: Routes = [
     component : MainAboutUsComponent
   },
   {
-    path : 'detailGame/:title/:compania/:vMedia/:urlImg', 
+    path : 'detailGame/:title/:compania/:vMedia/:urlImg/:desc', 
     component : MainDetailGameComponent
   },
 

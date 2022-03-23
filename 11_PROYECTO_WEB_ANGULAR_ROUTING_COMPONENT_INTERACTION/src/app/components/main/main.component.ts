@@ -61,10 +61,10 @@ export class MainComponent {
      this.urlIconUser = MainComponent.static_urlIconUser 
      this.userId = MainComponent.static_userId 
     //Para Pruebas
-    let game = new Game("Loop Hero"," Four Quarters ", 63,3,"../../assets/img/game_loop_hero.png")
-    let game2 = new Game("Stardew Valley"," ConcernedApe(Eric Barone)", 88, 2,"../../assets/img/game_stardew_valley.png")
-    let game3 = new Game("Elder Ring"," Bandai Namco Entertainment", 96, 4,"../../assets/img/game_elder_ring.png")
-    let game4 = new Game("Age of Empires IV ","  Relic Entertainment", 86, 1,"../../assets/img/game_AEO4.png")
+    let game = new Game("Loop Hero"," Four Quarters ", 63,3,"../../assets/img/game_loop_hero.png","Devolver Digital edita Loop Hero, un videojuego roguelite donde el jugador ha de hacer uso de diferentes cartas para situar enemigos, edificios y terrenos en cada bucle de expedición único para el valiente héroe protagonista de esta aventura, buscando un perfecto equilibrio para aumentar sus opciones de supervivencia y sus posibilidades de un gran botín. ¿El fin último de Loop Hero? Vencer a una serie de impíos jefes guardianes en una grandiosa saga con el objetivo de salvar el mundo y romper el bucle temporal del Lich.")
+    let game2 = new Game("Stardew Valley"," ConcernedApe(Eric Barone)", 88, 2,"../../assets/img/game_stardew_valley.png","Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero?")
+    let game3 = new Game("Elder Ring"," Bandai Namco Entertainment", 96, 4,"../../assets/img/game_elder_ring.png","Elden Ring se desarrolla en un mundo abierto. Podremos montarnos en nuestro corcel, atacar desde él y, por supuesto, aprovechar las bondades de un terreno más amplio. Acostumbrados a combates en entornos más cerrados, ahora se dispone de más lugar para luchar. Esto es bueno, claro, pero también tiene sus puntos negativos: ¡cuidado con lo que hay detrás y no estás viendo!")
+    let game4 = new Game("Age of Empires IV ","  Relic Entertainment", 86, 1,"../../assets/img/game_AEO4.png","Age of Empires 4 es la cuarta parte de la veterana saga de estrategia en tiempo real, Age of Empires. Bajo la dirección de Microsoft y con el desarrollo a cargo de Relic Entertainment y el nuevo estudio World’s Edge, se trata de una secuela que pretende recoger conceptos clásicos de los títulos anteriores y presentar nuevas ideas bajo un espectacular apartado gráfico en 3D que nos llevará a la Edad Media.")
     let game5 = new Game("erew1"," 2", 23, 55)
     this.games.push(game,game2,game3,game4,game5)
   }
@@ -88,7 +88,7 @@ export class MainComponent {
 
   }
   public navigateDetailGame(game: Game) {
-    this.router.navigate(["/detailGame",game.getTitulo(),game.getCompania(),game.getValoracionMedia(),game.getUrlImg()])
+    this.router.navigate(["/detailGame",game.getTitulo(),game.getCompania(),game.getValoracionMedia(),game.getUrlImg(),game.getDescripcion()])
   }
   
 }

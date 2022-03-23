@@ -19,6 +19,7 @@
 
   #divArray {
     padding: 2%;
+    padding-bottom: 6%;
     overflow: auto;
     max-height: 75vh;
     background-color: darkslateblue;
@@ -229,6 +230,7 @@
 
   #divArray {
     overflow: auto;
+    padding-bottom: 2%;
     width: 70%;
     max-height: 73vh;
     background-color: darkslateblue;
@@ -308,6 +310,9 @@
     float: right;
     padding: 3%;
     border-radius: 50%;
+  }
+  #infoUser {
+    font-size: medium;
   }
 
   /*Estilo Barra Scroll*/
