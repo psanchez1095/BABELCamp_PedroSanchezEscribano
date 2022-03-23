@@ -29,21 +29,37 @@ export class MainComponent {
   compania: string = '';
   vMedia: string = '';
   urlImgGame: string=""
+  userId : number = -1;
   userEmail: string =""
   urlIconUser: string =""
+
   errorMessage: string = '';
   titleUser: string ="User Info"
 
   showDetailImgGame: boolean =true;
   error: boolean = true;
-
+  
+   //Asignando valores al componente Footer
   currentBtnBack:boolean = true;
   
-  constructor(private router:Router,route:ActivatedRoute) {
+  static static_urlIconUser: string = ""
+  static static_userEmail: string ="";
+  static static_userId: number =0;
+  
+  constructor(private router:Router, route:ActivatedRoute) {
      //Recogemos los datos enviados con route
      this.userEmail = route.snapshot.params["userEmail"]
      this.urlIconUser =  route.snapshot.params["urlIconStatus"]
+     this.userId =  parseInt(route.snapshot.params["id"])
+     
+     MainComponent.static_userEmail = this.userEmail;
+     MainComponent.static_urlIconUser = this.urlIconUser;
+     MainComponent.static_userId = this.userId;
 
+     //Una vez tenemos el valor estatico, lo actualizamos en los atributos de la clase por si hubieran un back a este componente
+     this.userEmail = MainComponent.static_userEmail 
+     this.urlIconUser = MainComponent.static_urlIconUser 
+     this.userId = MainComponent.static_userId 
     //Para Pruebas
     let game = new Game("Loop Hero"," Four Quarters ", 63,3,"../../assets/img/game_loop_hero.png")
     let game2 = new Game("Stardew Valley"," ConcernedApe(Eric Barone)", 88, 2,"../../assets/img/game_stardew_valley.png")
@@ -72,8 +88,7 @@ export class MainComponent {
 
   }
   public navigateDetailGame(game: Game) {
-    this.router.navigate(["/detailGame",game.getTitulo(),game.getCompania(),game.getValoracionMedia(),game.getUrlImg(),this.userEmail,this.urlIconUser])
-
+    this.router.navigate(["/detailGame",game.getTitulo(),game.getCompania(),game.getValoracionMedia(),game.getUrlImg()])
   }
   
 }

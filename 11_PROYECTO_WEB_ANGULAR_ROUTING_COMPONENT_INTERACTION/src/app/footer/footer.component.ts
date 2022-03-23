@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { MainComponent } from '../main/main.component';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -25,7 +26,7 @@ export class FooterComponent {
   constructor(private router:Router) {}
   
   public navigateMain(){
-    this.router.navigate(["/index",this.userEmailInput,this.urlImgUser])
+    this.router.navigate(["/index",MainComponent.static_userEmail,MainComponent.static_urlIconUser,MainComponent.static_userId])
   }
   /**
    * Metodo que navega al indice de la aplicación web

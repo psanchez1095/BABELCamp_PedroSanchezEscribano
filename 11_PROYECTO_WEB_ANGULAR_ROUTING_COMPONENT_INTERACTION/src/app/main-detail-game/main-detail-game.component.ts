@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MainComponent } from '../main/main.component';
 
 @Component({
   selector: 'app-main-detail-game',
@@ -7,14 +8,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./main-detail-game.component.css']
 })
 export class MainDetailGameComponent  {
+
   titleUser:string ="User Info"
   titleDetailGame:string ="Detalles Juego"
-  urlIconUser: string=""
-  userEmail: string =""
+  
+  urlIconUser: string= MainComponent.static_urlIconUser
+  userEmail: string = MainComponent.static_userEmail
   constructor(route:ActivatedRoute) {
-    //Recogemos los datos enviados con route
-    this.userEmail = route.snapshot.params["userEmail"]
-    this.urlIconUser =  route.snapshot.params["urlIconStatus"]
+    
   }
 
   
