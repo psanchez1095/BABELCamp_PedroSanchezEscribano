@@ -47,8 +47,8 @@ export class MainComponent {
     //Para Pruebas
     let game = new Game("Loop Hero"," Four Quarters ", 63,3,"../../assets/img/game_loop_hero.png")
     let game2 = new Game("Stardew Valley"," ConcernedApe(Eric Barone)", 88, 2,"../../assets/img/game_stardew_valley.png")
-    let game3 = new Game("ewr1"," 2ewr", 23, 4)
-    let game4 = new Game("1qew"," 2ewrew", 13, 1)
+    let game3 = new Game("Elder Ring"," Bandai Namco Entertainment", 96, 4,"../../assets/img/game_elder_ring.png")
+    let game4 = new Game("Age of Empires IV ","  Relic Entertainment", 86, 1,"../../assets/img/game_AEO4.png")
     let game5 = new Game("erew1"," 2", 23, 55)
     this.games.push(game,game2,game3,game4,game5)
   }
