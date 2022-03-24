@@ -7,22 +7,59 @@
     height: 87vh;
     display: flex;
     flex-direction: row;
-    background-color: lightslategray;
+    background-color: white;
   }
 
-  #divIzqMain {
-    width: 70%;
+  #divMain {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #divContact{
+    height:60%;
+    max-width: 100%;
+    background-color: white; 
+    font-family: 'Audiowide', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #divContact>h1{
+    margin-top: 2%;
+    text-align: center;
+  }
+  #divContact>p{
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: large;
+    margin-top: 2%;
+    text-align: center;
+  }
+
+  #divIcons{
+    margin-top: 2%;
+    height:40%;
+    background-color: darkslateblue;
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
 
-  
-  #divDerMain {
-    max-height: 75vh;
-    width: 30%;
+  img{
+    max-width: 33%;
+    height: auto;
   }
+  
+  #info{
+    margin-top: 8%;
+    margin-right: 5%;
 
+  }
+  #info>a{
+    color: black;
+  }
 
   /*Estilo Barra Scroll*/
   ::-webkit-scrollbar {
@@ -44,21 +81,13 @@
 
 /*CSS Para PCs*/
 @media screen and (min-width:1100px) {
+
   body {
     display: flex;
     flex-direction: row;
     height: 81vh;
     background-color: lightslategray;
   }
-
-  #divIzqMain {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-  }
-
-
   
   /*Estilo Barra Scroll*/
   ::-webkit-scrollbar {
@@ -75,4 +104,14 @@
   ::-webkit-scrollbar-thumb {
     background-color: black;
   }
+  
+  #divIcons{
+  margin-top: 0%;
+  height:40%;
+  background-color: darkslateblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  }
+
 }

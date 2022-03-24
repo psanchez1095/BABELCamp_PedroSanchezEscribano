@@ -12,6 +12,14 @@ export class MainContactComponent{
   currentBtnLogin:boolean = false;
   currentBtnAboutUs: boolean = false;
   currentBtnContact: boolean = true;
+
+  //Property Binding
+  ciudad : string ="Madrid"
+  correo:string ="appGames@gmail.com"
+  telefono:string ="666xxxxxx"
+  urlImgMail : string = "../../assets/img/mainContactImages/email.png"
+  urlImgPhone : string = "../../assets/img/mainContactImages/phone.png"
+  urlImgCity : string = "../../assets/img/mainContactImages/city.png"
   
   constructor() { }
 

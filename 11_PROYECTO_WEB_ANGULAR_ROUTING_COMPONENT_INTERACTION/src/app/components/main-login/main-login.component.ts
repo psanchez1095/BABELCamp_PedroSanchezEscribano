@@ -80,7 +80,7 @@ export class MainLoginComponent {
           else{
             let user = null;
             for(let x in this.users){
-                if(this.users[x].getUserEmail() == this.userEmail && this.users[x].getPassword() == this.password ) user =  this.users[x]
+                if(this.users[x].getUserEmail() === this.userEmail && this.users[x].getPassword() === this.password ) user = this.users[x]
             }
             this.router.navigate(["/index",user?.getUserEmail(),user?.getUrlIconStatus(),user?.getId()])
           }
