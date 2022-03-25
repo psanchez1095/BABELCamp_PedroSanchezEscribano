@@ -1,12 +1,13 @@
 import {Historial} from './historial.js'
 
 class Jugador {
-    public id: number;
-    public nombre: string;
-    public edad: number;
-    public pais: string;
-    public urlImg: string;
-    public historial : Historial;
+  
+    private id: number;
+    private nombre: string;
+    private edad: number;
+    private pais: string;
+    private urlImg: string;
+    private historial : Historial;
   
     constructor(nombre: string, edad: number, pais: string, historial:Historial ,urlImg:string,id?: number) {
       this.id = id ? id : -1;
@@ -20,14 +21,14 @@ class Jugador {
     public getNombre(): string {
       return this.nombre ;
     }
-    public getEdad(): string {
-        return this.nombre ;
+    public getEdad(): number {
+        return this.edad ;
     }
     public getPais(): string {
-        return this.nombre ;
+        return this.pais ;
     }
-    public getHistorial(): string {
-        return this.nombre ;
+    public getHistorial(): Historial {
+        return this.historial ;
     }
     public getUrlImg(): string {
         return this.urlImg ;

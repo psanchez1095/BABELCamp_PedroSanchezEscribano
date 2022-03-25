@@ -1,10 +1,10 @@
 import {Jugador} from './jugador.js';
 
 class Equipo {
-    public id: number;
-    public nombre: string;
-    public fechaFund: string;
-    public jugadores: Array<Jugador>;
+    private id: number;
+    private nombre: string;
+    private fechaFund: string;
+    private jugadores: Array<Jugador>;
   
     constructor(nombre: string, fechaFund: string, jugadores:Array<Jugador>,id?: number) {
       this.id = id ? id : -1;

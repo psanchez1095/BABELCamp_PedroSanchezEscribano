@@ -1,8 +1,8 @@
 class Historial {
-    public id: number;
-    public golesAnotados: number;
-    public tarjetasA: number;
-    public tarjetasR: number;
+    private id: number;
+    private golesAnotados: number;
+    private tarjetasA: number;
+    private tarjetasR: number;
   
   
     constructor(golesAnotados: number, tarjetasA: number, tarjetasR: number, id?: number) {

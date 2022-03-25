@@ -11,13 +11,13 @@ class Jugador {
         return this.nombre;
     }
     getEdad() {
-        return this.nombre;
+        return this.edad;
     }
     getPais() {
-        return this.nombre;
+        return this.pais;
     }
     getHistorial() {
-        return this.nombre;
+        return this.historial;
     }
     getUrlImg() {
         return this.urlImg;
