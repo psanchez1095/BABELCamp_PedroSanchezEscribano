@@ -16,10 +16,13 @@ export class MainContactComponent{
   //Property Binding
   ciudad : string ="Madrid"
   correo:string ="appGames@gmail.com"
-  telefono:string ="666xxxxxx"
+  telefono:string ="666666666"
   urlImgMail : string = "../../assets/img/mainContactImages/email.png"
   urlImgPhone : string = "../../assets/img/mainContactImages/phone.png"
   urlImgCity : string = "../../assets/img/mainContactImages/city.png"
+  urlImgGameConsole : string ="../../assets/img/icon_gameconsole.png"
+  urlImgAccesory : string ="../../assets/img/icon_accessory.png"
+  urlImgGame: string ="../../assets/img/icon_cd.png"
   
   constructor() { }
 

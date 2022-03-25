@@ -13,12 +13,13 @@ class User {
       this.id = id ? id : 0;
       this.userEmail = userEmail;
       this.password = password;
-      this.urlIconStatus = urlIconStatus ? urlIconStatus : "../assets/img/iconBronze.png"  ;
+      this.urlIconStatus = urlIconStatus ? urlIconStatus : "../assets/img/iconBronze.png";
+
     }
   
     public getId(): number {
       return this.id;
-  }
+    }
     public getUserEmail(): string {
       return this.userEmail ;
     }
@@ -39,6 +40,5 @@ class User {
       this.urlIconStatus=url;
     }
    
-    
   }
   export{User}

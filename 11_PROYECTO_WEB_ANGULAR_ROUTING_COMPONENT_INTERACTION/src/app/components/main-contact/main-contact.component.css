@@ -20,31 +20,33 @@
   #divContact{
     height:60%;
     max-width: 100%;
-    background-color: white; 
-    font-family: 'Audiowide', cursive;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: white; 
+    font-family: 'Audiowide', cursive;
   }
+
   #divContact>h1{
     margin-top: 2%;
     text-align: center;
   }
+
   #divContact>p{
     margin-left: 25%;
-    margin-right: 25%;
-    font-size: large;
+    margin-right: 25%;  
     margin-top: 2%;
+    font-size: large;
     text-align: center;
   }
 
   #divIcons{
-    margin-top: 2%;
     height:40%;
-    background-color: darkslateblue;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 2%;
+    background-color: darkslateblue;
   }
 
   img{
@@ -83,9 +85,9 @@
 @media screen and (min-width:1100px) {
 
   body {
+    height: 81vh;
     display: flex;
     flex-direction: row;
-    height: 81vh;
     background-color: lightslategray;
   }
   
@@ -106,12 +108,18 @@
   }
   
   #divIcons{
-  margin-top: 0%;
   height:40%;
-  background-color: darkslateblue;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 0%;
+  background-color: darkslateblue;
+  }
+
+  #imgDivIcons{
+    width: auto;
+    height: auto;
+    margin-right: 2%;
   }
 
 }
