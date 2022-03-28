@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Directivo extends Empleado {
 	
+	public static String puesto= "Directivo";
 	
 	private List<Empleado> empleadosAdjuntos;
 	

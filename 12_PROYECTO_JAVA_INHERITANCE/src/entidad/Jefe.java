@@ -2,7 +2,9 @@ package entidad;
 
 public class Jefe extends Empleado {
 	
-	private Double incentivos;
+	public static String puesto= "Jefe";
+	
+	private double incentivos;
 	
 	public Jefe(String nombre, double sueldoBase,double incentivos) {
 		super(nombre, sueldoBase);
@@ -20,5 +22,6 @@ public class Jefe extends Empleado {
 		return this.getSueldoBase() + this.incentivos;
 
 	}
+	
 
 }

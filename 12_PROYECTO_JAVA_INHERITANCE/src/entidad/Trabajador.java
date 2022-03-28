@@ -2,6 +2,8 @@ package entidad;
 
 public class Trabajador extends Empleado {
 	
+	public static String puesto= "Trabajador";
+	
 	private int valoracion;
 	
 	public Trabajador(String nombre, double sueldoBase, int valoracion) {
