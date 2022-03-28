@@ -37,6 +37,17 @@ public class Main {
 		
 		emp = new Directivo("Elon",53888.5,empDirectivo);
 		empleados.add(emp);
+		
+		
+		//SALIDA POR CONSOLA
+		System.out.print("Listado Sueldos: \n\n");
+		
+		for(Empleado x : empleados) {
+			System.out.print("Empleado " + x.getNombre() + " \n");
+			System.out.print("Sueldo Anual : \n" +x.calcularSueldo() + " \n\n");
+
+		}
+		
 	}
 
 }

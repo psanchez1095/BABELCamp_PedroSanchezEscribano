@@ -21,8 +21,8 @@ public class Directivo extends Empleado {
 	
 	
 	@Override
-	public void calcularSueldo() {
-		// TODO Auto-generated method stub
+	public double calcularSueldo() {
+		return this.empleadosAdjuntos.size()*100 + this.getSueldoBase();
 
 	}
 

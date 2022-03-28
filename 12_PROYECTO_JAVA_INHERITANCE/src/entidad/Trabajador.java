@@ -19,9 +19,17 @@ public class Trabajador extends Empleado {
 	
 
 	@Override
-	public void calcularSueldo() {
-		// TODO Auto-generated method stub
-
+	public double calcularSueldo() {
+		
+		int extra;
+		
+		if(this.valoracion<0 || this.valoracion > 10) extra = 0;
+		else if(this.valoracion < 5 ) extra = 0;
+		else if(this.valoracion < 7 ) extra = 50;
+		else if(this.valoracion < 9 ) extra = 100;
+		else extra = 200;
+		
+		return this.getSueldoBase() + extra;
 	}
 	
 	

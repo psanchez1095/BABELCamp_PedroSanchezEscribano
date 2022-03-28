@@ -16,8 +16,8 @@ public class Jefe extends Empleado {
 		this.incentivos = incentivos;
 	}
 	
-	public void calcularSueldo() {
-		// TODO Auto-generated method stub
+	public double calcularSueldo() {
+		return this.getSueldoBase() + this.incentivos;
 
 	}
 

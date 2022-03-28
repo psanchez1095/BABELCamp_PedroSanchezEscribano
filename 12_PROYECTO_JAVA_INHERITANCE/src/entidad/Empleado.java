@@ -3,8 +3,12 @@ package entidad;
 public abstract class Empleado {
 	private String nombre;
 	private double sueldoBase;
-	
-	abstract void calcularSueldo();
+
+	/**
+	 * Metodo abstracto que se encarga de calcular el sueldo en funcion de cada empleado
+	 * @return Devuelve un tipo double que sera el sueldo ya calculado
+	 */
+	public abstract double calcularSueldo();
 
 	public Empleado(String nombre, double sueldoBase) {
 		this.nombre = nombre;
