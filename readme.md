@@ -181,6 +181,42 @@ listado de videojuegos)
 * Se deben hacer estilos en la aplicación, aplicar routing en todas las paginas y aplicar comunicación 
 entre componentes.
 
+## [12_PROYECTO_JAVA_INHERITANCE](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/12_PROYECTO_JAVA_INHERITANCE)    
+
+***Ejercicio 13***
+
+HERENCIA
+
+ En una empresa hay tres tipos de empleados, todos con dos atributos comunes, el
+ NOMBRE y la SUELDO BASE.
+
+ Los tipos son los siguientes:
+1. Directivos
+    * Tienen a empleados a su cargo
+2. Jefes
+    * Tienen unos incentivos
+3. Trabajadores
+    * Valoracion (1-10) 	
+
+ A todos los empleados se les puede calcular el sueldo final pero a 
+ cada uno se le calcula el sueldo en función de ciertas reglas
+* El sueldo de los directivos es su sueldo base + el numero de empleados a su cargo multiplicado
+ 	por 100
+* El sueldo de los Jefes es su sueldo base + sus incentivos
+* El sueldo de los trabajadores es su sueldo base + un extra en funcion a su valoracion.
+	* 0-4 : +0
+	* 5-6 : + 50
+	* 7-8 : + 100
+	* 9-10: + 200
+			
+Se pide
+
+1. Diseñar el modelo de clases (ojo con la herencia, polimorfismo, etc)
+2. El programa creara 3 trabajadores, 2 jefes y un director. Se le darán a cada empleado
+los valores que se estimen. El director tendrán al menos 3 empleados a su cargo.
+3. Se meterán a los empleados en un array que se recorrerá calculando el salario de cada uno de ellos
+	simplemente recorriendolo y ejecutando su metodo.
+
 # OTROS  
 
 ## TOMCAT  
