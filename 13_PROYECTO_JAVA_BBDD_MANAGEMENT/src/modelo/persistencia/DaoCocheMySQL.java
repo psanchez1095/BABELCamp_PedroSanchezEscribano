@@ -2,6 +2,7 @@ package modelo.persistencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,6 @@ public class DaoCocheMySQL implements DaoCoche{
 			e.printStackTrace();
 			return false;
 		}
-		System.out.print("bien");
 		return true;
 	}
 	
@@ -55,20 +55,92 @@ public class DaoCocheMySQL implements DaoCoche{
 	
 	@Override
 	public boolean alta(Coche c) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		if(!nuevaConexion())return false;
+		
+		boolean alta = true;
+		
+		String query = "insert into coches (MATRICULA,MARCA,MODELO,NUMEROKILOMETROS) "
+				+ " values(?,?,?,?)";
+		try {
+			//preparamos la query con valores parametrizables(?)
+			PreparedStatement ps = conexion.prepareStatement(query);
+			ps.setString(1, c.getMatricula());
+			ps.setString(2, c.getMarca());
+			ps.setString(3,c.getModelo());
+			ps.setDouble(4,c.getKilometros());
+			
+			int numeroFilasAfectadas = ps.executeUpdate();
+			
+			if(numeroFilasAfectadas == 0) {
+				alta = false;
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("alta -> Error al insertar: " +c);
+			alta = false;
+			e.printStackTrace();
+		} finally{
+			cerrarConexion();
+		}
+		return alta;
 	}
 
 	@Override
-	public boolean baja(int id) {
-		// TODO Auto-generated method stub
-		return false;
+	public int baja(int id) {
+
+		if(!nuevaConexion())return 2;
+		
+		int baja = 0;
+		String query = "delete from coches where id = ?";
+		try {
+			PreparedStatement ps = conexion.prepareStatement(query);
+			//sustituimos la primera interrgante por la id
+			ps.setInt(1, id);
+			
+			int numeroFilasAfectadas = ps.executeUpdate();
+			if(numeroFilasAfectadas == 0) baja = 1;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			cerrarConexion();
+		}
+		
+		return baja; 
+		
 	}
 
 	@Override
-	public boolean modificar(int id) {
-		// TODO Auto-generated method stub
-		return false;
+	public int modificar(Coche c) {
+
+		if(!nuevaConexion())return 5;
+		
+		int modificar = 0;
+		
+		String query = "update coches set MATRICULA=?, MARCA=?, "
+				+ "MODELO=?,NUMEROKILOMETROS=? WHERE ID=?";
+		try {
+			//preparamos la query con valores parametrizables(?)
+			PreparedStatement ps = conexion.prepareStatement(query);
+			
+			ps.setString(1, c.getMatricula());
+			ps.setString(2, c.getMarca());
+			ps.setString(3,c.getModelo());
+			ps.setDouble(4,c.getKilometros());
+			ps.setInt(5, c.getId());
+			
+			int numeroFilasAfectadas = ps.executeUpdate();
+			
+			if(numeroFilasAfectadas == 0) modificar = 1;
+			
+			
+		} catch (SQLException e) {
+			modificar = 1;
+		} finally{
+			cerrarConexion();
+		}
+		return modificar;
 	}
 
 	@Override
