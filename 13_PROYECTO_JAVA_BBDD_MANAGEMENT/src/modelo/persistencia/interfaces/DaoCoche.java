@@ -1,5 +1,6 @@
 package modelo.persistencia.interfaces;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import modelo.entidad.Coche;
@@ -28,7 +29,7 @@ public interface DaoCoche {
 	 * @return true en caso de que se haya modificado el coche en la BBDD con éxito. False en caso de error
 	 * con la BBDD.
 	 */
-	boolean modificar(int c);
+	boolean modificar(int id);
 	
 	/**
 	 * Metodo que se encarga de dar de buscar un coche en la BBDD. En caso de error se imprimira por consola
@@ -43,14 +44,14 @@ public interface DaoCoche {
 	 * @param id Marca del coche que se va a buscar ( tipo String )
 	 * @return Devuelve un objeto de tipo Coche en caso de éxito. null en caso contrario
 	 */
-	Coche buscarPorMarca(String marca);
+	ArrayList<Coche> buscarPorMarca(String marca);
 	
 	/**
 	 * Metodo que se encarga de dar de buscar un coche en la BBDD. En caso de error se imprimira por consola
 	 * @param id Modelo del coche que se va a buscar ( tipo String )
 	 * @return Devuelve un objeto de tipo Coche en caso de éxito. null en caso contrario
 	 */
-	Coche buscarPorModelo(String modelo);
+	ArrayList<Coche> buscarPorModelo(String modelo);
 	
 	/**
 	 * Metodo que se encarga de dar de buscar un coche en la BBDD. En caso de error se imprimira por consola

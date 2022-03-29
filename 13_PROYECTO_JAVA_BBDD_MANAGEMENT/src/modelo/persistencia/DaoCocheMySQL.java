@@ -3,6 +3,7 @@ package modelo.persistencia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import modelo.entidad.Coche;
@@ -65,7 +66,7 @@ public class DaoCocheMySQL implements DaoCoche{
 	}
 
 	@Override
-	public boolean modificar(int c) {
+	public boolean modificar(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -77,13 +78,13 @@ public class DaoCocheMySQL implements DaoCoche{
 	}
 
 	@Override
-	public Coche buscarPorMarca(String marca) {
+	public ArrayList<Coche> buscarPorMarca(String marca) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Coche buscarPorModelo(String modelo) {
+	public ArrayList<Coche> buscarPorModelo(String modelo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
