@@ -1,12 +1,13 @@
 package modelo.entidad;
 
 public class Coche {
+
 	private int id;
 	private String matricula;
 	private String marca;
 	private String modelo;
 	private double kilometros;
-	
+
 	public Coche(int id, String matricula, String marca, String modelo, double kilometros) {
 		this.id = id;
 		this.matricula = matricula;
@@ -33,7 +34,7 @@ public class Coche {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-	
+
 	public String getMarca() {
 		return marca;
 	}
@@ -64,7 +65,4 @@ public class Coche {
 				+ ", kilometros=" + kilometros + "]";
 	}
 
-
-
-	
 }
