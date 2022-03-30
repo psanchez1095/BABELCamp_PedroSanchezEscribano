@@ -295,8 +295,8 @@ public class DaoCocheMySQL implements DaoCoche {
 				c = new Coche();
 				c.setId(rs.getInt(1));
 				c.setMatricula(rs.getString(2));
-				c.setModelo(rs.getString(3));
-				c.setMarca(rs.getString(4));
+				c.setMarca(rs.getString(3));
+				c.setModelo(rs.getString(4));
 				c.setKilometros(rs.getDouble(5));
 				lista.add(c);
 
