@@ -1,5 +1,8 @@
 package modelo.negocio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import modelo.entidad.Coche;
 import modelo.persistencia.DaoCocheMySQL;
 import modelo.persistencia.interfaces.DaoCoche;
@@ -60,6 +63,26 @@ private DaoCoche daoCoche = new DaoCocheMySQL();
 		else if(c.getKilometros()>= 0) {return 2;}
 		else if(c.getMatricula().length() == 7) {return 3;}
 		else return 4;
+	}
+	public Coche buscarPorId(int id) {
+		Coche c = daoCoche.buscarPorId(id);
+		return c;
+	}
+	public ArrayList<Coche> buscarPorMarca(String marca) {
+		ArrayList<Coche> lista = daoCoche.buscarPorMarca(marca);
+		return lista;
+	}
+	public ArrayList<Coche> buscarPoModelo(String modelo) {
+		ArrayList<Coche> lista = daoCoche.buscarPorModelo(modelo);
+		return lista;
+	}
+	public Coche buscarPoMatricula(String matricula) {
+		Coche c = daoCoche.buscarPorMatricula(matricula);
+		return c;
+	}
+	public ArrayList<Coche> listar() {
+		ArrayList<Coche> lista = daoCoche.listar();
+		return lista;
 	}
 	
 	

@@ -15,7 +15,8 @@ public class Coche {
 		this.kilometros = kilometros;
 	}
 
-
+	public Coche() {
+	}
 
 	public int getId() {
 		return id;

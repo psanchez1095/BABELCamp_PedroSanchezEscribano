@@ -64,7 +64,7 @@ public interface DaoCoche {
 	 * Metodo que se encarga de dar de buscar un coche en la BBDD. En caso de error se imprimira por consola.
 	 * @return Devuelve un List de objetos de la clase Coche en caso de éxito. null en caso de error.
 	 */
-	List<Coche> listar();
+	ArrayList<Coche> listar();
 
 	
 

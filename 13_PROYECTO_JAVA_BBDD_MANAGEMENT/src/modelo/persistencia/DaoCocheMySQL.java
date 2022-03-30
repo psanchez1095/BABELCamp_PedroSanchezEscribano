@@ -3,6 +3,7 @@ package modelo.persistencia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +80,6 @@ public class DaoCocheMySQL implements DaoCoche{
 		} catch (SQLException e) {
 			System.out.println("alta -> Error al insertar: " +c);
 			alta = false;
-			e.printStackTrace();
 		} finally{
 			cerrarConexion();
 		}
@@ -145,32 +145,182 @@ public class DaoCocheMySQL implements DaoCoche{
 
 	@Override
 	public Coche buscarPorId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		if(!nuevaConexion()){
+			return null;
+		}		
+		Coche c = null;
+		
+		String query = "select ID,MATRICULA,MODELO,MARCA,NUMEROKILOMETROS from coches "
+				+ "where id = ?";
+		try {
+			PreparedStatement ps = conexion.prepareStatement(query);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				c = new Coche();
+				c.setId(rs.getInt(1));
+				c.setMatricula(rs.getString(2));
+				c.setModelo(rs.getString(3));
+				c.setMarca(rs.getString(4));
+				c.setKilometros(rs.getDouble(5));
+				
+			}
+		} catch (SQLException e) {
+			System.out.println("Buscar por Id -> error al obtener la "
+					+ "persona con id " + id);
+		} finally {
+			cerrarConexion();
+		}
+		
+		
+		return c;
 	}
 
 	@Override
 	public ArrayList<Coche> buscarPorMarca(String marca) {
-		// TODO Auto-generated method stub
-		return null;
+		if(!nuevaConexion()){
+			return null;
+		}		
+		Coche c = null;
+		
+		String query = "select ID,MATRICULA,MODELO,MARCA,NUMEROKILOMETROS from coches "
+				+ "where marca = ?";
+		ArrayList<Coche> lista = new ArrayList<Coche>();
+		try {
+			PreparedStatement ps = conexion.prepareStatement(query);
+			ps.setString(1, marca);
+			
+		
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				c = new Coche();
+				c.setId(rs.getInt(1));
+				c.setMatricula(rs.getString(2));
+				c.setModelo(rs.getString(3));
+				c.setMarca(rs.getString(4));
+				c.setKilometros(rs.getDouble(5));
+				lista.add(c);
+				
+			}
+		} catch (SQLException e) {
+			System.out.println("Buscar por marca -> error al obtener la "
+					+ "persona con marca " + marca);
+		} finally {
+			cerrarConexion();
+		}
+		
+		
+		return lista;
 	}
 
 	@Override
 	public ArrayList<Coche> buscarPorModelo(String modelo) {
-		// TODO Auto-generated method stub
-		return null;
+		if(!nuevaConexion()){
+			return null;
+		}		
+		Coche c = null;
+		
+		String query = "select ID,MATRICULA,MODELO,MARCA,NUMEROKILOMETROS from coches "
+				+ "where modelo = ?";
+		ArrayList<Coche> lista = new ArrayList<Coche>();
+		try {
+			PreparedStatement ps = conexion.prepareStatement(query);
+			ps.setString(1, modelo);
+			
+		
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				c = new Coche();
+				c.setId(rs.getInt(1));
+				c.setMatricula(rs.getString(2));
+				c.setModelo(rs.getString(3));
+				c.setMarca(rs.getString(4));
+				c.setKilometros(rs.getDouble(5));
+				lista.add(c);
+				
+			}
+		} catch (SQLException e) {
+			System.out.println("Buscar por modelo -> error al obtener la "
+					+ "persona con modelo " + modelo);
+		} finally {
+			cerrarConexion();
+		}
+		
+		
+		return lista;
 	}
 
 	@Override
 	public Coche buscarPorMatricula(String matricula) {
-		// TODO Auto-generated method stub
-		return null;
+		if(!nuevaConexion()){
+			return null;
+		}		
+		Coche c = null;
+		
+		String query = "select ID,MATRICULA,MODELO,MARCA,NUMEROKILOMETROS from coches "
+				+ "where matricula = ?";
+		ArrayList<Coche> lista = new ArrayList<Coche>();
+		try {
+			PreparedStatement ps = conexion.prepareStatement(query);
+			ps.setString(1, matricula);
+			
+		
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				c = new Coche();
+				c.setId(rs.getInt(1));
+				c.setMatricula(rs.getString(2));
+				c.setModelo(rs.getString(3));
+				c.setMarca(rs.getString(4));
+				c.setKilometros(rs.getDouble(5));
+				
+			}
+		} catch (SQLException e) {
+			System.out.println("Buscar por matrícula -> error al obtener la "
+					+ "vehículo con matrícula " + matricula);
+		} finally {
+			cerrarConexion();
+		}
+		
+		
+		return c;
 	}
 
 	@Override
-	public List<Coche> listar() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Coche> listar() {
+		if(!nuevaConexion()){
+			return null;
+		}		
+		Coche c = null;
+		
+		String query = "select * from coches ";
+		ArrayList<Coche> lista = new ArrayList<Coche>();
+		try {
+			PreparedStatement ps = conexion.prepareStatement(query);
+			
+		
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				
+				c = new Coche();
+				c.setId(rs.getInt(1));
+				c.setMatricula(rs.getString(2));
+				c.setModelo(rs.getString(3));
+				c.setMarca(rs.getString(4));
+				c.setKilometros(rs.getDouble(5));
+				lista.add(c);
+				
+			}
+		} catch (SQLException e) {
+			System.out.println("Listar vehículos > error al obtener los vehículos");
+					
+		} finally {
+			cerrarConexion();
+		}
+		
+		
+		return lista;
 	}
 
 }
