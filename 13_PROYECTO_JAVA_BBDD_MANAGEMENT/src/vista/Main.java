@@ -51,19 +51,24 @@ public class Main {
 				car.setMarca(marca);
 				car.setModelo(modelo);
 				car.setKilometros(numeroKm);
+				int alta =-1;
 				
-				int alta = gCoche.alta(car);
+				if(gCoche.buscarPoMatricula(car.getMatricula())==null) alta = gCoche.alta(car);
+				else {
+					System.out.println("\n Matrícula ya existente");
+					break;
+				}
 				
 				if(alta == 0) {
-					System.out.println("Vehiculo dado de alta con éxito");
+					System.out.println("\n Vehiculo dado de alta con éxito");
 				}else if(alta == 1) {
-					System.out.println("Error de conexión con la BBDD");
+					System.out.println("\n Error de conexión con la BBDD");
 				}else if(alta == 2){
-					System.out.println("La matricula del vehiculo debe tener exactamente siete carateres");
+					System.out.println("\n La matricula del vehiculo debe tener exactamente siete carateres");
 				}else if(alta == 3){
-					System.out.println("Los kilometros deben ser un número positivo");
+					System.out.println("\n Los kilometros deben ser un número positivo");
 				}else if(alta == 4){
-					System.out.println("La matricula del vehiculo debe tener exactamente siete carateres\nLos kilometros deben ser un número positivo");
+					System.out.println("\n La matricula del vehiculo debe tener exactamente siete carateres\nLos kilometros deben ser un número positivo");
 				}
 				break;
 				
@@ -72,7 +77,7 @@ public class Main {
 				System.out.println(" Introduzca el id del vehiculo que quiere dar de baja");
 			
 				id = sc.nextInt();
-			
+				
 				int baja = gCoche.baja(id);
 				
 				if(baja == 0) System.out.println("Vehiculo dado de baja con éxito");
@@ -89,29 +94,32 @@ public class Main {
 				marca = sc.next();
 				modelo = sc.next();
 				numeroKm = sc.nextDouble();
-			
+				
 				car = new Coche(id, matricula, marca, modelo, numeroKm);
-				car.setId(1);
-				car.setMatricula(matricula);
-				car.setMarca(marca);
-				car.setModelo(modelo);
-				car.setKilometros(numeroKm);
 				
-				alta = gCoche.modificar(car);
 				
-				if(alta == 0) {
-					System.out.println("Vehiculo modificado éxito");
-				}else if(alta == 1) {
-					System.out.println("El vehiculo con id "+ car.getId() + " no existe");
-				}else if(alta == 2){
-					System.out.println("La matricula del vehiculo debe tener exactamente siete carateres");
-				}else if(alta == 3){
-					System.out.println("Los kilometros deben ser un número positivo");
-				}else if(alta == 4){
-					System.out.println("La matricula del vehiculo debe tener exactamente siete carateres\nLos kilometros deben ser un número positivo");
+				int modificar = -1;
+				if(gCoche.buscarPoMatricula(car.getMatricula())==null||gCoche.buscarPoMatricula(car.getMatricula()).getId() == car.getId()  ) modificar = gCoche.modificar(car);
+				else {
+					System.out.println("\n Matrícula ya existente en otro vehículo");
+					break;
 				}
-				else if(alta == 5) {
-					System.out.println("Error de conexión con la BBDD");
+				
+				modificar = gCoche.modificar(car);
+				
+				if(modificar == 0) {
+					System.out.println("\n Vehiculo modificado con éxito");
+				}else if(modificar == 1) {
+					System.out.println("\n El vehiculo con id "+ car.getId() + " no existe");
+				}else if(modificar == 2){
+					System.out.println("\n La matricula del vehiculo debe tener exactamente siete carateres");
+				}else if(modificar == 3){
+					System.out.println("\n Los kilometros deben ser un número positivo");
+				}else if(modificar == 4){
+					System.out.println("\n La matricula del vehiculo debe tener exactamente siete carateres\nLos kilometros deben ser un número positivo");
+				}
+				else if(modificar == 5) {
+					System.out.println("\n Error de conexión con la BBDD");
 				}
 				
 				break;
@@ -125,10 +133,10 @@ public class Main {
 				car = gCoche.buscarPorId(id);
 				
 				if(car != null) {
-					System.out.println("Vehiculo encontrado con éxito");
+					System.out.println("\n Vehiculo encontrado con éxito");
 					System.out.println("\n "+car.toString());
 				}
-				else System.out.println("Error de conexión con la BBDD");
+				else System.out.println(" \nError de conexión con la BBDD");
 				
 				
 				break;
@@ -150,7 +158,7 @@ public class Main {
 					System.out.println("\n Fin del listado");
 					
 				}
-				else System.out.println("Error de conexión con la BBDD");
+				else System.out.println("\n Error de conexión con la BBDD");
 						
 				break;
 				
@@ -171,7 +179,7 @@ public class Main {
 					System.out.println("\n Fin del listado");
 					
 				}
-				else System.out.println("Error de conexión con la BBDD");
+				else System.out.println("\n Error de conexión con la BBDD");
 				
 				break;
 				
@@ -184,10 +192,10 @@ public class Main {
 				car = gCoche.buscarPoMatricula(matricula);
 				
 				if(car != null) {
-					System.out.println("Vehiculo encontrado con éxito");
+					System.out.println("\n Vehiculo encontrado con éxito");
 					System.out.println("\n "+car.toString());
 				}
-				else System.out.println("Error de conexión con la BBDD");
+				else System.out.println("\n Error de conexión con la BBDD");
 				
 				break;
 				
@@ -204,7 +212,7 @@ public class Main {
 					System.out.println("\n Fin del listado");
 				}
 				
-				else System.out.println("Error de conexión con la BBDD");
+				else System.out.println("\n Error de conexión con la BBDD");
 				
 				break;
 				
