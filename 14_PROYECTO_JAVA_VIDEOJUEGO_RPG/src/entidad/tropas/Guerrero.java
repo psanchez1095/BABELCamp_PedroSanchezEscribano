@@ -3,9 +3,8 @@ package entidad.tropas;
 public class Guerrero extends Tropa {
 
 	@Override
-	public void atacar() {
-		// TODO Auto-generated method stub
-
+	public void atacar(Object o) {
+		this.getArma().usar(o);
 	}
 
 	public Guerrero() {

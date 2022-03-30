@@ -7,7 +7,7 @@ public abstract class Tropa {
 	private int salud;
 	private Arma arma;
 	
-	public abstract void atacar();
+	public abstract void atacar(Object o);
 
 	public int getSalud() {
 		return salud;

@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 	 menu();
-	 
+	 player();
 	 
 	 
 	 
@@ -29,5 +29,17 @@ public class Main {
 		 System.out.println("\n    Elija una opción:");
 		 System.out.println("    0- Salir del programa");
 		 System.out.println("    1- Nueva Partida");
+	}
+	
+	static void player() {
+		
+		 System.out.println("     ___   ");
+		 System.out.println("    |_|_|  ");
+		 System.out.println("      |    ");
+		 System.out.println("     -|-   ");
+		 System.out.println("      |    ");
+		 System.out.println("     _|_   ");
+		 
+		
 	}
 }
