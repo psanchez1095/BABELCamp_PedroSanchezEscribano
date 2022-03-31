@@ -127,13 +127,15 @@ public class Batalla {
 	 * un arma especial.
 	 */
 	void potenciador() {
-		Object o;
+		
 		Random rd = new Random();
 		
 		int n = rd.nextInt(101);
 		//ARMA ESPECIAL
 		if(n<=15) {
 			generarArmaEspecial();
+			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró la " + player.getArma().getNombre() +"---");
+			System.out.println("\n");
 		}
 		//PUNTOS DE SALUD
 		else if(n<=75) {
@@ -154,23 +156,19 @@ public class Batalla {
 	 * dependiendo del tipo de tropa que sea.
 	 */
 	private void generarArmaEspecial() {
+		
 		if(player instanceof Guerrero) {
 			player.getArma().setNombre("Espada de Damocles");
 			player.getArma().setDaño(player.getArma().getDaño() + 75);
-			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró la " + player.getArma().getNombre() +"---");
 		}
 		else if(player instanceof Mago) {
 			player.getArma().setNombre("Cetro de Fuego");
 			player.getArma().setDaño(player.getArma().getDaño() + 75);
-			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró la " + player.getArma().getNombre() +"---");
 		}
 		else if(player instanceof Curandero) {
 			player.getArma().setNombre("Libro Sagrado");
-			player.getArma().setDaño(player.getArma().getDaño() + 75);
-			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró la " + player.getArma().getNombre() +"---");
-			
+			player.getArma().setDaño(player.getArma().getDaño() + 75);	
 		}
-		System.out.println("\n");
 		
 	}
 
@@ -180,7 +178,6 @@ public class Batalla {
 	 * 
 	 */
 	void menuBatalla() {
-
 		System.out.println("           1- Atacar");
 		System.out.println("           2- Huir");
 	}
