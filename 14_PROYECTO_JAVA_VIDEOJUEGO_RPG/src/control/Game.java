@@ -14,12 +14,18 @@ import utils.TropasEnum;
 public class Game {
 
 	public static Scanner in = new Scanner(System.in);
+
 	Tropa player;
 	Tropa aux;
 	String auxIn;
-	int dañoPlayerGuerrero = 150, dañoPlayerCurandero = -75, dañoPlayerMago = 200,dañoPlayerGigante = 100;
-	int saludPlayerGuerrero = 1000, saludPlayerCurandero = 500, saludPlayerMago = 500,saludPlayerGigante = 1600;
+	int dañoPlayerGuerrero = 150, dañoPlayerCurandero = -75, dañoPlayerMago = 200, dañoPlayerGigante = 100;
+	int saludPlayerGuerrero = 1000, saludPlayerCurandero = 500, saludPlayerMago = 500, saludPlayerGigante = 1600;
 
+	/**
+	 * Método en el que transcurre el desarrollo de una partida. Se crea el objeto
+	 * jugado y los enemigos.
+	 * 
+	 */
 	public void run() {
 
 		boolean exit = false;
@@ -63,9 +69,10 @@ public class Game {
 					player.setSalud(saludPlayerGigante);
 					player.getArma().setDaño(dañoPlayerGigante);
 					break;
-					
+
 				}
 				player.setPlayer(true);
+
 				System.out.println(player.paintIcon());
 				System.out.println(
 						"\n    El arma por defecto del " + player.getNombre() + " es " + player.getArma().getNombre());
@@ -73,7 +80,8 @@ public class Game {
 
 				System.out.println(" Pulse una tecla...");
 				auxIn = in.next();
-				//PRIMERA BATALLA
+
+				// PRIMERA BATALLA
 				/* Genero primera tropa enemiga */
 				Tropa enemy = generateRandomEnemy();
 
@@ -94,11 +102,11 @@ public class Game {
 				auxIn = in.next();
 
 				boolean playerWins = battle.fight();
-				if(!playerWins) {
+				if (!playerWins) {
 					playerDead();
 					break;
 				}
-				//SEGUNDA BATALLA
+				// SEGUNDA BATALLA
 				/* Genero primera tropa enemiga */
 				enemy = generateRandomEnemy();
 
@@ -117,7 +125,7 @@ public class Game {
 				battle.setEnemy(enemies);
 
 				playerWins = battle.fight();
-				if(!playerWins) {
+				if (!playerWins) {
 					playerDead();
 					break;
 				}
@@ -131,6 +139,12 @@ public class Game {
 
 	}
 
+	/**
+	 * Método que generá una tropa aleatoriamente en función de un numero aleatorio.
+	 * 
+	 * @return Devuelve una referencia de tipo Tropa en caso de éxito Null en caso
+	 *         contrario.
+	 */
 	Tropa generateRandomEnemy() {
 
 		Tropa enemy = null;
@@ -155,11 +169,11 @@ public class Game {
 					enemy = new Curandero();
 					enemy.setSalud(150);
 					enemy.getArma().setDaño(-40);
-				}else if (tropa.equals(TropasEnum.Gigante)) {
-				enemy = new Gigante();
-				enemy.setSalud(1300);
-				enemy.getArma().setDaño(65);
-			}
+				} else if (tropa.equals(TropasEnum.Gigante)) {
+					enemy = new Gigante();
+					enemy.setSalud(1300);
+					enemy.getArma().setDaño(65);
+				}
 
 			}
 			contador++;
@@ -169,9 +183,14 @@ public class Game {
 
 	}
 
+	/**
+	 * Metodo que se encarga de mostrar por pantalla las diferentes tropas y su
+	 * informacion de vida y daño
+	 * 
+	 */
 	private void infoTropas() {
 		System.out.println(Guerrero.icon);
-		System.out.println("    " + TropasEnum.Guerrero);
+		System.out.println("   " + TropasEnum.Guerrero);
 		System.out.println(" PS " + this.saludPlayerGuerrero + " POT " + this.dañoPlayerGuerrero);
 		System.out.println("\n");
 		System.out.println(Mago.icon);
@@ -183,13 +202,16 @@ public class Game {
 		System.out.println(" PS " + this.saludPlayerCurandero + " POT " + this.dañoPlayerCurandero);
 		System.out.println("\n");
 		System.out.println(Gigante.icon);
-		System.out.println("   " + TropasEnum.Gigante);
+		System.out.println("    " + TropasEnum.Gigante);
 		System.out.println(" PS " + this.saludPlayerGigante + " POT " + this.dañoPlayerGigante);
 		System.out.println("\n");
 	}
 
+	/**
+	 * Metodo que se encarga de mostrar por pantalla el titulo del juego
+	 * 
+	 */
 	void title() {
-
 		System.out.println("\n     ______________________________");
 		System.out.println("    |______________________________|");
 		System.out.println("    |                              |");
@@ -197,9 +219,12 @@ public class Game {
 		System.out.println("    |                              |");
 		System.out.println("    | Pedro S            BabelCamp |");
 		System.out.println("    --------------------------------");
-
 	}
 
+	/**
+	 * Metodo que se encarga de mostrar por pantalla el menu principal del juego
+	 * 
+	 */
 	void menu() {
 		System.out.println("     ______________________________");
 		System.out.println("\n          Elija una opción:");
@@ -208,12 +233,21 @@ public class Game {
 		System.out.println("           2- Info Tropas");
 		System.out.println("     ______________________________");
 	}
-	
+
+	/**
+	 * Metodo que se encarga de mostrar por pantalla que el jugador ha muerto y
+	 * finaliza la partida
+	 * 
+	 */
 	void playerDead() {
-		System.out.println("    ------JUGADOR "+player.getNombre()+" HA MUERTO------");
+		System.out.println("    ------JUGADOR " + player.getNombre() + " HA MUERTO------");
 		System.out.println("    ---FIN DE LA PARTIDA---");
 	}
 
+	/**
+	 * Metodo que se encarga de mostrar por pantalla el menu de elección de tropa
+	 * 
+	 */
 	void menuTropaPlayer() {
 		int i = 1;
 		for (TropasEnum tropa : TropasEnum.values()) {

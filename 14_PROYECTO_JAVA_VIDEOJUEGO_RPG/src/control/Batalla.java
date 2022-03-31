@@ -42,8 +42,7 @@ public class Batalla {
 	 *         contrario.
 	 */
 	public boolean fight() {
-		
-		
+
 		System.out.println("   ---------------------------------------");
 		System.out.println("                 Batalla      ");
 		System.out.println("\n");
@@ -79,7 +78,7 @@ public class Batalla {
 						enemies.remove(n);
 					n = 51;
 					break;
-					// ATACAR
+				// ATACAR
 				case 2:
 					player.atacar(player);
 					n = 51;
@@ -99,7 +98,7 @@ public class Batalla {
 					// CAMBIO DE TURNO
 					n = 100 / 2 + 1;
 					break;
-				
+
 				}
 
 			}
@@ -127,60 +126,59 @@ public class Batalla {
 		}
 
 	}
-	
+
 	/**
 	 * Metodo que se encarga de generar al azar un potenciador para el jugador
-	 * cuando se ha ganado una batalla. El potenciador puede ser vida, daño para el arma o
-	 * un arma especial.
+	 * cuando se ha ganado una batalla. El potenciador puede ser vida, daño para el
+	 * arma o un arma especial.
 	 */
 	void potenciador() {
-		
+
 		Random rd = new Random();
-		
+
 		int n = rd.nextInt(101);
-		//ARMA ESPECIAL
-		if(n<=15) {
+		// ARMA ESPECIAL
+		if (n <= 15) {
 			generarArmaEspecial();
-			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró " + player.getArma().getNombre() +"---");
+			System.out.println(
+					"   ---" + "Jugador " + player.getNombre() + " encontró " + player.getArma().getNombre() + "---");
 			System.out.println("\n");
 		}
-		//PUNTOS DE SALUD
-		else if(n<=75) {
+		// PUNTOS DE SALUD
+		else if (n <= 75) {
 			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró vendas y medicinas---");
 			System.out.println("\n");
-			player.setSalud(player.getSalud()+100);
+			player.setSalud(player.getSalud() + 100);
 		}
-		//AUMENTO DAÑO ARMA
+		// AUMENTO DAÑO ARMA
 		else {
 			System.out.println("      ---" + "Jugador " + player.getNombre() + " encontró un amuleto---");
 			System.out.println("\n");
-			player.getArma().setDaño(player.getArma().getDaño()+30);
+			player.getArma().setDaño(player.getArma().getDaño() + 30);
 		}
-		
+
 	}
+
 	/**
-	 * Metodo que se encarga de generar arma especial para el jugador
-	 * dependiendo del tipo de tropa que sea.
+	 * Metodo que se encarga de generar arma especial para el jugador dependiendo
+	 * del tipo de tropa que sea.
 	 */
 	private void generarArmaEspecial() {
-		
-		if(player instanceof Guerrero) {
+
+		if (player instanceof Guerrero) {
 			player.getArma().setNombre("Espada de Damocles");
 			player.getArma().setDaño(player.getArma().getDaño() + 75);
-		}
-		else if(player instanceof Mago) {
+		} else if (player instanceof Mago) {
 			player.getArma().setNombre("Cetro de Fuego");
 			player.getArma().setDaño(player.getArma().getDaño() + 75);
-		}
-		else if(player instanceof Curandero) {
+		} else if (player instanceof Curandero) {
 			player.getArma().setNombre("Libro Sagrado");
-			player.getArma().setDaño(player.getArma().getDaño() + 75);	
-		}
-		else if(player instanceof Gigante) {
+			player.getArma().setDaño(player.getArma().getDaño() + 75);
+		} else if (player instanceof Gigante) {
 			player.getArma().setNombre("Puño de Hierro");
-			player.getArma().setDaño(player.getArma().getDaño() + 75);	
+			player.getArma().setDaño(player.getArma().getDaño() + 75);
 		}
-		
+
 	}
 
 	/**
