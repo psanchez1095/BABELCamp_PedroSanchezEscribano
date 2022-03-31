@@ -5,6 +5,7 @@ import entidad.armas.Rezo;
 public class Curandero extends Tropa {
 
 	String armaEspecial = "Libro Sagrado";
+	private int dañoExtraArmaEspecial;
 	public static String icon = "   ___|___  \n    |_|_|  \n      |    \n     -|- _ \n     _|_|_|\n";
 
 	@Override
@@ -19,7 +20,7 @@ public class Curandero extends Tropa {
 
 			// Si lleva el arma especial
 			if (this.getArma().getNombre().equals(armaEspecial)) {
-				this.getArma().setDaño(this.getArma().getDaño() + 100);
+				this.getArma().setDaño(this.getArma().getDaño() + this.getDañoExtraArmaEspecial());
 			}
 
 			this.getArma().usar(o);
@@ -30,11 +31,20 @@ public class Curandero extends Tropa {
 
 	}
 
+	public int getDañoExtraArmaEspecial() {
+		return dañoExtraArmaEspecial;
+	}
+
+	public void setDañoExtraArmaEspecial(int dañoExtraArmaEspecial) {
+		this.dañoExtraArmaEspecial = dañoExtraArmaEspecial;
+	}
+
 	public Curandero() {
 		super();
 		this.setNombre("Curandero");
 		this.setArma(new Rezo());
 		this.getArma().setNombre("Rezo");
+		this.setDañoExtraArmaEspecial(100);
 	}
 
 	public String paintIcon() {

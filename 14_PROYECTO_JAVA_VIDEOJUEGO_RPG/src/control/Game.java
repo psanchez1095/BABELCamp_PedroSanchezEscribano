@@ -75,7 +75,7 @@ public class Game {
 				enemies.add(enemy);
 
 				for (Tropa en : enemies) {
-					System.out.println(enemy.paintIcon());
+					System.out.println(en.paintIcon());
 					System.out.println("    Enemy  ");
 				}
 
@@ -88,7 +88,10 @@ public class Game {
 				auxIn = in.next();
 
 				boolean playerWins = battle.fight();
-
+				if(!playerWins) {
+					playerDead();
+					break;
+				}
 				//SEGUNDA BATALLA
 				/* Genero primera tropa enemiga */
 				enemy = generateRandomEnemy();
@@ -99,7 +102,7 @@ public class Game {
 				enemies.add(enemy);
 
 				for (Tropa en : enemies) {
-					System.out.println(enemy.paintIcon());
+					System.out.println(en.paintIcon());
 					System.out.println("    Enemy  ");
 				}
 
@@ -108,7 +111,10 @@ public class Game {
 				battle.setEnemy(enemies);
 
 				playerWins = battle.fight();
-				
+				if(!playerWins) {
+					playerDead();
+					break;
+				}
 				break;
 
 			case 2:
@@ -187,6 +193,11 @@ public class Game {
 		System.out.println("           1- Nueva Partida");
 		System.out.println("           2- Info Tropas");
 		System.out.println("     ______________________________");
+	}
+	
+	void playerDead() {
+		System.out.println("    ------JUGADOR "+player.getNombre()+" HA MUERTO------");
+		System.out.println("    ---FIN DE LA PARTIDA---");
 	}
 
 	void menuTropaPlayer() {
