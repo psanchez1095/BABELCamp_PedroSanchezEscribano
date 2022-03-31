@@ -3,7 +3,7 @@ package entidad.tropas;
 import entidad.armas.Arma;
 
 public abstract class Tropa {
-	
+	private boolean player;
 	private String nombre;
 	private int salud;
 	private Arma arma;
@@ -35,5 +35,12 @@ public abstract class Tropa {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	public boolean isPlayer() {
+		return player;
+	}
+	public void setPlayer(boolean player) {
+		this.player = player;
+	}
+	
 	
 }

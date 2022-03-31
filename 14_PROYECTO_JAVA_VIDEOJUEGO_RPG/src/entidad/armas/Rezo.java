@@ -10,7 +10,11 @@ public class Rezo extends Arma {
 	@Override
 	public void usar(Object o) {
 		 
-		if(o.equals(this)) {((Tropa) o).setSalud(((Tropa) o).getSalud()-(this.getDaño()));}
+		if(o instanceof Tropa && ((Tropa) o).isPlayer()) {
+		
+			((Tropa) o).setSalud(((Tropa) o).getSalud()-(this.getDaño()));
+			
+		}
 		else ((Tropa) o).setSalud(((Tropa) o).getSalud()+(this.getDaño()/3));
 	
 		}

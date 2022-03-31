@@ -79,8 +79,13 @@ public class Batalla {
 						enemies.remove(n);
 					n = 51;
 					break;
-				// HUIR
+					// ATACAR
 				case 2:
+					player.atacar(player);
+					n = 51;
+					break;
+				// HUIR
+				case 3:
 					rd = new Random();
 					// Aleatorio entre 0 y 100
 					n = rd.nextInt(101);
@@ -94,6 +99,7 @@ public class Batalla {
 					// CAMBIO DE TURNO
 					n = 100 / 2 + 1;
 					break;
+				
 				}
 
 			}
@@ -184,7 +190,8 @@ public class Batalla {
 	 */
 	void menuBatalla() {
 		System.out.println("           1- Atacar");
-		System.out.println("           2- Huir");
+		System.out.println("           2- Defenderse/Curarse");
+		System.out.println("           3- Huir");
 	}
 
 	/**

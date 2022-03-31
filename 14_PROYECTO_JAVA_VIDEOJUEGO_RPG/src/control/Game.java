@@ -63,9 +63,9 @@ public class Game {
 					player.setSalud(saludPlayerGigante);
 					player.getArma().setDaño(dañoPlayerGigante);
 					break;
-
+					
 				}
-
+				player.setPlayer(true);
 				System.out.println(player.paintIcon());
 				System.out.println(
 						"\n    El arma por defecto del " + player.getNombre() + " es " + player.getArma().getNombre());
