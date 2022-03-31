@@ -1,5 +1,5 @@
 package utils;
 
 public enum TropasEnum {
-	Guerrero, Curandero, Mago;
+	Guerrero, Curandero, Mago,Gigante;
 }

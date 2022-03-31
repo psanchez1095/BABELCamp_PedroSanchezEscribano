@@ -5,6 +5,7 @@ import java.util.Random;
 
 import entidad.armas.Arma;
 import entidad.tropas.Curandero;
+import entidad.tropas.Gigante;
 import entidad.tropas.Guerrero;
 import entidad.tropas.Mago;
 import entidad.tropas.Tropa;
@@ -134,7 +135,7 @@ public class Batalla {
 		//ARMA ESPECIAL
 		if(n<=15) {
 			generarArmaEspecial();
-			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró la " + player.getArma().getNombre() +"---");
+			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró " + player.getArma().getNombre() +"---");
 			System.out.println("\n");
 		}
 		//PUNTOS DE SALUD
@@ -167,6 +168,10 @@ public class Batalla {
 		}
 		else if(player instanceof Curandero) {
 			player.getArma().setNombre("Libro Sagrado");
+			player.getArma().setDaño(player.getArma().getDaño() + 75);	
+		}
+		else if(player instanceof Gigante) {
+			player.getArma().setNombre("Puño de Hierro");
 			player.getArma().setDaño(player.getArma().getDaño() + 75);	
 		}
 		

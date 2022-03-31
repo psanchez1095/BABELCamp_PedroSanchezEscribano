@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import entidad.tropas.Curandero;
+import entidad.tropas.Gigante;
 import entidad.tropas.Guerrero;
 import entidad.tropas.Mago;
 import entidad.tropas.Tropa;
@@ -16,8 +17,8 @@ public class Game {
 	Tropa player;
 	Tropa aux;
 	String auxIn;
-	int dañoPlayerGuerrero = 150, dañoPlayerCurandero = -75, dañoPlayerMago = 100;
-	int saludPlayerGuerrero = 1000, saludPlayerCurandero = 500, saludPlayerMago = 700;
+	int dañoPlayerGuerrero = 150, dañoPlayerCurandero = -75, dañoPlayerMago = 200,dañoPlayerGigante = 100;
+	int saludPlayerGuerrero = 1000, saludPlayerCurandero = 500, saludPlayerMago = 500,saludPlayerGigante = 1600;
 
 	public void run() {
 
@@ -56,6 +57,11 @@ public class Game {
 					player = new Mago();
 					player.setSalud(saludPlayerMago);
 					player.getArma().setDaño(dañoPlayerMago);
+					break;
+				case 4:
+					player = new Gigante();
+					player.setSalud(saludPlayerGigante);
+					player.getArma().setDaño(dañoPlayerGigante);
 					break;
 
 				}
@@ -143,13 +149,17 @@ public class Game {
 					enemy.getArma().setDaño(100);
 				} else if (tropa.equals(TropasEnum.Mago)) {
 					enemy = new Mago();
-					enemy.setSalud(250);
-					enemy.getArma().setDaño(65);
+					enemy.setSalud(400);
+					enemy.getArma().setDaño(180);
 				} else if (tropa.equals(TropasEnum.Curandero)) {
 					enemy = new Curandero();
 					enemy.setSalud(150);
 					enemy.getArma().setDaño(-40);
-				}
+				}else if (tropa.equals(TropasEnum.Gigante)) {
+				enemy = new Gigante();
+				enemy.setSalud(1300);
+				enemy.getArma().setDaño(65);
+			}
 
 			}
 			contador++;
@@ -171,6 +181,10 @@ public class Game {
 		System.out.println(Curandero.icon);
 		System.out.println("   " + TropasEnum.Curandero);
 		System.out.println(" PS " + this.saludPlayerCurandero + " POT " + this.dañoPlayerCurandero);
+		System.out.println("\n");
+		System.out.println(Gigante.icon);
+		System.out.println("   " + TropasEnum.Gigante);
+		System.out.println(" PS " + this.saludPlayerGigante + " POT " + this.dañoPlayerGigante);
 		System.out.println("\n");
 	}
 
@@ -203,7 +217,7 @@ public class Game {
 	void menuTropaPlayer() {
 		int i = 1;
 		for (TropasEnum tropa : TropasEnum.values()) {
-			System.out.println("\n   " + i + "- " + tropa);
+			System.out.println("   " + i + "- " + tropa);
 			i++;
 		}
 	}
