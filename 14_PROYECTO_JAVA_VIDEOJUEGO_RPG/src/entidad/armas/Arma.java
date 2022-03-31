@@ -24,8 +24,8 @@ public class Arma {
 		this.nombre = nombre;
 	}
 
-	public void usar(Object o) {
-		((Tropa) o).setSalud(((Tropa) o).getSalud()-(this.getDaño()));
+	public void usar(Object ini,Object o) {
+		if ( !ini.equals(o)) ((Tropa) o).setSalud(((Tropa) o).getSalud()-(this.getDaño()));
 	}
 			 
 }

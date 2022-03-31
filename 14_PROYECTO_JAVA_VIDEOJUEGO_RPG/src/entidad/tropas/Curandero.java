@@ -9,7 +9,7 @@ public class Curandero extends Tropa {
 	public static String icon = "   ___|___  \n    |_|_|  \n      |    \n     -|- _ \n     _|_|_|\n";
 
 	@Override
-	public void atacar(Object o) {
+	public void atacar(Object ini,Object o) {
 
 		// Si el arma corresponde con la favorita para el tipo Curandero se aumenta el
 		// daño un 10%
@@ -23,11 +23,11 @@ public class Curandero extends Tropa {
 				this.getArma().setDaño(this.getArma().getDaño() + this.getDañoExtraArmaEspecial());
 			}
 
-			this.getArma().usar(o);
+			this.getArma().usar(ini,o);
 			this.getArma().setDaño(dañoAct);
 
 		} else
-			this.getArma().usar(o);
+			this.getArma().usar(ini,o);
 
 	}
 

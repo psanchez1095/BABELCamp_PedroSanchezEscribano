@@ -9,7 +9,7 @@ public abstract class Tropa {
 	private Arma arma;
 	
 
-	public abstract void atacar(Object o);
+	public abstract void atacar(Object ini,Object o);
 	public abstract String paintIcon();
 
 	public int getSalud() {

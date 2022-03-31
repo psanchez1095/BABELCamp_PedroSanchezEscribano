@@ -9,7 +9,7 @@ public class Guerrero extends Tropa {
 	private int saludExtraArmaEspecial;
 	
 	@Override
-	public void atacar(Object o) {
+	public void atacar(Object ini,Object o) {
 		
 		//Si el arma corresponde con la favorita para el tipo Guerrero se aumenta el daño un 10%
 		if(this.getArma() instanceof Espada) {
@@ -21,11 +21,11 @@ public class Guerrero extends Tropa {
 			
 			int dañoAct =this.getArma().getDaño();
 			this.getArma().setDaño(this.getArma().getDaño()+this.getArma().getDaño()/10);
-			this.getArma().usar(o);
+			this.getArma().usar(ini,o);
 			this.getArma().setDaño(dañoAct);
 			
 		}
-		else this.getArma().usar(o);
+		else this.getArma().usar(ini,o);
 	}
 
 	public Guerrero() {

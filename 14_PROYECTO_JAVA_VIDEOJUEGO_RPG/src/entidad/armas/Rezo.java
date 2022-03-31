@@ -8,14 +8,14 @@ public class Rezo extends Arma {
 		super();
 	}
 	@Override
-	public void usar(Object o) {
+	public void usar(Object ini,Object o) {
 		 
-		if(o instanceof Tropa && ((Tropa) o).isPlayer()) {
+		if(ini.equals(o)) {
 		
 			((Tropa) o).setSalud(((Tropa) o).getSalud()-(this.getDaño()));
 			
 		}
-		else ((Tropa) o).setSalud(((Tropa) o).getSalud()+(this.getDaño()/3));
+		else ((Tropa) o).setSalud(((Tropa) o).getSalud()+(this.getDaño()/2));
 	
 		}
 	

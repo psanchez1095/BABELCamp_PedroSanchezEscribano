@@ -73,14 +73,15 @@ public class Batalla {
 
 				// ATACAR
 				case 1:
-					player.atacar(enemies.get(n));
+					player.atacar(player,enemies.get(n));
 					if (enemies.get(n).getSalud() <= 0)
 						enemies.remove(n);
 					n = 51;
 					break;
 				// ATACAR
 				case 2:
-					player.atacar(player);
+					player.atacar(player,player);
+					if(!(player instanceof Curandero))System.out.println("   ---Jugador " + player.getNombre() + " se defendió pero no logró nada" + "---");
 					n = 51;
 					break;
 				// HUIR
@@ -107,7 +108,7 @@ public class Batalla {
 				// Aleatorio para ver que enemigo ataca
 				n = rd.nextInt(enemies.size());
 				System.out.println("   ---------" + enemies.get(n).getNombre() + " Enemigo Ataca" + "-----------");
-				enemies.get(n).atacar(player);
+				enemies.get(n).atacar(enemies.get(n),player);
 
 				// CAMBIO DE TURNO
 				n = 100 / 2 - 1;

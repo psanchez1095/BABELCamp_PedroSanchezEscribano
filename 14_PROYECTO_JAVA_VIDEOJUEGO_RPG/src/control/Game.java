@@ -18,7 +18,7 @@ public class Game {
 	Tropa player;
 	Tropa aux;
 	String auxIn;
-	int dañoPlayerGuerrero = 150, dañoPlayerCurandero = -75, dañoPlayerMago = 200, dañoPlayerGigante = 100;
+	int dañoPlayerGuerrero = 150, dañoPlayerCurandero = -55, dañoPlayerMago = 200, dañoPlayerGigante = 100;
 	int saludPlayerGuerrero = 1000, saludPlayerCurandero = 500, saludPlayerMago = 500, saludPlayerGigante = 1600;
 
 	/**
