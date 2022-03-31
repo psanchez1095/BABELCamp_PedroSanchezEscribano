@@ -1,15 +1,36 @@
 package entidad.tropas;
 
-public class Guerrero extends Tropa {
+import entidad.armas.Espada;
 
+public class Guerrero extends Tropa {
+	
+	public static String icon = "    __^__  \n    |___|  \n     ___   \n    __|__  \n";
+	
 	@Override
 	public void atacar(Object o) {
-		this.getArma().usar(o);
+		//Si el arma corresponde con la favorita para el tipo Guerrero se aumenta el daño un 10%
+		if(this.getArma() instanceof Espada) {
+			
+			int dañoAct =this.getArma().getDaño();
+			this.getArma().setDaño(this.getArma().getDaño()+this.getArma().getDaño()/10);
+			this.getArma().usar(o);
+			this.getArma().setDaño(dañoAct);
+			
+		}
+		else this.getArma().usar(o);
 	}
 
 	public Guerrero() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.setNombre("Guerero");
+		this.setArma(new Espada());
+		this.getArma().setNombre("Espada");
 	}
 
+	@Override
+	public String paintIcon() {
+		String icon = "    __^__  \n    |___|  \n     ___   \n    __|__  \n";
+		return icon;
+	}
+	
 }
