@@ -20,7 +20,7 @@ public class Game {
 	int saludPlayerGuerrero = 1000, saludPlayerCurandero = 500, saludPlayerMago = 700;
 
 	public void run() {
-		
+
 		boolean exit = false;
 		title();
 
@@ -67,13 +67,11 @@ public class Game {
 
 				System.out.println(" Pulse una tecla...");
 				auxIn = in.next();
-				
+				//PRIMERA BATALLA
 				/* Genero primera tropa enemiga */
 				Tropa enemy = generateRandomEnemy();
 
 				ArrayList<Tropa> enemies = new ArrayList<Tropa>();
-				enemies.add(enemy);
-				enemy = generateRandomEnemy();
 				enemies.add(enemy);
 
 				for (Tropa en : enemies) {
@@ -90,6 +88,26 @@ public class Game {
 				auxIn = in.next();
 
 				boolean playerWins = battle.fight();
+
+				//SEGUNDA BATALLA
+				/* Genero primera tropa enemiga */
+				enemy = generateRandomEnemy();
+
+				enemies = new ArrayList<Tropa>();
+				enemies.add(enemy);
+				enemy = generateRandomEnemy();
+				enemies.add(enemy);
+
+				for (Tropa en : enemies) {
+					System.out.println(enemy.paintIcon());
+					System.out.println("    Enemy  ");
+				}
+
+				battle = new Batalla();
+				battle.setPlayer(player);
+				battle.setEnemy(enemies);
+
+				playerWins = battle.fight();
 				
 				break;
 
