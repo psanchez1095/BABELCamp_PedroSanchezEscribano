@@ -16,6 +16,7 @@ public class Game {
 	public static Scanner in = new Scanner(System.in);
 
 	Tropa player;
+	ArrayList<Tropa> enemies;
 	Tropa aux;
 	String auxIn;
 	int dañoPlayerGuerrero = 150, dañoPlayerCurandero = -55, dañoPlayerMago = 200, dañoPlayerGigante = 100;
@@ -29,6 +30,7 @@ public class Game {
 	public void run() {
 
 		boolean exit = false;
+		
 		title();
 
 		do {
@@ -40,10 +42,11 @@ public class Game {
 
 			case 0:
 				System.out.println("\n  Apagando el juego...");
+				exit=true;
 				break;
 
 			case 1:
-				System.out.println("\n Elige el tipo de tropa que quieres usar:");
+				
 				menuTropaPlayer();
 
 				opcion = in.nextInt();
@@ -73,19 +76,16 @@ public class Game {
 				}
 				player.setPlayer(true);
 
-				System.out.println(player.paintIcon());
-				System.out.println(
-						"\n    El arma por defecto del " + player.getNombre() + " es " + player.getArma().getNombre());
-				System.out.println("\n\n    Parece que se acerca algo");
-
-				System.out.println(" Pulse una tecla...");
+				paintNewPlayer();
+				
+				System.out.println("\n    Pulse una tecla...");
 				auxIn = in.next();
 
 				// PRIMERA BATALLA
 				/* Genero primera tropa enemiga */
 				Tropa enemy = generateRandomEnemy();
 
-				ArrayList<Tropa> enemies = new ArrayList<Tropa>();
+				enemies = new ArrayList<Tropa>();
 				enemies.add(enemy);
 
 				for (Tropa en : enemies) {
@@ -98,7 +98,7 @@ public class Game {
 				battle.setPlayer(player);
 				battle.setEnemy(enemies);
 
-				System.out.println(" Pulse una tecla...");
+				System.out.println("\n    Pulse una tecla...");
 				auxIn = in.next();
 
 				boolean playerWins = battle.fight();
@@ -106,11 +106,13 @@ public class Game {
 					playerDead();
 					break;
 				}
+				
+				///////////////////////////////////
+				
 				// SEGUNDA BATALLA
-				/* Genero primera tropa enemiga */
-				enemy = generateRandomEnemy();
-
+				/* Genero segunda tropa enemiga */
 				enemies = new ArrayList<Tropa>();
+				enemy = generateRandomEnemy();
 				enemies.add(enemy);
 				enemy = generateRandomEnemy();
 				enemies.add(enemy);
@@ -123,13 +125,19 @@ public class Game {
 				battle = new Batalla();
 				battle.setPlayer(player);
 				battle.setEnemy(enemies);
-
+				///////////////////////////////////
+				
 				playerWins = battle.fight();
+				
 				if (!playerWins) {
 					playerDead();
 					break;
 				}
-				break;
+				else {
+					playerWin();
+					break;
+				}
+				
 
 			case 2:
 				infoTropas();
@@ -138,6 +146,8 @@ public class Game {
 		} while (!exit);
 
 	}
+
+	
 
 	/**
 	 * Método que generá una tropa aleatoriamente en función de un numero aleatorio.
@@ -192,15 +202,12 @@ public class Game {
 		System.out.println(Guerrero.icon);
 		System.out.println("   " + TropasEnum.Guerrero);
 		System.out.println(" PS " + this.saludPlayerGuerrero + " POT " + this.dañoPlayerGuerrero);
-		System.out.println("\n");
 		System.out.println(Mago.icon);
 		System.out.println("     " + TropasEnum.Mago);
 		System.out.println(" PS " + this.saludPlayerMago + " POT " + this.dañoPlayerMago);
-		System.out.println("\n");
 		System.out.println(Curandero.icon);
 		System.out.println("   " + TropasEnum.Curandero);
 		System.out.println(" PS " + this.saludPlayerCurandero + " POT " + this.dañoPlayerCurandero);
-		System.out.println("\n");
 		System.out.println(Gigante.icon);
 		System.out.println("    " + TropasEnum.Gigante);
 		System.out.println(" PS " + this.saludPlayerGigante + " POT " + this.dañoPlayerGigante);
@@ -240,8 +247,17 @@ public class Game {
 	 * 
 	 */
 	void playerDead() {
-		System.out.println("    ------JUGADOR " + player.getNombre() + " HA MUERTO------");
-		System.out.println("    ---FIN DE LA PARTIDA---");
+		System.out.println("    ------JUGADOR " + player.getNombre().toUpperCase()+ " HA MUERTO------");
+		System.out.println("          ---FIN DE LA PARTIDA---");
+	}
+	/**
+	 * Metodo que se encarga de mostrar por pantalla que el jugador ha ganado la partida y
+	 * finaliza la partida
+	 * 
+	 */
+	private void playerWin() {
+		System.out.println("    ------JUGADOR " + player.getNombre().toUpperCase() + " DERROTÓ A TODOS LOS ENEMIGOS------");
+		System.out.println("                  ---FIN DE LA PARTIDA---");	
 	}
 
 	/**
@@ -249,10 +265,19 @@ public class Game {
 	 * 
 	 */
 	void menuTropaPlayer() {
+		System.out.println("\n   Elige el tipo de tropa que quieres usar:");
 		int i = 1;
 		for (TropasEnum tropa : TropasEnum.values()) {
-			System.out.println("   " + i + "- " + tropa);
+			System.out.println("     " + i + "- " + tropa);
 			i++;
 		}
 	}
+	void paintNewPlayer() {
+		System.out.println(player.paintIcon());
+		System.out.println(
+				"\n    El arma por defecto del " + player.getNombre() + " es " + player.getArma().getNombre());
+		System.out.println("\n\n    Parece que se acerca algo");
+
+	}
+	
 }

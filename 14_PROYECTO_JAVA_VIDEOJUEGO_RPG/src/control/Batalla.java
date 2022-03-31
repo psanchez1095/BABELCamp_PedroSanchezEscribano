@@ -53,7 +53,7 @@ public class Batalla {
 		// Aleatorio entre 0 y 100 para decidir quien empieza atacando
 		int n = rd.nextInt(101);
 
-		System.out.println(" Comienza la Batalla. Pulse una tecla...");
+		System.out.println("\n    Pulse una tecla...");
 		auxIn = Game.in.next();
 
 		do {
