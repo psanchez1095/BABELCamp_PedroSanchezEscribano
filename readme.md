@@ -280,6 +280,20 @@ sus puntos de vida sean inferiores a 0. Se mostrará el vencedor
 		(Ej, los curandores se curan cuando usan rezos)
 	* En vez de un daño fijo, un daño maximo y un daño minimo
 
+## [15_PROYECTO_JAVA_THREADS](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/15_PROYECTO_JAVA_THREADS)    
+
+***Ejercicio 16***
+
+Trabajar con hilos en Java
+
+**El calculo de numeros primos es una tarea complicada y costosa de hacer porque puede llevar mucho tiempo de procesamiento**
+
+* Queremos hacer un programa que pida 3 numeros por pantalla y nos diga si son primos o no.
+
+Pero dado que el calculo del numero primo puede ser muy costoso, queremos abrir un hilo de
+ejecución por cada numero introducido. Cada hilo recibira el numero que ha introducido el 
+usuario por pantalla, y mostrará si es primo o no.
+
 # OTROS  
 
 ## TOMCAT  
