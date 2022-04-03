@@ -2,7 +2,7 @@ package entidad.tropas;
 
 import entidad.armas.Hechizo;
 
-public class Mago extends Tropa {
+public class Mago extends Tropa{
 	String armaEspecial = "Cetro de Fuego";
 	private int saludExtraArmaEspecial;
 	public static String icon = "    __*__  \n    |___|  \n     -|-   \n     -|-  \n    __|__\n";

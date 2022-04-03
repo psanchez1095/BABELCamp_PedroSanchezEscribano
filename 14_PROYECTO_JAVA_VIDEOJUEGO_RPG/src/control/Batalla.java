@@ -14,7 +14,6 @@ public class Batalla {
 
 	private Tropa player;
 	private ArrayList<Tropa> enemies;
-	private String auxIn;
 
 	public Batalla() {
 	}
@@ -38,11 +37,12 @@ public class Batalla {
 	/**
 	 * Metodo que se encarga de llevar a cabo una batalla entre dos tropas.
 	 * 
-	 * @return true en caso de que el jugador haya ganado la batalla False en caso
-	 *         contrario.
+	 * @return int el número de enemigos derrotados
 	 */
-	public boolean fight() {
-
+	public int fight() {
+		
+		int enemiesDead=0;
+		
 		System.out.println("   ---------------------------------------");
 		System.out.println("                 Batalla      ");
 		System.out.println("\n");
@@ -54,14 +54,14 @@ public class Batalla {
 		int n = rd.nextInt(101);
 
 		System.out.println("\n    Pulse una tecla...");
-		auxIn = Game.in.next();
+		Game.in.next();
 
 		do {
 
 			// TURNO DEL USUARIO
 			if (n <= 50) {
 
-				System.out.println("   ---------Jugador " + player.getNombre() + " Ataca" + "----------");
+				System.out.println("   ---------" + player.getNombre()+" "+player.getNombrePlayer() + " Ataca" + "----------");
 
 				menuBatalla();
 
@@ -74,14 +74,16 @@ public class Batalla {
 				// ATACAR
 				case 1:
 					player.atacar(player,enemies.get(n));
-					if (enemies.get(n).getSalud() <= 0)
+					if (enemies.get(n).getSalud() <= 0) {
 						enemies.remove(n);
+						enemiesDead++;
+						}
 					n = 51;
 					break;
-				// ATACAR
+				// DEFENDERSE/CURARSE ( ACCIONES CONTRA UNO MISMO )
 				case 2:
 					player.atacar(player,player);
-					if(!(player instanceof Curandero))System.out.println("   ---Jugador " + player.getNombre() + " se defendió pero no logró nada" + "---");
+					if(!(player instanceof Curandero))System.out.println("   ---"+ player.getNombre()+" "+player.getNombrePlayer() + " se defendió pero no logró nada" + "---");
 					n = 51;
 					break;
 				// HUIR
@@ -91,10 +93,10 @@ public class Batalla {
 					n = rd.nextInt(101);
 
 					if (n <= 1 / 4) {
-						System.out.println("   <<<<  Jugador " + player.getNombre() + " pudo escapar  >>>>\n");
-						return true;
+						System.out.println("   <<<<  " + player.getNombre()+" "+player.getNombrePlayer() + " pudo escapar  >>>>\n");
+						return -1;
 					} else
-						System.out.println("   <<<<  Jugador " + player.getNombre() + " no pudo escapar  >>>>\n");
+						System.out.println("   <<<<  " + player.getNombre()+" "+player.getNombrePlayer() + " no pudo escapar  >>>>\n");
 
 					// CAMBIO DE TURNO
 					n = 100 / 2 + 1;
@@ -119,11 +121,11 @@ public class Batalla {
 		} while (player.getSalud() > 0 && !enemies.isEmpty());
 
 		if (player.getSalud() <= 0)
-			return false;
+			return enemiesDead;
 		else {
 			System.out.println("   ----" + " El enemigo ha muerto, tu camino sigue" + " ----");
 			potenciador();
-			return true;
+			return enemiesDead;
 		}
 
 	}
@@ -142,18 +144,18 @@ public class Batalla {
 		if (n <= 15) {
 			generarArmaEspecial();
 			System.out.println(
-					"   ---" + "Jugador " + player.getNombre() + " encontró " + player.getArma().getNombre() + "---");
+					"   ---" + player.getNombre()+" "+player.getNombrePlayer() + " encontró " + player.getArma().getNombre() + "---");
 			System.out.println("\n");
 		}
 		// PUNTOS DE SALUD
 		else if (n <= 75) {
-			System.out.println("   ---" + "Jugador " + player.getNombre() + " encontró vendas y medicinas---");
+			System.out.println("   ---" + player.getNombre()+" "+player.getNombrePlayer() + " encontró vendas y medicinas---");
 			System.out.println("\n");
 			player.setSalud(player.getSalud() + 100);
 		}
 		// AUMENTO DAÑO ARMA
 		else {
-			System.out.println("      ---" + "Jugador " + player.getNombre() + " encontró un amuleto---");
+			System.out.println("      ---" + player.getNombre()+" "+player.getNombrePlayer() + " encontró un amuleto---");
 			System.out.println("\n");
 			player.getArma().setDaño(player.getArma().getDaño() + 30);
 		}
@@ -174,10 +176,10 @@ public class Batalla {
 			player.getArma().setDaño(player.getArma().getDaño() + 75);
 		} else if (player instanceof Curandero) {
 			player.getArma().setNombre("Libro Sagrado");
-			player.getArma().setDaño(player.getArma().getDaño() + 75);
+			player.getArma().setDaño(player.getArma().getDaño() - 100);
 		} else if (player instanceof Gigante) {
 			player.getArma().setNombre("Puño de Hierro");
-			player.getArma().setDaño(player.getArma().getDaño() + 75);
+			player.getArma().setDaño(player.getArma().getDaño() + 125);
 		}
 
 	}

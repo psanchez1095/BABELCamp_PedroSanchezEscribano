@@ -24,6 +24,11 @@ public class Arma {
 		this.nombre = nombre;
 	}
 
+	/**
+	 * Metodo que se encarga de usar el arma
+	 * @param ini es la tropa que inicia la accion con el arma 
+	 * @param o es la tropa que recibe la accion con el arma 
+	 */
 	public void usar(Object ini,Object o) {
 		if ( !ini.equals(o)) ((Tropa) o).setSalud(((Tropa) o).getSalud()-(this.getDaño()));
 	}
