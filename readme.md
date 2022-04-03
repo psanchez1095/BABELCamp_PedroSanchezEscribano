@@ -280,7 +280,7 @@ sus puntos de vida sean inferiores a 0. Se mostrará el vencedor
 		(Ej, los curandores se curan cuando usan rezos)
 	* En vez de un daño fijo, un daño maximo y un daño minimo
 
-![RPG Image](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/14_PROYECTO_JAVA_VIDEOJUEGO_RPG/img/RpgGameImage.PNG)
+![RPG Image](14_PROYECTO_JAVA_VIDEOJUEGO_RPG/img/RpgGameImage.PNG)
 
 ## [15_PROYECTO_JAVA_THREADS](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/15_PROYECTO_JAVA_THREADS)    
 
