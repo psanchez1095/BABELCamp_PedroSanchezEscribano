@@ -22,7 +22,7 @@ public class Game {
 	private int dañoPlayerGuerrero = 150, dañoPlayerCurandero = -55, dañoPlayerMago = 200, dañoPlayerGigante = 100;
 	private int saludPlayerGuerrero = 1000, saludPlayerCurandero = 500, saludPlayerMago = 500,
 			saludPlayerGigante = 1600;
-	
+
 	/**
 	 * Método en el que transcurre el desarrollo de una partida. Se crea el objeto
 	 * jugado y los enemigos.
@@ -40,18 +40,20 @@ public class Game {
 			int opcion = in.nextInt();
 
 			switch (opcion) {
-
+			
+			// SALIR DEL JUEGO
 			case 0:
 				System.out.println("\n  Apagando el juego...");
 				exit = true;
 				break;
-
+				
+			// NUEVA PARTIDA MODO NORMAL
 			case 1:
 
 				menuTropaPlayer();
 
 				opcion = in.nextInt();
-				
+
 				switch (opcion) {
 
 				case 1:
@@ -76,8 +78,8 @@ public class Game {
 					break;
 
 				}
-				System.out.println("   Elige un nombre para el "+player.getNombre());
-				
+				System.out.println("   Elige un nombre para el " + player.getNombre());
+
 				player.setNombrePlayer(in.next());
 
 				paintNewPlayer();
@@ -88,7 +90,10 @@ public class Game {
 				generateRounds(RONDAS_JUEGO);
 
 				break;
+				
+			// NUEVA PARTIDA MODO FORTALEZA
 			case 2:
+
 				fortaleza = new Fortaleza();
 				Tropa aux = new Gigante(fortaleza);
 				aux.setSalud(saludPlayerGigante);
@@ -105,35 +110,35 @@ public class Game {
 				aux.getArma().setDaño(150);
 				aux.setNombrePlayer("Conan el Bárbaro");
 				Thread t3 = new Thread(aux);
-				
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				
+
 				t1.start();
 				t2.start();
 				t3.start();
 				
+				//En el main me iba sin poner este join()
+				//Si quito el join() los hilos se pisan con el break
 				try {
-					Thread.currentThread().join();
+					t1.join();
+					t2.join();
+					t3.join();
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
+
 				break;
+				
+			// INFORMACION DE TROPAS
 			case 3:
 				infoTropas();
 				break;
-				
+
 			}
-			
+
 		} while (!exit);
 
 	}
-	
+
 	/**
 	 * Método que genera unas cuantas rondas cada una con su correspondiente
 	 * batalla.
@@ -148,7 +153,7 @@ public class Game {
 		enemies = new ArrayList<Tropa>();
 
 		for (int i = 0; i < rounds; i++) {
-			
+
 			// Genera dos enemigos aleatorios por ronda
 			enemy = generateRandomEnemy();
 			enemies.add(enemy);
@@ -165,22 +170,22 @@ public class Game {
 			battle = new Batalla();
 			battle.setPlayer(player);
 			battle.setEnemy(enemies);
-			
+
 			// Analiza el resultado de la batalla
 			int enemiesPreBattle = enemies.size();
-			
+
 			playerWins = battle.fight();
-			totalEnemiesDead+=playerWins;
-			
+			totalEnemiesDead += playerWins;
+
 			// En caso de no haber huido y si no ha matado a todos los enemigos
 			// partida
-			if (playerWins!=-1 && playerWins!=enemiesPreBattle) {
-				playerDead();	
+			if (playerWins != -1 && playerWins != enemiesPreBattle) {
+				playerDead();
 				break;
 			}
 			// En caso de ser la última ronda y el jugador siga vivo el jugador ganó la
 			// partida
-			if (i == RONDAS_JUEGO - 1 && playerWins==enemiesPreBattle) {
+			if (i == RONDAS_JUEGO - 1 && playerWins == enemiesPreBattle) {
 				playerWin();
 				break;
 			}
@@ -287,10 +292,11 @@ public class Game {
 	 * 
 	 */
 	void playerDead() {
-		System.out.println("    ------"+ player.getNombre().toUpperCase()+" "+player.getNombrePlayer().toUpperCase() + " HA MUERTO------");
+		System.out.println("    ------" + player.getNombre().toUpperCase() + " "
+				+ player.getNombrePlayer().toUpperCase() + " HA MUERTO------");
 		System.out.println("\n               ESTADÍSTICAS");
 		System.out.println(player.toString());
-		System.out.println("         -enemigos eliminados: "+totalEnemiesDead);
+		System.out.println("         -enemigos eliminados: " + totalEnemiesDead);
 		System.out.println("\n           ---FIN DE LA PARTIDA---");
 	}
 
@@ -300,11 +306,11 @@ public class Game {
 	 * 
 	 */
 	private void playerWin() {
-		System.out.println(
-				"    ------"+ player.getNombre().toUpperCase()+" "+player.getNombrePlayer().toUpperCase() + " DERROTÓ A TODOS LOS ENEMIGOS------");
+		System.out.println("    ------" + player.getNombre().toUpperCase() + " "
+				+ player.getNombrePlayer().toUpperCase() + " DERROTÓ A TODOS LOS ENEMIGOS------");
 		System.out.println("\n               ESTADÍSTICAS");
 		System.out.println(player.toString());
-		System.out.println("         -enemigos eliminados: "+totalEnemiesDead);
+		System.out.println("         -enemigos eliminados: " + totalEnemiesDead);
 		System.out.println("\n                   ---FIN DE LA PARTIDA---");
 	}
 
@@ -320,9 +326,10 @@ public class Game {
 			i++;
 		}
 	}
-	
+
 	/**
-	 * Metodo que se encarga de mostrar por pantalla por primera vez el jugador elegido
+	 * Metodo que se encarga de mostrar por pantalla por primera vez el jugador
+	 * elegido
 	 * 
 	 */
 	void paintNewPlayer() {
