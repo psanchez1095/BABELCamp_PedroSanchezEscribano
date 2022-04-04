@@ -93,39 +93,29 @@ public class Game {
 				
 			// NUEVA PARTIDA MODO FORTALEZA
 			case 2:
-
-				fortaleza = new Fortaleza();
-				Tropa aux = new Gigante(fortaleza);
-				aux.setSalud(saludPlayerGigante);
-				aux.getArma().setDaño(100);
-				aux.setNombrePlayer("Mag el temido");
-				Thread t1 = new Thread(aux);
-				aux = new Mago(fortaleza);
-				aux.setSalud(saludPlayerMago);
-				aux.getArma().setDaño(100);
-				aux.setNombrePlayer("Merlin");
-				Thread t2 = new Thread(aux);
-				aux = new Guerrero(fortaleza);
-				aux.setSalud(saludPlayerGuerrero);
-				aux.getArma().setDaño(150);
-				aux.setNombrePlayer("Conan el Bárbaro");
-				Thread t3 = new Thread(aux);
-
-				t1.start();
-				t2.start();
-				t3.start();
 				
-				//En el main me iba sin poner este join()
-				//Si quito el join() los hilos se pisan con el break
-				try {
-					t1.join();
-					t2.join();
-					t3.join();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				System.out.println("\n   Elige cuantas personas asaltan la fortaleza hoy:");
+				int asaltantes = in.nextInt();
+				fortaleza = new Fortaleza();
+				Thread auxHilo ; 
+				
+				for(int i=0;i<asaltantes;i++) {
+					
+					Tropa auxTropa=generateRandomEnemy();
+					auxTropa.setFortaleza(fortaleza);
+					auxTropa.setNombrePlayer("Thor");
+					auxHilo = new Thread(auxTropa);
+					auxHilo.start();
+					try {
+						//Con join se ejecuta el hilo tx y se pausa el hilo principal hasta que el termina
+						auxHilo.join();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
-
+				
+					
 				break;
 				
 			// INFORMACION DE TROPAS
