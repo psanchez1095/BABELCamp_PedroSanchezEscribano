@@ -21,7 +21,26 @@ public class Main {
 			else return true;
 		}	;
 		
-		//TODO USAR INTERFACES
+		System.out.println("\n   Suma Enteros");
+		System.out.println("   "+interfazSuma.operation(10, 2));
+		System.out.println("   Resta Enteros");
+		System.out.println("   "+interfazResta.operation(10, 2));
+		System.out.println("   División Enteros");
+		System.out.println("   "+interfazDivision.operation(10, 2));
+		System.out.println("   Multiplicación Enteros");
+		System.out.println("   "+interfazMultiplicacion.operation(10, 2));
+		
+		System.out.println("\n   Suma Doubles");
+		System.out.println("   "+interfazSumaDou.operation(10.2, 3.2));
+		System.out.println("   Resta Doubles");
+		System.out.println("   "+interfazRestaDou.operation(10.2, 3.2));
+		System.out.println("   División Doubles");
+		System.out.println("   "+interfazDivisionDou.operation(10.2, 3.2));
+		System.out.println("   Multiplicación Doubles");
+		System.out.println("   "+interfazMultiplicacionDou.operation(10.2, 3.2));
+		
+		System.out.println("\n   Concatena Cadenas");
+		System.out.println("   "+interfazConcatenaStr.operation("Pedro","Sanchez"));
 		
 	}
 
