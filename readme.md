@@ -316,6 +316,39 @@ la fortaleza a matar al jefe final, pero solamente uno podrá entrar en la forta
 tiempo, por lo que se debe sincronizar el objeto fortaleza para que solo un personaje 
 pueda entrar a la vez.
 
+## [17_PROYECTO_JAVA_CONCEPTOS_JAVA8](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/17_PROYECTO_JAVA_CONCEPTOS_JAVA8)    
+
+***Ejercicio 18***
+
+**Similar al ejercicio 16 pero con funciones Lambda**
+
+El calculo de numeros primos es una tarea complicada y costosa de hacer porque puede
+llevar mucho tiempo de procesamiento;
+
+Queremos hacer un programa que pida 3 numeros por pantalla y nos diga si son primos o no.
+
+Pero dado que el calculo del numero primo puede ser muy costoso, queremos abrir un hilo de
+ejecución por cada numero introducido. Cada hilo recibira el numero que ha introducido el 
+usuario por pantalla, y mostrará si es primo o no.
+
+* HACERLO CON FUNCIONES LAMBDA. A un objeto de tipo Thread se le puede pasar por parametros de 
+constructor una función lambada (runnable es una interfaz funcional)
+
+* Quiero que todo este en la clase main y no haya otras clases.
+
+## [18_PROYECTO_JAVA_CONCEPTOS_JAVA8_2](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/18_PROYECTO_JAVA_CONCEPTOS_JAVA8_2)    
+
+***Ejercicio 19***
+
+* Quiero que hagáis una interfaz que os permmita operar con 2 numeros y devuelva un valor.
+
+A partir de esta interfaz, realizar las 4 operaciones basicas que podemos hacer con los numeros
+(suma, resta, multiplicacion, division). Ademas realizar la potencia de ambos numeros.
+
+* Para todos los casos deberemos usar las funciones lambda.
+
+* Opcional: Parametrizar los tipos de numero en la interfaz (double, integer)
+
 # OTROS  
 
 ## TOMCAT  
