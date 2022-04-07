@@ -57,7 +57,6 @@ public class DaoCocheMySQL implements DaoCoche {
 		return true;
 	}
 
-	@Override
 	public boolean alta(Coche c) {
 
 		if (!nuevaConexion())
@@ -89,7 +88,6 @@ public class DaoCocheMySQL implements DaoCoche {
 		return alta;
 	}
 
-	@Override
 	public int baja(int id) {
 
 		if (!nuevaConexion())
@@ -116,7 +114,6 @@ public class DaoCocheMySQL implements DaoCoche {
 
 	}
 
-	@Override
 	public int modificar(Coche c) {
 
 		if (!nuevaConexion())
@@ -148,7 +145,6 @@ public class DaoCocheMySQL implements DaoCoche {
 		return modificar;
 	}
 
-	@Override
 	public Coche buscarPorId(int id) {
 		if (!nuevaConexion()) {
 			return null;
@@ -179,7 +175,6 @@ public class DaoCocheMySQL implements DaoCoche {
 		return c;
 	}
 
-	@Override
 	public ArrayList<Coche> buscarPorMarca(String marca) {
 		if (!nuevaConexion()) {
 			return null;
@@ -212,7 +207,6 @@ public class DaoCocheMySQL implements DaoCoche {
 		return lista;
 	}
 
-	@Override
 	public ArrayList<Coche> buscarPorModelo(String modelo) {
 		if (!nuevaConexion()) {
 			return null;
@@ -245,7 +239,6 @@ public class DaoCocheMySQL implements DaoCoche {
 		return lista;
 	}
 
-	@Override
 	public Coche buscarPorMatricula(String matricula) {
 		if (!nuevaConexion()) {
 			return null;
@@ -277,7 +270,6 @@ public class DaoCocheMySQL implements DaoCoche {
 		return c;
 	}
 
-	@Override
 	public ArrayList<Coche> listar() {
 		if (!nuevaConexion()) {
 			return null;
