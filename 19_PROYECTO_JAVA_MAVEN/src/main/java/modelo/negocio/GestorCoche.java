@@ -7,6 +7,7 @@ import modelo.entidad.Coche;
 import modelo.persistencia.DaoCocheMySQL;
 import modelo.persistencia.interfaces.DaoCoche;
 import com.google.gson.Gson;
+
 public class GestorCoche {
 
 	private DaoCoche daoCoche = new DaoCocheMySQL();
@@ -147,12 +148,19 @@ public class GestorCoche {
 		ArrayList<Coche> lista = daoCoche.listar();
 		return lista;
 	}
+
+	/**
+	 * Metodo que se encarga de convertir una referencia de un objeto de tipo coche
+	 * a JSON
+	 * 
+	 * @param c es una referencia del tipo coche que se va a convertir a JSON
+	 * @return Devuelve un String en formato JSON de Coche si se pudo convertir el
+	 *         Coche a JSON
+	 */
 	public String convertirAJson(Coche c) {
 		Gson gson = new Gson();
 		String json = gson.toJson(c);
 		return json;
 	}
-	
-	
 
 }

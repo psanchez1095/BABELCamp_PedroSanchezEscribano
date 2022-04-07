@@ -28,18 +28,20 @@ public class Main {
 		ArrayList<Coche> lista;
 
 		System.out.println("\n Consulta de Vehiculos");
-		
+
 		do {
 
 			menu();
 			int opcion = sc.nextInt();
 			switch (opcion) {
 
+			// SALIR
 			case 0:
 
 				exit = true;
 				break;
 
+			// DAR DE ALTA COCHE
 			case 1:
 
 				System.out
@@ -79,6 +81,7 @@ public class Main {
 				}
 				break;
 
+			// DAR DE BAJA COCHE
 			case 2:
 
 				System.out.println(" Introduzca el id del vehiculo que quiere dar de baja");
@@ -95,6 +98,7 @@ public class Main {
 					System.out.println("Error de conexión con la BBDD");
 				break;
 
+			// MODIFICAR COCHE
 			case 3:
 
 				System.out.println(
@@ -136,6 +140,7 @@ public class Main {
 
 				break;
 
+			// BUSCAR COCHE POR ID
 			case 4:
 
 				System.out.println(" Introduzca el id del vehiculo que quiere buscar");
@@ -152,6 +157,7 @@ public class Main {
 
 				break;
 
+			// BUSCAR COCHES POR MARCA
 			case 5:
 
 				System.out.println(" Introduzca la marca del vehiculo que quiere buscar");
@@ -173,6 +179,7 @@ public class Main {
 
 				break;
 
+			// BUSCAR COCHES POR MODELO
 			case 6:
 
 				System.out.println(" Introduzca el modelo del vehiculo que quiere buscar");
@@ -194,6 +201,7 @@ public class Main {
 
 				break;
 
+			// BUSCAR COCHE POR MATRICULA
 			case 7:
 
 				System.out.println(" Introduzca la matrícula del vehiculo que quiere buscar");
@@ -210,6 +218,7 @@ public class Main {
 
 				break;
 
+			// LISTAR COCHES
 			case 8:
 
 				lista = gCoche.listar();
@@ -227,20 +236,20 @@ public class Main {
 					System.out.println("\n Error de conexión con la BBDD");
 
 				break;
-				
+
+			// CONVERSION DE LA LISTA DE COCHES A UN FICHERO TXT EN FORMATO JSON
 			case 9:
-				
+
 				String sFichero = "src/main/resources/ficheroJson.txt";
 				File fichero = new File(sFichero);
-				
-				
-					BufferedWriter bw = new BufferedWriter(new FileWriter(sFichero));
-				
-				
-				if (fichero.exists()) {}
+
+				BufferedWriter bw = new BufferedWriter(new FileWriter(sFichero));
+
+				if (fichero.exists()) {
+				}
 				lista = gCoche.listar();
-				
-				lista.forEach( x ->{
+
+				lista.forEach(x -> {
 					try {
 						bw.write(gCoche.convertirAJson(x));
 						bw.write("\n");
@@ -248,17 +257,18 @@ public class Main {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
+
 				});
 				bw.close();
-				
+
 				break;
+			// CONVERSION DE LA LISTA DE COCHES A UN FICHERO PDF
 			case 10:
 
-				//TODO PDF FILE
+				// TODO PDF FILE
 
 				break;
-				
+
 			}
 
 		} while (!exit);
@@ -267,6 +277,10 @@ public class Main {
 
 	}
 
+	/**
+	 * Metodo que se encarga de imprimir por pantalla el menu principal
+	 * 
+	 */
 	private static void menu() {
 
 		System.out.println("\n Elija una opción:");
