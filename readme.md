@@ -349,6 +349,42 @@ A partir de esta interfaz, realizar las 4 operaciones basicas que podemos hacer 
 
 * Opcional: Parametrizar los tipos de numero en la interfaz (double, integer)
 
+## [19_PROYECTO_JAVA_MAVEN](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/19_PROYECTO_JAVA_MAVEN)    
+
+***Ejercicio 20***
+
+**Similar al ejericico 14 pero usando Maven**
+
+Los coches tendrán las siguientes atributos
+* id
+* matricula;
+* marca;
+* modelo;
+* kilometros;
+
+Se mostrará un menu con las siguientes opciones:
+
+1. Alta de coche
+2. Eliminar coche por id
+3. Modificar coche por id
+4. buscar coche por id
+5. buscar coche por matricula
+6. buscar coches por marca
+7. buscar coches por modelo
+8. listar todos los coches
+9. Salir de la aplicación
+10. Exportar los coches a un fichero en formato JSON
+11. Exportar los coches a un fichero excel (o PDF)
+	https://github.com/fdepablo/WorkspaceJava/tree/master/30_Maven
+
+Tendremos las siguientes reglas de negocio
+
+La matricula tendrá una longitud de 7
+No puede haber dos matriculas repetidas
+Los kilometros no podrán ser negativos
+
+Hacerlo mediante el modelo de las 3 capas que hemos visto en clase
+
 # OTROS  
 
 ## TOMCAT  
