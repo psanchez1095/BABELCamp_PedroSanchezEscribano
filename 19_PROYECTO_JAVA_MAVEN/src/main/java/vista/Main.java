@@ -1,22 +1,15 @@
 package vista;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.itextpdf.text.DocumentException;
-
 import modelo.entidad.Coche;
 import modelo.negocio.GestorCoche;
-import modelo.persistencia.DaoCocheMySQL;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException  {
+	public static void main(String[] args) throws IOException {
 
 		Scanner sc = new Scanner(System.in);
 		boolean exit = false;
@@ -244,27 +237,32 @@ public class Main {
 			case 9:
 
 				lista = gCoche.listar();
-				
+
 				if (lista != null) {
 
-					if (gCoche.crearTxtJson(lista)) System.out.println(" Archivo creado con éxito");
-					else System.out.println(" Error al crear el archivo");
+					if (gCoche.crearTxtJson(lista))
+						System.out.println(" Archivo creado con éxito");
+					else
+						System.out.println(" Error al crear el archivo");
 				}
 
 				else
 					System.out.println("\n Error de conexión con la BBDD");
 
 				break;
+
 			// CONVERSION DE LA LISTA DE COCHES A UN FICHERO PDF
 			case 10:
 
 				// TODO PDF FILE
 				lista = gCoche.listar();
 				System.out.println("");
-				
-				if (gCoche.crearPDF(lista)) System.out.println(" PDF Creado con éxito");
-				else System.out.println(" Error al crear el PDF");
-				
+
+				if (gCoche.crearPDF(lista))
+					System.out.println(" PDF creado con éxito");
+				else
+					System.out.println(" Error al crear el PDF");
+
 				break;
 
 			}

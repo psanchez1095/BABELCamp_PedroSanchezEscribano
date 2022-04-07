@@ -6,9 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import modelo.entidad.Coche;
 import modelo.persistencia.DaoCocheMySQL;
@@ -19,10 +17,8 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Font.FontFamily;
-import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-
 
 public class GestorCoche {
 
@@ -178,20 +174,22 @@ public class GestorCoche {
 		String json = gson.toJson(c);
 		return json;
 	}
-	
+
 	/**
-	 * Metodo que se encarga de convertir una referencia de un objeto de tipo coche
-	 * a PDF
+	 * Metodo que se encarga de crear un PDF a partir de una lista de Coches
 	 * 
+	 * @param listaC es la lista de coches
+	 * @return devuelve true si se ha realizado la creación del archivo PDF con
+	 *         éxito,false en caso contrario
 	 */
 	public boolean crearPDF(ArrayList<Coche> listaC) {
-		
+
 		boolean ok = true;
 		// Crear Documento
-        Document document = new Document();
+		Document document = new Document();
 
-        // Crear PdfWriter
-        try {
+		// Crear PdfWriter
+		try {
 			PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/listaCoches.pdf"));
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
@@ -203,71 +201,73 @@ public class GestorCoche {
 			return false;
 		}
 
-        // Abrir Documento
-        document.open();
-        
-        //Añadir titulo PDF
-      	document.addTitle("Lista Vehículos PDF");
-      	
-      	//To add the Author for the PDF
-      	document.addAuthor("Pedro Babel");
-      	
-      	// Titulo
-      	Font bold = new Font(FontFamily.COURIER, 18, Font.BOLD);
-      	Paragraph p = new Paragraph("Lista Vehículos PDF",bold);
-      	p.setAlignment(Element.ALIGN_CENTER);
-      	
-      	try {
+		// Abrir Documento
+		document.open();
+
+		// Añadir titulo PDF
+		document.addTitle("Lista Vehículos PDF");
+
+		// To add the Author for the PDF
+		document.addAuthor("Pedro Babel");
+
+		// Titulo
+		Font bold = new Font(FontFamily.COURIER, 18, Font.BOLD);
+		Paragraph p = new Paragraph("Lista Vehículos PDF", bold);
+		p.setAlignment(Element.ALIGN_CENTER);
+
+		try {
 			document.add(p);
 			document.add(new Paragraph("\n"));
 		} catch (DocumentException e1) {
 			// TODO Auto-generated catch block
-			
+
 			e1.printStackTrace();
 			return false;
 		}
-      	
-      	// Lista Vehículos
-        listaC.forEach(x -> {
-        	
+
+		// Lista Vehículos
+		listaC.forEach(x -> {
+
 			try {
-				
-				document.add(new Paragraph("Vehiculo "+Integer.toString(x.getId()),new Font(FontFamily.COURIER, 14, Font.BOLD)));
-				document.add(new Paragraph("Id - > " +Integer.toString(x.getId())));
-				document.add(new Paragraph("Matrícula - > " +x.getMatricula()));
-				document.add(new Paragraph("Marca - > " +x.getMarca()));
-				document.add(new Paragraph("Modelo - > " +x.getModelo()));
-				document.add(new Paragraph("Número Kilómetros - > " +Double.toString(x.getKilometros())));
+
+				document.add(new Paragraph("Vehiculo " + Integer.toString(x.getId()),
+						new Font(FontFamily.COURIER, 14, Font.BOLD)));
+				document.add(new Paragraph("Id - > " + Integer.toString(x.getId())));
+				document.add(new Paragraph("Matrícula - > " + x.getMatricula()));
+				document.add(new Paragraph("Marca - > " + x.getMarca()));
+				document.add(new Paragraph("Modelo - > " + x.getModelo()));
+				document.add(new Paragraph("Número Kilómetros - > " + Double.toString(x.getKilometros())));
 				document.add(new Paragraph("\n\n"));
 
 			} catch (DocumentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		});
 
-        // Cerrar Documento
-        document.close();
-        return ok;
+		// Cerrar Documento
+		document.close();
+		return ok;
 
 	}
-	
+
 	/**
-	 * Metodo que se encarga de convertir una referencia de un objeto de tipo coche
-	 * a PDF
+	 * Metodo que se encarga de crear un archivo de texto con formato JSON a partir
+	 * de una lista de Coches
 	 * 
-	 * @param c es una referencia del tipo coche que se va a convertir a PDF
-	 * @throws IOException 
+	 * @param listaC es la lista de coches
+	 * @return devuelve true si se ha realizado la creación del archivo con
+	 *         éxito,false en caso contrario
+	 * @throws IOException
 	 */
-	public boolean crearTxtJson(ArrayList<Coche> listaC) throws IOException  {
-		
+	public boolean crearTxtJson(ArrayList<Coche> listaC) throws IOException {
 
 		String sFichero = "src/main/resources/ficheroJson.txt";
 		File fichero = new File(sFichero);
 
 		BufferedWriter bw = new BufferedWriter(new FileWriter(sFichero));
-		
+
 		listaC.forEach(x -> {
 			try {
 				bw.write(convertirAJson(x));
@@ -279,8 +279,7 @@ public class GestorCoche {
 		});
 		bw.close();
 		return true;
-		
-		
+
 	}
 
 }
