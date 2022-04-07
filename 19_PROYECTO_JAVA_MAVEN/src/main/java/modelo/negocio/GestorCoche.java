@@ -6,7 +6,7 @@ import java.util.List;
 import modelo.entidad.Coche;
 import modelo.persistencia.DaoCocheMySQL;
 import modelo.persistencia.interfaces.DaoCoche;
-
+import com.google.gson.Gson;
 public class GestorCoche {
 
 	private DaoCoche daoCoche = new DaoCocheMySQL();
@@ -147,5 +147,12 @@ public class GestorCoche {
 		ArrayList<Coche> lista = daoCoche.listar();
 		return lista;
 	}
+	public String convertirAJson(Coche c) {
+		Gson gson = new Gson();
+		String json = gson.toJson(c);
+		return json;
+	}
+	
+	
 
 }

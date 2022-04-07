@@ -1,0 +1,6 @@
+{"id":1,"matricula":"QWERTY0","marca":"SEAT","modelo":"TOLEDO","kilometros":15325.5}
+{"id":2,"matricula":"ASDFGH7","marca":"SEAT","modelo":"LEON","kilometros":65400.0}
+{"id":3,"matricula":"QWERTY5","marca":"AUDI","modelo":"Q5","kilometros":1450.0}
+{"id":4,"matricula":"KHJSA87","marca":"OPEL","modelo":"INSIGNIA","kilometros":0.0}
+{"id":5,"matricula":"FTHUK77","marca":"DACIA","modelo":"DUSTER","kilometros":100450.5}
+{"id":6,"matricula":"sasad44","marca":"Mercedes","modelo":"CLX500","kilometros":1324.3}

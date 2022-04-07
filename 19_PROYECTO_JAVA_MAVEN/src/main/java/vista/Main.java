@@ -1,5 +1,9 @@
 package vista;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,7 +13,7 @@ import modelo.persistencia.DaoCocheMySQL;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		Scanner sc = new Scanner(System.in);
 		boolean exit = false;
@@ -223,7 +227,38 @@ public class Main {
 					System.out.println("\n Error de conexión con la BBDD");
 
 				break;
+				
+			case 9:
+				
+				String sFichero = "src/main/resources/ficheroJson.txt";
+				File fichero = new File(sFichero);
+				
+				
+					BufferedWriter bw = new BufferedWriter(new FileWriter(sFichero));
+				
+				
+				if (fichero.exists()) {}
+				lista = gCoche.listar();
+				
+				lista.forEach( x ->{
+					try {
+						bw.write(gCoche.convertirAJson(x));
+						bw.write("\n");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				});
+				bw.close();
+				
+				break;
+			case 10:
 
+				//TODO PDF FILE
+
+				break;
+				
 			}
 
 		} while (!exit);
@@ -244,6 +279,8 @@ public class Main {
 		System.out.println(" 6- Buscar Vehículo por Modelo");
 		System.out.println(" 7- Buscar Vehículo por Matricula");
 		System.out.println(" 8- Listar Vehículos");
+		System.out.println(" 9- Exportar los coches a un fichero en formato JSON");
+		System.out.println(" 10- Exportar los coches a un fichero en formato PDF");
 
 	}
 
