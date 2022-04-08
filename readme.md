@@ -385,6 +385,10 @@ Los kilometros no podrán ser negativos
 
 Hacerlo mediante el modelo de las 3 capas que hemos visto en clase
 
+* Quiero que probéis mediante JUNIT un método de vuestros.(probar el metodo obtener coche por id del DAO)
+* Quiero que generéis un ejecutable del proyecto mediante maven y que se pasen tambien las pruebas 
+unitarias
+
 # OTROS  
 
 ## TOMCAT  
