@@ -17,6 +17,17 @@ class TestGestorCoche {
 		assertNotNull(c);
 		assertNotSame("",gc.convertirAJson(c));
 
-}
+	}
+	
+	@Test
+	void testBuscarPorId() {
+		
+		GestorCoche gc = new GestorCoche();
+		int id = 1;
+		assert(gc.buscarPorId(id)==null || gc.buscarPorId(id) instanceof Coche);
+		id = 10000;
+		assert(gc.buscarPorId(id)==null || gc.buscarPorId(id) instanceof Coche);
+
+	}
 	
 }
