@@ -1,7 +1,6 @@
-{"id":1,"matricula":"QWERTY6","marca":"SEAT","modelo":"TOLEDO","kilometros":44.0}
-{"id":2,"matricula":"qwrew23","marca":"Renault","modelo":"Clio","kilometros":123.0}
-{"id":3,"matricula":"QW446R5","marca":"FORD","modelo":"MUSTANG","kilometros":1134.0}
-{"id":4,"matricula":"778DF9D","marca":"Toyota","modelo":"Auris","kilometros":100000.0}
-{"id":5,"matricula":"WE2245R","marca":"AUDI","modelo":"A7","kilometros":0.0}
-{"id":6,"matricula":"HJGF313","marca":"Renault","modelo":"Megane","kilometros":21.0}
-{"id":7,"matricula":"QAZXCV4","marca":"Spezial","modelo":"S77","kilometros":113210.0}
+{"id":1,"matricula":"QWERTY0","marca":"SEAT","modelo":"TOLEDO","kilometros":15325.5}
+{"id":2,"matricula":"ASDFGH7","marca":"SEAT","modelo":"LEON","kilometros":65400.0}
+{"id":3,"matricula":"QWERTY5","marca":"AUDI","modelo":"Q5","kilometros":1450.0}
+{"id":4,"matricula":"KHJSA87","marca":"OPEL","modelo":"INSIGNIA","kilometros":0.0}
+{"id":5,"matricula":"FTHUK77","marca":"DACIA","modelo":"DUSTER","kilometros":100450.5}
+{"id":6,"matricula":"sasad44","marca":"Mercedes","modelo":"CLX500","kilometros":1324.3}
