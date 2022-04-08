@@ -1,0 +1,22 @@
+package modelo.negocio;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import modelo.entidad.Coche;
+
+class TestGestorCoche {
+
+	@Test
+	void testConvertirJSON() {
+		
+		GestorCoche gc = new GestorCoche();
+		Coche c = new Coche(1,"qwerty22","SEAT","TOLEDO",1234.5);
+
+		assertNotNull(c);
+		assertNotSame("",gc.convertirAJson(c));
+
+}
+	
+}
