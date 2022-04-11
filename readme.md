@@ -428,6 +428,28 @@ seguridad de la aplicacion. Ej:
 	body de petición: nombre=tony&password=1234
 	
 Para probar esto podéis utilizar postman
+
+## [21_PROYECTO_JAVA_MAVEN_CONSUMIDOR](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/21_PROYECTO_JAVA_MAVEN_CONSUMIDOR)    
+
+***Ejercicio 21***
+
+2a PARTE
+--------
+
+Vamos a usar alguna aplicación que hemos construido para probar dicho servicio.
+
+1. Al arrancar la aplicación del ejercicio 20(Aplicacion Java Consola Vehículos) y antes de mostrar ningun tipo de menu, la aplicación
+nos pedira un usuario y un password para validarlo con el servicio web que hemos creado antes.
+(HTTP cliente Java 11).
+
+Si el usuario esta "validado" nos dejará entrar en la aplicación y nos mostrará el menu. En caso
+contrario, la aplicación nos dirá que el usuario y el password no es correcto y nos permitira 
+inserta otra vez el usuario y el password. La aplicación hará esta funcionalidad un maximo de 3
+veces antes de acabar el programa. Hacerlo tambien por capas.
+
+Posible mejora: Hacer la peticion consumiendo "POST /usuarios/login"
+
+
 # OTROS  
 
 ## TOMCAT  
