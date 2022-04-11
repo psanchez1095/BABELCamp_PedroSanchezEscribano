@@ -92,8 +92,9 @@ public class DaoUserMySQL implements DaoUser {
 		} finally {
 			cerrarConexion();
 		}
+		return false;
 
-		return true;
+		
 		
 		
 	}

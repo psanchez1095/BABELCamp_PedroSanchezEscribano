@@ -2,6 +2,10 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.http.HttpClient;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandler;
+import java.net.http.HttpResponse.BodyHandlers;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,9 +50,8 @@ public class validateUserServlet extends HttpServlet {
 		
 		boolean validado;
 		
-		
 		User aux = new User(-1,request.getParameter("nombre"),request.getParameter("password"));
-		System.out.println(aux.getNombre()+aux.getPassword());
+	
 		validado=daoUser.validar(aux);
 		
 		JSONObject json =new JSONObject();
@@ -65,8 +68,22 @@ public class validateUserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		daoUser = new DaoUserMySQL();
+		
+		boolean validado;
+		
+		User aux = new User(-1,request.getParameter("nombre").toString(),request.getParameter("password").toString());
+		
+		validado=daoUser.validar(aux);
+		
+		JSONObject json =new JSONObject();
+		
+		json.put("validado", validado);
+		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+	    response.getWriter().write(json.toString());
 	}
 
 }
