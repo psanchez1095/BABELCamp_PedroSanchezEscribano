@@ -389,6 +389,45 @@ Hacerlo mediante el modelo de las 3 capas que hemos visto en clase
 * Quiero que generéis un ejecutable del proyecto mediante maven y que se pasen tambien las pruebas 
 unitarias
 
+## [20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB)    
+
+***Ejercicio 21***
+
+1a PARTE
+--------
+
+Hacer un servicio web '21_WebLogin' (con servlets) que diga a las demás aplicaciones que lo consumen si 
+un usuario esta autenticado.
+
+Un usuario esta autenticado si su usuario y password son correcto. Los usuarios estarán almacenados
+en una tabla de base de datos.
+
+Para consumir el servicio la URL del recurso sera GET '/usuarios/login' y se pasarán los datos del usuario
+por parametros de query. Ej: /usuarios/login?nombre=tony&password=1234
+
+El servicio enviará un objeto json con la respuesta con el siguiente formato
+
+{"validado":true}
+o
+{"validado":false}
+
+La aplicación debe estar construtida con capas vista en clase.
+
+	- Capa controladora (Servlet)
+	- Capa de modelo 
+		- entidades
+		- negocio
+		- Dao o acceso a datos	
+
+Para probar esto podéis utilizar un navegador o postman
+
+Posible mejora: Se quiere enviar los datos dentro del body de la petición HTTP para incrementar la
+seguridad de la aplicacion. Ej:
+
+	Linea de petición: POST /usuarios/login
+	body de petición: nombre=tony&password=1234
+	
+Para probar esto podéis utilizar postman
 # OTROS  
 
 ## TOMCAT  
