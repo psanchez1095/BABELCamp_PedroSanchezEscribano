@@ -413,11 +413,11 @@ o
 
 La aplicación debe estar construtida con capas vista en clase.
 
-	- Capa controladora (Servlet)
-	- Capa de modelo 
-		- entidades
-		- negocio
-		- Dao o acceso a datos	
+* Capa controladora (Servlet)
+* Capa de modelo 
+* Entidades
+* Negocio
+* Dao o acceso a datos	
 
 Para probar esto podéis utilizar un navegador o postman
 
