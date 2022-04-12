@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+/*CSS Para Moviles y Tablets*/
+@media screen and (min-width:0px) {
+  body {
+    height: 87vh;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+  }
+
+  #divMain {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #divContact{
+    height:60%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white; 
+    font-family: 'Audiowide', cursive;
+  }
+
+  #divContact>h1{
+    margin-top: 2%;
+    text-align: center;
+  }
+
+  #divContact>p{
+    margin-left: 25%;
+    margin-right: 25%;  
+    margin-top: 2%;
+    font-size: large;
+    text-align: center;
+  }
+
+  #divIcons{
+    height:40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2%;
+    background-color: darkslateblue;
+  }
+
+  img{
+    max-width: 33%;
+    height: auto;
+  }
+  
+  #info{
+    margin-top: 8%;
+    margin-right: 5%;
+
+  }
+  #info>a{
+    color: black;
+  }
+
+  /*Estilo Barra Scroll*/
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: black;
+  }
+
+}
+
+/*CSS Para PCs*/
+@media screen and (min-width:1100px) {
+
+  body {
+    height: 81vh;
+    display: flex;
+    flex-direction: row;
+    background-color: lightslategray;
+  }
+  
+  /*Estilo Barra Scroll*/
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: black;
+  }
+  
+  #divIcons{
+  height:40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0%;
+  background-color: darkslateblue;
+  }
+
+  #imgDivIcons{
+    width: auto;
+    height: auto;
+    margin-right: 2%;
+  }
+
+}

@@ -1,0 +1,27 @@
+<body>
+
+  <div id="divMain">
+
+    <div id="divContact">
+      <div id="info"> <img [src]="urlImgMail"> Email : <a href="mailto:ps95se@gmail.com">{{correo}}</a>
+      </div>
+      <div id="info"> <img [src]="urlImgPhone"> Telefono : <a href="tel:+34630413222">{{telefono}}</a>
+      </div>
+      <div id="info"> <img [src]="urlImgCity"> Ciudad : {{ciudad}}</div>
+
+    </div>
+
+    <div id="divIcons">
+        <img id="imgDivIcons" [src]="urlImgGameConsole">
+        <img id="imgDivIcons" [src]="urlImgAccesory">
+        <img id="imgDivIcons" [src]="urlImgGame">
+    </div>
+
+</div>
+
+</body>
+
+<!--Vinculando la propiedad del FooterComponent en la plantilla del componente principal-->
+<app-footer [showBtnAboutUs]="currentBtnAboutUs" [showBtnContact]="currentBtnContact" [showBtnLogin]="currentBtnLogin"
+  [showBtnBack]="currentBtnBack">
+</app-footer>

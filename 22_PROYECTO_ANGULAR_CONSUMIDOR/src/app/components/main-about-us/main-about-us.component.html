@@ -1,0 +1,23 @@
+<body>
+
+    <div id="divMain">
+        
+        <div id="divAboutUs">
+            <h1>{{titleAboutUs}}</h1>
+            <p>{{textAboutUs}}</p>
+            <p>{{textAboutUsCont}}</p>
+        </div>
+
+        <div id="divIcons">
+            <img [src]="urlImgGameConsole">
+            <img [src]="urlImgAccesory">
+            <img [src]="urlImgGame">
+        </div>
+   
+    </div>
+
+</body>
+
+<!--Vinculando la propiedad del FooterComponent en la plantilla del componente principal-->
+<app-footer [showBtnAboutUs]="currentBtnAboutUs"[showBtnContact]="currentBtnContact"[showBtnLogin]="currentBtnLogin" [showBtnBack]="currentBtnBack">
+</app-footer>

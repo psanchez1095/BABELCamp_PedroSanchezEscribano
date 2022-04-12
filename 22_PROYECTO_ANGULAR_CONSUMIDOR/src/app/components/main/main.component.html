@@ -1,0 +1,29 @@
+<body>
+    <div id="divIzqMain">
+        <div id="divArray">
+            <h2>{{titleArrGames}}</h2>
+            <div id="game" *ngFor="let x of games" (click)="navigateDetailGame(x)">
+
+                <h2> {{x.getTitulo()}} <span><img id="idGame" src={{x.getUrlImg()}}></span></h2>
+                <span> {{x.getCompania()}} </span>
+                <span id="vMedia"> {{x.getValoracionMedia()}} </span>
+
+            </div>
+        </div>
+    </div>
+    <div id="divDerMain">
+
+        <div id="divDerMainUser">
+            
+            <h2>{{titleUser}}</h2>
+
+            <div id="infoUser">
+                <p>{{userEmail}} </p><img id="imgUserStatus" [src]="urlIconUser">
+            </div>
+
+        </div>
+       
+    </div>
+
+</body>
+<app-footer [showBtnBack]="currentBtnBack"></app-footer>
