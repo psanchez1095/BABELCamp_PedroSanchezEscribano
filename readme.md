@@ -450,6 +450,20 @@ veces antes de acabar el programa. Hacerlo tambien por capas.
 Posible mejora: Hacer la peticion consumiendo "POST /usuarios/login"
 
 
+## [22_PROYECTO_ANGULAR_CONSUMIDOR](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/22_PROYECTO_ANGULAR_CONSUMIDOR)    
+
+***Ejercicio 21***
+
+2a PARTE
+--------
+Vamos a usar la aplicación angular de videojuegos que hemos construido para probar dicho servicio.
+
+2. Cuidado con el XSS, tendremos que poneren la peticion cabeceras que permitan hacer la petición al servicio. Tendreis que meter alguna cabecera en la request que permita. 
+
+**He creado un nuevo servicio en angular llamado [LoginValidation](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/blob/master/22_PROYECTO_ANGULAR_CONSUMIDOR/src/app/services/login-validation.service.ts) el cual tiene un método login que realiza una petición get al servicio web creado mediante servlets en [enlace](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/blob/master/20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB/src/main/java/controlador/validateUserServlet.java).**
+
+**He usado dicho servicio en el [componente](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/blob/master/22_PROYECTO_ANGULAR_CONSUMIDOR/src/app/components/main-login/main-login.component.ts) login en la linea 69 del código.**
+
 # OTROS  
 
 ## TOMCAT  
