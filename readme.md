@@ -391,10 +391,10 @@ unitarias
 
 ## [20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB)    
 
-***Ejercicio 21***
-
-1a PARTE
+Ejercicio 21
 --------
+
+***PRIMERA PARTE***
 
 Hacer un servicio web '21_WebLogin' (con servlets) que diga a las demás aplicaciones que lo consumen si 
 un usuario esta autenticado.
@@ -434,11 +434,11 @@ Para probar esto podéis utilizar postman
 Ejercicio 21
 --------
 
-***2a PARTE***
+***SEGUNDA PARTE-1***
 
-Vamos a usar alguna aplicación que hemos construido para probar dicho servicio.
+Vamos a usar la aplicación java del ejercicio 20 que hemos construido para probar dicho servicio.
 
-1. Al arrancar la aplicación del ejercicio 20(Aplicacion Java Consola Vehículos) y antes de mostrar ningun tipo de menu, la aplicación
+Al arrancar la aplicación y antes de mostrar ningun tipo de menu, la aplicación
 nos pedira un usuario y un password para validarlo con el servicio web que hemos creado antes.
 (HTTP cliente Java 11).
 
@@ -452,13 +452,14 @@ Posible mejora: Hacer la peticion consumiendo "POST /usuarios/login"
 
 ## [22_PROYECTO_ANGULAR_CONSUMIDOR](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/22_PROYECTO_ANGULAR_CONSUMIDOR)    
 
-***Ejercicio 21***
-
-2a PARTE
+Ejercicio 21
 --------
+
+***SEGUNDA PARTE-2***
+
 Vamos a usar la aplicación angular de videojuegos que hemos construido para probar dicho servicio.
 
-2. Cuidado con el XSS, tendremos que poneren la peticion cabeceras que permitan hacer la petición al servicio. Tendreis que meter alguna cabecera en la request que permita. 
+Cuidado con el XSS, tendremos que poneren la peticion cabeceras que permitan hacer la petición al servicio. Tendreis que meter alguna cabecera en la request que permita. 
 
 **He creado un nuevo servicio en angular llamado [LoginValidation](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/blob/master/22_PROYECTO_ANGULAR_CONSUMIDOR/src/app/services/login-validation.service.ts) el cual tiene un método llamado login que realiza una petición GET al servicio web creado mediante servlets en el proyecto [20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/blob/master/20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB/src/main/java/controlador/validateUserServlet.java).**
 
