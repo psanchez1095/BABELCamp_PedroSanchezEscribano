@@ -431,10 +431,10 @@ Para probar esto podéis utilizar postman
 
 ## [21_PROYECTO_JAVA_MAVEN_CONSUMIDOR](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/21_PROYECTO_JAVA_MAVEN_CONSUMIDOR)    
 
-***Ejercicio 21***
-
-2a PARTE
+Ejercicio 21
 --------
+
+***2a PARTE***
 
 Vamos a usar alguna aplicación que hemos construido para probar dicho servicio.
 
