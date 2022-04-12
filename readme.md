@@ -449,6 +449,7 @@ veces antes de acabar el programa. Hacerlo tambien por capas.
 
 Posible mejora: Hacer la peticion consumiendo "POST /usuarios/login"
 
+**He usado dicho servicio en el [main](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/blob/master/21_PROYECTO_JAVA_MAVEN_CONSUMIDOR/src/main/java/vista/Main.java) en el método `boolean validarUsuario(String nombre, String contraseña)` en la linea 302 del código.**
 
 ## [22_PROYECTO_ANGULAR_CONSUMIDOR](https://github.com/psanchez1095/BABELCamp_PedroSanchezEscribano/tree/master/22_PROYECTO_ANGULAR_CONSUMIDOR)    
 
