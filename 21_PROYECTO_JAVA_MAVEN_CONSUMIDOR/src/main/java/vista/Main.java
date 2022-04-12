@@ -18,6 +18,7 @@ import modelo.entidad.Coche;
 import modelo.negocio.GestorCoche;
 
 public class Main {
+	
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
@@ -34,8 +35,22 @@ public class Main {
 		ArrayList<Coche> lista;
 		
 		//VALIDAMOS USUARIO CON HTTP CLIENT ( JAVA 11 )
-		validarUsuario();
+		String nombre, contraseña;
+		boolean contraseñaBoolean = false;
 
+		do {
+			
+			System.out.println("\n Introduzca el usuario");
+			nombre = sc.next();
+			System.out.println("\n Introduzca la contraseña para " + nombre);
+			contraseña = sc.next();
+
+			contraseñaBoolean = validarUsuario(nombre,contraseña);
+			
+		} while (!contraseñaBoolean);
+		
+		
+		System.out.println("\n Usuario identificado con éxito\n");
 		System.out.println("\n Consulta de Vehiculos");
 
 		do {
@@ -285,18 +300,15 @@ public class Main {
 		System.out.println("Fin de programa");
 
 	}
+	
+	/**
+	 * Método que se encarga de validar un usuario realizando una petición get al servicio web de validación
+	 * @param nombre nombre del usuario
+	 * @param contraseña contraseña del usuario
+	 * @return Devuelve un booleano, True en caso de validar con éxito el usuario, false en caso contrario
+	 *  */
+	private static boolean validarUsuario(String nombre, String contraseña) {
 
-	private static void validarUsuario() {
-
-		String nombre, contraseña;
-		boolean contraseñaBoolean = false;
-
-		do {
-
-			System.out.println("\n Introduzca el usuario");
-			nombre = sc.next();
-			System.out.println("\n Introduzca la contraseña para " + nombre);
-			contraseña = sc.next();
 
 			try {
 				HttpRequest request = HttpRequest.newBuilder()
@@ -308,7 +320,7 @@ public class Main {
 
 				HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 				JSONObject json = new JSONObject(response.body());
-				contraseñaBoolean = json.getBoolean("validado");
+				return json.getBoolean("validado");
 
 			} catch (URISyntaxException e) {
 				// TODO Auto-generated catch block
@@ -324,7 +336,8 @@ public class Main {
 				e.printStackTrace();
 
 			}
-		} while (!contraseñaBoolean);
+			return false;
+		
 
 	}
 
