@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { Game } from '../../entities/game';
 import { User } from '../../entities/user';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { LoginValidationService } from 'src/app/services/login-validation.service';
+
+
 @Component({
   selector: 'app-main-login',
   templateUrl: './main-login.component.html',
@@ -34,7 +37,7 @@ export class MainLoginComponent {
   error: boolean = true;
   pswdVisible: boolean = false
   
-  constructor(private router:Router,private _httpClient : HttpClient) {
+  constructor(private router:Router,private _loginService:LoginValidationService) {
     
     let user1 = new User("pedro@gmail.com","app10101")
     this.mapUserPswd.set(user1.getUserEmail(),user1.getPassword())
@@ -49,81 +52,57 @@ export class MainLoginComponent {
     this.mapUserPswd.set(user1.getUserEmail(),user1.getPassword())
     this.users.push(user1)
 
+    this._loginService = _loginService
     //USUARIOS BASE DE DATOS
     /**
      * pedro
      * pswd11
      */
   }
-  
-    /**
-     *  USUARIOS BASE DE DATOS
-     *  usuario : pedro
-     *  contraseña : pswd11
-     */
 
-  /**
-   * @author Pedro Sanchez Escribano
-   * Método que realiza el proceso de login con los datos introducidos por el usuario.
-   * En caso de error se mostrará un mensaje de error
-   */
-  async login(){
-    await fetch(`http://localhost:8080/20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB/usuarios/login?nombre=${this.userEmail}&password=${this.password}`,{mode: 'cors'})
-    .then(v => v.json())
-    .then(v => {
-      if(JSON.parse(v.validado)){
-        let user = null;
-        for(let x in this.users){
-            if(this.users[x].getUserEmail() === this.userEmail && this.users[x].getPassword() === this.password ) user = this.users[x]
+    /**
+    * @author Pedro Sanchez Escribano
+    * Método que realiza el proceso de login con los datos introducidos por el usuario.
+    * En caso de error se mostrará un mensaje de error
+    */
+     public login(){
+       
+      this._loginService.login(this.userEmail,this.password).subscribe(respuesta => {//'respuesta' es un objeto Json que contiene el body
+        if(respuesta.validado){
+          let user = null;
+          for(let x in this.users){
+              if(this.users[x].getUserEmail() === this.userEmail && this.users[x].getPassword() === this.password ) user = this.users[x]
+          }
+          this.router.navigate(["/index",user?.getUserEmail(),user?.getUrlIconStatus(),user?.getId()])
         }
-        this.router.navigate(["/index",user?.getUserEmail(),user?.getUrlIconStatus(),user?.getId()])
-      }else {
-        setTimeout(() => {
+        else if(!this.mapUserPswd.has(this.userEmail)){
+
+          this.error=false
+          this.errorMessage="El usuario no existe, revise el correo o nombre de usuario"
+
+          setTimeout(() => {
+            this.error=true
+          }, 2000);
+      }
+      else{
+
+        if(this.mapUserPswd.get(this.userEmail)!=this.password){
           this.error=false
           this.errorMessage="La contraseña no coincide, revísela"
-          this.error=true
-        }, 2000);
+
+          setTimeout(() => {
+            this.error=true
+          }, 2000);
+            
+        }
       }
     });
+      
 
-      /*this._httpClient.get(this.endPoint+'/usuarios/login?nombre=pedro&password=pswd1')
-      .subscribe(respuesta => {//'respuesta' es un objeto Json que contiene el body
-        console.log(respuesta);
-      });*/
-        //Si el correo o nombre de usuario no se corresponde con ninguno de los usuarios registrados
-        /*if(!this.mapUserPswd.has(this.userEmail)){
+      }
 
-            this.error=false
-            this.errorMessage="El usuario no existe, revise el correo o nombre de usuario"
-
-            setTimeout(() => {
-              this.error=true
-            }, 2000);
-        }
-        else{
-
-          if(this.mapUserPswd.get(this.userEmail)!=this.password){
-            this.error=false
-            this.errorMessage="La contraseña no coincide, revísela"
-
-            setTimeout(() => {
-              this.error=true
-            }, 2000);
-              
-          }
-
-          else{
-            let user = null;
-            for(let x in this.users){
-                if(this.users[x].getUserEmail() === this.userEmail && this.users[x].getPassword() === this.password ) user = this.users[x]
-            }
-            this.router.navigate(["/index",user?.getUserEmail(),user?.getUrlIconStatus(),user?.getId()])
-          }
-         
-
-        }
-         */
-  }
+  
+  
 
   /**
    * @author Pedro Sanchez Escribano
@@ -143,5 +122,8 @@ export class MainLoginComponent {
         this.pswdVisible = true;
       }
   }
+
+
+ 
 
 }
