@@ -12,20 +12,17 @@ import java.util.Scanner;
 
 import org.json.JSONObject;
 
-import com.google.protobuf.Duration;
-
 import modelo.entidad.Coche;
 import modelo.negocio.GestorCoche;
 
 public class Main {
-	
+
 	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {
 
-		boolean exit = false;
 		GestorCoche gCoche = new GestorCoche();
-
+		final int MAX_ERROR_LOGIN = 3;
 		int id;
 		String matricula;
 		String marca;
@@ -33,41 +30,42 @@ public class Main {
 		double numeroKm;
 		Coche car;
 		ArrayList<Coche> lista;
-		
-		//VALIDAMOS USUARIO CON HTTP CLIENT ( JAVA 11 )
+
+		// VALIDAMOS USUARIO CON HTTP CLIENT ( JAVA 11 )
+
 		String nombre, contraseña;
 		boolean contraseñaBoolean = false;
+		int contador = 0;
 
 		do {
-			
+
+			contador++;
 			System.out.println("\n Introduzca el usuario");
 			nombre = sc.next();
 			System.out.println("\n Introduzca la contraseña para " + nombre);
 			contraseña = sc.next();
 
-			contraseñaBoolean = validarUsuario(nombre,contraseña);
+			contraseñaBoolean = validarUsuario(nombre, contraseña);
+			if(contraseñaBoolean) System.out.println("\n Usuario identificado con éxito\n");
 			
-		} while (!contraseñaBoolean);
-		
-		
-		System.out.println("\n Usuario identificado con éxito\n");
-		System.out.println("\n Consulta de Vehiculos");
+		} while (!contraseñaBoolean && contador < MAX_ERROR_LOGIN);
 
-		do {
 
+		boolean exit = false;
+
+		while (!exit && contraseñaBoolean) {
+			
 			menu();
 			int opcion = sc.nextInt();
 			switch (opcion) {
 
 			// SALIR
 			case 0:
-
 				exit = true;
 				break;
 
 			// DAR DE ALTA COCHE
 			case 1:
-
 				System.out
 						.println(" Introduzca los datos del nuevo vehiculo (matricula/marca/modelo/numeroKilometros)");
 
@@ -107,7 +105,6 @@ public class Main {
 
 			// DAR DE BAJA COCHE
 			case 2:
-
 				System.out.println(" Introduzca el id del vehiculo que quiere dar de baja");
 
 				id = sc.nextInt();
@@ -124,7 +121,6 @@ public class Main {
 
 			// MODIFICAR COCHE
 			case 3:
-
 				System.out.println(
 						" Introduzca los datos a modificar del vehiculo (id/matricula/marca/modelo/numeroKilometros)");
 
@@ -166,7 +162,6 @@ public class Main {
 
 			// BUSCAR COCHE POR ID
 			case 4:
-
 				System.out.println(" Introduzca el id del vehiculo que quiere buscar");
 
 				id = sc.nextInt();
@@ -183,7 +178,6 @@ public class Main {
 
 			// BUSCAR COCHES POR MARCA
 			case 5:
-
 				System.out.println(" Introduzca la marca del vehiculo que quiere buscar");
 
 				marca = sc.next();
@@ -205,7 +199,6 @@ public class Main {
 
 			// BUSCAR COCHES POR MODELO
 			case 6:
-
 				System.out.println(" Introduzca el modelo del vehiculo que quiere buscar");
 
 				modelo = sc.next();
@@ -227,7 +220,6 @@ public class Main {
 
 			// BUSCAR COCHE POR MATRICULA
 			case 7:
-
 				System.out.println(" Introduzca la matrícula del vehiculo que quiere buscar");
 
 				matricula = sc.next();
@@ -244,7 +236,6 @@ public class Main {
 
 			// LISTAR COCHES
 			case 8:
-
 				lista = gCoche.listar();
 
 				if (lista != null) {
@@ -263,7 +254,6 @@ public class Main {
 
 			// CONVERSION DE LA LISTA DE COCHES A UN FICHERO TXT EN FORMATO JSON
 			case 9:
-
 				lista = gCoche.listar();
 
 				if (lista != null) {
@@ -281,7 +271,6 @@ public class Main {
 
 			// CONVERSION DE LA LISTA DE COCHES A UN FICHERO PDF
 			case 10:
-
 				// TODO PDF FILE
 				lista = gCoche.listar();
 				System.out.println("");
@@ -295,49 +284,50 @@ public class Main {
 
 			}
 
-		} while (!exit);
+		}
 
-		System.out.println("Fin de programa");
+		System.out.println(" Fin de programa");
 
 	}
-	
+
 	/**
-	 * Método que se encarga de validar un usuario realizando una petición get al servicio web de validación
-	 * @param nombre nombre del usuario
+	 * Método que se encarga de validar un usuario realizando una petición get al
+	 * servicio web de validación
+	 * 
+	 * @param nombre     nombre del usuario
 	 * @param contraseña contraseña del usuario
-	 * @return Devuelve un booleano, True en caso de validar con éxito el usuario, false en caso contrario
-	 *  */
+	 * @return Devuelve un booleano, True en caso de validar con éxito el usuario,
+	 *         false en caso contrario
+	 */
 	private static boolean validarUsuario(String nombre, String contraseña) {
 
+		try {
+			HttpRequest request = HttpRequest.newBuilder()
+					.uri(new URI("http://localhost:8080/20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB/usuarios/login?nombre="
+							+ nombre + "&password=" + contraseña))
+					.GET().build();
 
-			try {
-				HttpRequest request = HttpRequest.newBuilder()
-						.uri(new URI("http://localhost:8080/20_PROYECTO_JAVA_MAVEN_SERVICIO_WEB/usuarios/login?nombre="
-								+ nombre + "&password=" + contraseña))
-						.GET().build();
+			HttpClient client = HttpClient.newHttpClient();
 
-				HttpClient client = HttpClient.newHttpClient();
+			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+			JSONObject json = new JSONObject(response.body());
+			return json.getBoolean("validado");
 
-				HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-				JSONObject json = new JSONObject(response.body());
-				return json.getBoolean("validado");
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
 
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
+			e.printStackTrace();
 
-				e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-
-			}
-			return false;
-		
+		}
+		return false;
 
 	}
 
@@ -346,7 +336,8 @@ public class Main {
 	 * 
 	 */
 	private static void menu() {
-
+		
+		System.out.println("\n Consulta de Vehiculos");
 		System.out.println("\n Elija una opción:");
 		System.out.println(" 0- Salir del programa");
 		System.out.println(" 1- Alta de Vehículo");
