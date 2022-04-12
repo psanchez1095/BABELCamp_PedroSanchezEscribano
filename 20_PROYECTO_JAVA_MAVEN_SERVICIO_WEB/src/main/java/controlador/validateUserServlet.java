@@ -45,45 +45,31 @@ public class validateUserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+	   
+	    response.addHeader("Access-Control-Allow-Origin", "*");
+	    
 		daoUser = new DaoUserMySQL();
 		
 		boolean validado;
-		
+		System.out.println(request.getParameter("nombre")+request.getParameter("password"));
 		User aux = new User(-1,request.getParameter("nombre"),request.getParameter("password"));
 	
 		validado=daoUser.validar(aux);
-		
+		System.out.println(validado);
 		JSONObject json =new JSONObject();
 		
 		json.put("validado", validado);
-		
-		response.setContentType("application/json");
-		response.setCharacterEncoding("UTF-8");
-	    response.getWriter().write(json.toString());
-		
+		response.getWriter().write(json.toString());
+	
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		daoUser = new DaoUserMySQL();
-		
-		boolean validado;
-		
-		User aux = new User(-1,request.getParameter("nombre").toString(),request.getParameter("password").toString());
-		
-		validado=daoUser.validar(aux);
-		
-		JSONObject json =new JSONObject();
-		
-		json.put("validado", validado);
-		
-		response.setContentType("application/json");
-		response.setCharacterEncoding("UTF-8");
-	    response.getWriter().write(json.toString());
+		doGet(request,response);
 	}
 
 }
