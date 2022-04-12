@@ -12,6 +12,13 @@ export class LoginValidationService {
 
    }
 
+   /**
+    *
+    * Método que consume el servicio web de validacíon de usuario mediante una peticion GET
+    * @author Pedro Sanchez Escribano
+    * @param user nombre de usuario de tipo String
+    * @param password contraseña del usuario de tipo String
+    */
    public login(user:String,password:String):Observable<any>{
     return this._httpClient.get<any>(`${this.endPoint}?nombre=${user}&password=${password}`) .pipe(catchError(this.manejarError))
   }
