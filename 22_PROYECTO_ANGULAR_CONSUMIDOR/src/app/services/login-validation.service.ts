@@ -23,6 +23,25 @@ export class LoginValidationService {
     return this._httpClient.get<any>(`${this.endPoint}?nombre=${user}&password=${password}`) .pipe(catchError(this.manejarError))
   }
 
+  
+   /**
+    *
+    * Método que consume el servicio web de validacíon de usuario mediante una peticion POST
+    * @author Pedro Sanchez Escribano
+    * @param user nombre de usuario de tipo String
+    * @param password contraseña del usuario de tipo String
+    */
+    public loginPost(user:String,password:String):Observable<any>{
+      const headers= new HttpHeaders()
+      .set('content-type', 'application/json')
+      .set('Access-Control-Allow-Origin', '*');
+
+      let jsonUser = { usuario: user ,contraseña: password};
+
+      return this._httpClient.post<any>(`${this.endPoint}`, jsonUser,{ 'headers': headers }) .pipe(catchError(this.manejarError))
+    
+    }
+
   /**
    * Metodo que maneja los posibles errores de las llamadas al servicio rest
    * @param error 
