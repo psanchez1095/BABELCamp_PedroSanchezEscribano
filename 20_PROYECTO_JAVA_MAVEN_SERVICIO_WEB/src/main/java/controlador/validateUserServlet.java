@@ -1,16 +1,10 @@
 package controlador;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.http.HttpClient;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandler;
-import java.net.http.HttpResponse.BodyHandlers;
-import java.util.HashMap;
-import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,6 +39,7 @@ public class validateUserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 	   
@@ -69,7 +64,49 @@ public class validateUserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request,response);
+		
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		
+		
+		String str = readPostBody(request);
+		
+		//Las tres lineas siguientes evitn un error de JSONObject
+		int i = str.indexOf("{");
+		str = str.substring(i);
+		JSONObject json = new JSONObject(str.trim()); 
+	
+		daoUser = new DaoUserMySQL();
+		
+		boolean validado;
+		System.out.println(json.getString("usuario")+json.getString("contrasenia"));
+		User aux = new User(-1,json.getString("usuario"),json.getString("contrasenia"));
+	
+		validado=daoUser.validar(aux);
+		
+		json =new JSONObject();
+		
+		json.put("validado", validado);
+		response.getWriter().write(json.toString());
 	}
+	
+	
+	private static String readPostBody(HttpServletRequest request) {
+		  try {
+		    StringBuilder sb = new StringBuilder();
+		    BufferedReader reader = request.getReader();
+		    int c;
+		    while ((c = reader.read()) != -1) {
+		      sb.append((char) c);
+		    }
+	
+		    return sb.toString();
+		  } catch (IOException e) {
+		    throw new RuntimeException(e);
+		  }
+		}
+	
+	
 
 }
