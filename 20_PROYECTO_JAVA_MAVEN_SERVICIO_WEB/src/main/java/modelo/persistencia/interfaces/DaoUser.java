@@ -1,19 +1,16 @@
 package modelo.persistencia.interfaces;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import modelo.entidad.User;
 
 public interface DaoUser {
 	
 	/**
-	 * Metodo que se encarga de dar de alta un coche en la BBDD. En caso de error se imprimira por consola
-	 * @param c Coche a dar de alta
-	 * @return true en caso de que se haya dado de alta el coche en la BBDD con éxito. False en caso de error
-	 * con la BBDD.
+	 * Metodo que se encarga de buscar un usuario en la base de datos mediante su nombre y contraseña.
+	 * @param user usuario a buscar en la BBDD
+	 * @return Devuelve un objeto user, en caso de que este usuario no se encuentre en la base de datos o exista algun error de conexion
+	 * sus campos de nombre y contraseña seran ""
 	 */
-	boolean validar(User c);
+	User buscarUsuarioPorNombreContrasenia(User user);
 	
 	
 }

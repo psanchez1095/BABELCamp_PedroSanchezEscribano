@@ -1,14 +1,10 @@
 package modelo.persistencia;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 
 import modelo.entidad.User;
 import modelo.persistencia.interfaces.DaoUser;
@@ -27,7 +23,7 @@ public class DaoUserMySQL implements DaoUser {
 	 */
 	public boolean nuevaConexion() throws ClassNotFoundException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		String url = "jdbc:mysql://localhost:3306/empresacoches";
+		String url = "jdbc:mysql://localhost:3306/users_pruebas";
 		String usuario = "root";
 		String password = "";
 
@@ -59,12 +55,12 @@ public class DaoUserMySQL implements DaoUser {
 
 		return true;
 	}
-
-	public boolean validar(User c) {
+	
+	public User buscarUsuarioPorNombreContrasenia(User c) {
 
 		try {
 			if (!nuevaConexion()) {
-				return false;
+				return null;
 			}
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
@@ -76,7 +72,7 @@ public class DaoUserMySQL implements DaoUser {
 		try {
 			PreparedStatement ps = conexion.prepareStatement(query);
 			ps.setString(1, c.getNombre());
-			
+		
 
 			ResultSet rs = ps.executeQuery();
 			User aux = new User();
@@ -85,14 +81,14 @@ public class DaoUserMySQL implements DaoUser {
 				aux.setNombre(rs.getString(1));
 				aux.setPassword(rs.getString(2));
 			}
-			if(c.getPassword().equals(aux.getPassword())) return true;
+			return aux;
 			
 		} catch (SQLException e) {
 			System.out.println("Buscar por Id -> error al obtener la " + "persona con id ");
 		} finally {
 			cerrarConexion();
 		}
-		return false;
+		return null;
 
 		
 		
