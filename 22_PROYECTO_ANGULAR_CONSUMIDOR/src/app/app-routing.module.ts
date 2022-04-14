@@ -13,7 +13,7 @@ const routes: Routes = [
     component : MainLoginComponent
   },
   {
-    path : 'index/:userEmail/:urlIconStatus/:id', //cuando definimos el 'path' no puede empezar por '/'
+    path : 'index/:userEmail', //cuando definimos el 'path' no puede empezar por '/'
     component : MainComponent
   },
   {

@@ -74,19 +74,9 @@ export class MainLoginComponent {
 
         //si validado es true se navega al index de la aplicacion web con los datos del usuario logueado
         if (respuesta.validado) {
-          let user = null;
-          for (let x in this.users) {
-            if (
-              this.users[x].getUserEmail() === this.userEmail &&
-              this.users[x].getPassword() === this.password
-            )
-              user = this.users[x];
-          }
           this.router.navigate([
             '/index',
-            user?.getUserEmail(),
-            user?.getUrlIconStatus(),
-            user?.getId(),
+            this.userEmail
           ]);
         }
         //Si el correo o nombre de usuario no se corresponde con ninguno de los usuarios registrados
