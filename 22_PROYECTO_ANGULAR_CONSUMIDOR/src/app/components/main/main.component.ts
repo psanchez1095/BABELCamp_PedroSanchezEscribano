@@ -36,9 +36,8 @@ export class MainComponent {
   //Referente al usuario 
   userId : number = -1;
   userEmail: string =""
-  urlIconUser: string =""
-
-   //Asignando valores al componente Footer
+  
+  //Asignando valores al componente Footer
   currentBtnBack:boolean = true;
   
   //Declaramos como estáticos los atributos de usuario para que se puedan mostrar en otros componentes sin necesidad de instanciar el objeto
@@ -50,19 +49,9 @@ export class MainComponent {
     
     //Recogemos los datos enviados con route
     this.userEmail = route.snapshot.params["userEmail"]
-    this.urlIconUser =  route.snapshot.params["urlIconStatus"]
-    this.userId =  parseInt(route.snapshot.params["id"])
-     
     //Actualizamos atributos estáticos
     MainComponent.static_userEmail = this.userEmail;
-    MainComponent.static_urlIconUser = this.urlIconUser;
-    MainComponent.static_userId = this.userId;
 
-    //Una vez tenemos el valor estatico, lo actualizamos en los atributos de la clase por si hubieran un back a este componente
-    this.userEmail = MainComponent.static_userEmail 
-    this.urlIconUser = MainComponent.static_urlIconUser 
-    this.userId = MainComponent.static_userId 
-    
     let game = new Game("Loop Hero"," Four Quarters ", 63,3,"../../assets/img/game_loop_hero.png","Devolver Digital edita Loop Hero, un videojuego roguelite donde el jugador ha de hacer uso de diferentes cartas para situar enemigos, edificios y terrenos en cada bucle de expedición único para el valiente héroe protagonista de esta aventura, buscando un perfecto equilibrio para aumentar sus opciones de supervivencia y sus posibilidades de un gran botín. ¿El fin último de Loop Hero? Vencer a una serie de impíos jefes guardianes en una grandiosa saga con el objetivo de salvar el mundo y romper el bucle temporal del Lich.")
     this.games.push(game)
     game = new Game("Stardew Valley"," ConcernedApe(Eric Barone)", 88, 2,"../../assets/img/game_stardew_valley.png","Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero?")

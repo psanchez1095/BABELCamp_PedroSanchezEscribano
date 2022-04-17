@@ -26,7 +26,7 @@ export class FooterComponent {
   constructor(private router:Router) {}
   
   public navigateMain(){
-    this.router.navigate(["/index",MainComponent.static_userEmail,MainComponent.static_urlIconUser,MainComponent.static_userId])
+    this.router.navigate(["/index",MainComponent.static_userEmail])
   }
   /**
    * Metodo que navega al indice de la aplicación web
