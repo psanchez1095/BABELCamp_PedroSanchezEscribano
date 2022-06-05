@@ -1,4 +1,4 @@
-#117841 - Fix conditions in EqualsDataValidator
+#117841 - Fix conditions in EqualsDataValidator  
 #117841 - set password data to EditCustomer
   
 
